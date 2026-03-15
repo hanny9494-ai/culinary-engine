@@ -1,0 +1,2756 @@
+[
+  {
+    "question_id": "L0-Q-HT-001",
+    "question_text": "为什么水煮的温度上限是100°C，而油炸可以到180°C？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "题目涉及水与油的沸点差异及相变原理，属于传热与热力学范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-002",
+    "question_text": "热传导、热对流、热辐射在烹饪中如何体现？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "题目核心是传热三种方式（传导/对流/辐射），属于热力学/传热原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-003",
+    "question_text": "为什么铜锅比不锈钢锅加热更均匀？",
+    "old_domain": "heat_transfer",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "铜锅与不锈钢锅加热均匀性差异本质是导热系数等材料物理性质，属于设备/器具原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-004",
+    "question_text": "为什么厚底锅比薄底锅更不容易糊？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "厚底锅通过更大热容和均匀传热减少局部过热，属于传热与热力学原理。"
+  },
+  {
+    "question_id": "L0-Q-HT-005",
+    "question_text": "微波加热的原理是什么？",
+    "old_domain": "heat_transfer",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "微波加热属于设备工作原理，归入equipment_physics最合适。"
+  },
+  {
+    "question_id": "L0-Q-HT-006",
+    "question_text": "为什么焗烤时表面会先变色？",
+    "old_domain": "heat_transfer",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "焗烤表面变色是美拉德反应和焦糖化在高温干热条件下优先发生在表面的结果，核心是褐变化学而非传热机制。"
+  },
+  {
+    "question_id": "L0-Q-HT-007",
+    "question_text": "蒸和煮的传热效率有什么区别？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "蒸与煮的传热效率对比涉及传热方式（对流/蒸汽冷凝潜热）和热力学原理，属于传热/热力学范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-008",
+    "question_text": "为什么炒菜要大火快炒？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "大火快炒涉及高温短时传热原理，属于热力学/传热范畴，同时也涉及美拉德反应，但核心问题是传热速率与温度控制。"
+  },
+  {
+    "question_id": "L0-Q-HT-009",
+    "question_text": "余温烹饪(carryover cooking)的原理是什么？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "余温烹饪涉及食物离开热源后内部热量继续传导（传热/相变），属于热力学范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-010",
+    "question_text": "为什么烤箱需要预热？",
+    "old_domain": "heat_transfer",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "烤箱预热涉及烤箱设备的工作原理和热场稳定性，属于设备原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-011",
+    "question_text": "为什么同样温度的水比空气感觉更热？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "题目涉及水与空气的导热性差异（比热容/热传导率），属于传热与热力学物理性质范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-012",
+    "question_text": "美拉德反应和焦糖化的起始温度分别是多少？",
+    "old_domain": "heat_transfer",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.99,
+    "reason": "题目直接询问美拉德反应和焦糖化的起始温度，属于maillard_caramelization域的核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-HT-013",
+    "question_text": "为什么高压锅能缩短烹饪时间？",
+    "old_domain": "heat_transfer",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "高压锅通过密封加压提升沸点缩短烹饪时间，属于设备工作原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-014",
+    "question_text": "食物的比热容如何影响烹饪时间？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "比热容是热力学核心概念，直接影响食物升温速率与烹饪时间，属于传热/热力学范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-015",
+    "question_text": "为什么金属烤盘比玻璃烤盘烤得更快？",
+    "old_domain": "heat_transfer",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "题目涉及不同材质烤盘的导热性能差异，属于烹饪设备与物理特性的范畴，尽管传热原理相关，但问题核心是设备材质对烹饪效果的影响。"
+  },
+  {
+    "question_id": "L0-Q-HT-016",
+    "question_text": "低温慢煮(sous vide)的温度控制原理是什么？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "低温慢煮的核心是精确控温与热传导原理，属于传热与热力学范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-017",
+    "question_text": "为什么解冻时室温解冻不如冷藏解冻安全？",
+    "old_domain": "heat_transfer",
+    "new_domain": "food_safety",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "题目核心是解冻过程中病原体繁殖与安全温度区间的问题，属于食品安全范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-018",
+    "question_text": "热点(hot spot)是如何形成的？",
+    "old_domain": "heat_transfer",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "微波炉热点形成涉及微波设备的电磁场分布原理，属于设备物理范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-019",
+    "question_text": "为什么烤面包时要喷水？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.75,
+    "reason": "烤面包喷水涉及蒸汽传热、表面湿润延缓结壳等热力学与相变机制，属于传热/相变范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-020",
+    "question_text": "对流烤箱和普通烤箱的区别是什么？",
+    "old_domain": "heat_transfer",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "题目考查对流烤箱与普通烤箱的工作原理差异，属于设备原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-HT-021",
+    "question_text": "为什么煎牛排要先室温放置？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "室温放置牛排涉及热传导均匀性与中心温度提升，属于传热与热力学原理"
+  },
+  {
+    "question_id": "L0-Q-HT-022",
+    "question_text": "食材大小如何影响烹饪时间？",
+    "old_domain": "heat_transfer",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "食材大小影响热量传导路径和时间，属于传热与热力学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-001",
+    "question_text": "美拉德反应的化学机理是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.99,
+    "reason": "题目直接询问美拉德反应的化学机理，与maillard_caramelization域完全匹配。"
+  },
+  {
+    "question_id": "L0-Q-CR-002",
+    "question_text": "美拉德反应需要什么条件才能发生？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.99,
+    "reason": "题目直接询问美拉德反应的发生条件，属于maillard_caramelization域的核心内容。"
+  },
+  {
+    "question_id": "L0-Q-CR-003",
+    "question_text": "焦糖化和美拉德反应的区别是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.99,
+    "reason": "题目直接考查焦糖化与美拉德反应的区别，完全对应该domain的核心主题。"
+  },
+  {
+    "question_id": "L0-Q-CR-004",
+    "question_text": "为什么碱水能让面条变黄？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "碱水改变面条pH，碱性环境使黄酮类色素发生结构变化而呈黄色，属于pH/酸碱化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-005",
+    "question_text": "为什么柠檬汁能防止苹果变色？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "oxidation_reduction",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "柠檬汁中的抗坏血酸抑制多酚氧化酶活性，防止酶促褐变，属于氧化还原/抗氧化机制。"
+  },
+  {
+    "question_id": "L0-Q-CR-006",
+    "question_text": "为什么小苏打能让肉变嫩？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "小苏打（碳酸氢钠）通过提高pH值使肉中蛋白质结构松弛，属于pH/碱性化学作用机制。"
+  },
+  {
+    "question_id": "L0-Q-CR-007",
+    "question_text": "氧化反应如何影响油脂的风味？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "oxidation_reduction",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "题目直接涉及油脂氧化反应及其对风味的影响，属于脂肪氧化/抗氧化范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-008",
+    "question_text": "为什么腌制能改变肉的质地？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "腌制通过盐/酸改变pH和离子强度，影响蛋白质结构从而改变肉的质地，核心机制属于腌制化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-009",
+    "question_text": "酸碱度如何影响蔬菜的颜色？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "color_pigment",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "题目核心是pH对蔬菜色素（如叶绿素、花青素）的影响，属于色素变化范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-010",
+    "question_text": "为什么过度加热的油会产生有害物质？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "过度加热油脂涉及脂肪酸分解、烟点超越及有害物质（如丙烯醛）生成，属于脂质化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-011",
+    "question_text": "发酵过程中的主要化学变化是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "fermentation",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "题目直接询问发酵过程中的化学变化，核心主题是发酵/微生物代谢。"
+  },
+  {
+    "question_id": "L0-Q-CR-012",
+    "question_text": "为什么盐能加速冰的融化？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.72,
+    "reason": "盐降低冰点属于凝固点降低的热力学/相变原理，与相变和热力学过程最相关。"
+  },
+  {
+    "question_id": "L0-Q-CR-013",
+    "question_text": "糖的焦糖化温度是多少？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.98,
+    "reason": "焦糖化温度是焦糖化反应的核心知识点，直接归属maillard_caramelization域。"
+  },
+  {
+    "question_id": "L0-Q-CR-014",
+    "question_text": "为什么炖煮时加酒能去腥？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "酒精与腥味挥发性物质共同挥发，属于挥发性香气与沸点机制。"
+  },
+  {
+    "question_id": "L0-Q-CR-015",
+    "question_text": "酶促褐变的机理是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "enzyme",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "酶促褐变属于酶的催化反应机理，核心是多酚氧化酶的作用机制。"
+  },
+  {
+    "question_id": "L0-Q-CR-016",
+    "question_text": "为什么醋能软化骨头？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "醋软化骨头的机制是酸（乙酸）溶解骨骼中的钙盐（磷酸钙），属于pH/酸碱化学反应范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-017",
+    "question_text": "烟熏保存食物的化学原理是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "food_safety",
+    "changed": true,
+    "confidence": 0.93,
+    "reason": "人工复核：烟熏保存的核心目标是抑菌、防腐和延长货架期，按问题中心更适合 food_safety。"
+  },
+  {
+    "question_id": "L0-Q-CR-018",
+    "question_text": "为什么蛋白打发时加塔塔粉？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "塔塔粉（酒石酸氢钾）通过降低pH稳定蛋白泡沫，核心机制涉及蛋白质结构与变性行为。"
+  },
+  {
+    "question_id": "L0-Q-CR-019",
+    "question_text": "面筋形成的化学过程是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.98,
+    "reason": "面筋由麦谷蛋白和麦醇溶蛋白通过二硫键交联形成网络结构，属于蛋白质化学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-CR-020",
+    "question_text": "为什么果胶需要糖和酸才能凝固？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "carbohydrate",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "果胶是多糖类物质，其凝胶机制涉及糖与酸对果胶分子网络结构的影响，属于碳水化合物科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-021",
+    "question_text": "抗氧化剂如何延缓食物变质？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "oxidation_reduction",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "抗氧化剂延缓食物变质的核心机制是抑制脂肪氧化和自由基链式反应，属于氧化还原化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-022",
+    "question_text": "为什么亚硝酸盐能保持肉的粉红色？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "亚硝酸盐与肌红蛋白反应形成亚硝基肌红蛋白，属于腌制化学与亚硝酸盐作用机制范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-023",
+    "question_text": "水解反应在烹饪中的作用是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.72,
+    "reason": "烹饪中的水解反应最典型的是蛋白质水解（胶原→明胶、面筋降解），其次涉及淀粉和脂肪水解，但蛋白质水解在烹饪语境中最具代表性。"
+  },
+  {
+    "question_id": "L0-Q-CR-024",
+    "question_text": "为什么酸能使牛奶凝固？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "酸使牛奶中酪蛋白在等电点（pH 4.6）发生凝胶/沉淀，属于蛋白质变性与凝胶机制。"
+  },
+  {
+    "question_id": "L0-Q-CR-025",
+    "question_text": "乳化剂的作用机理是什么？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "乳化剂属于脂质科学核心内容，与脂肪酸、乳化机理直接相关。"
+  },
+  {
+    "question_id": "L0-Q-CR-026",
+    "question_text": "为什么糖能抑制面筋形成？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "题目核心是糖对面筋（麸质蛋白网络）形成的抑制机制，属于蛋白质/面筋科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CR-027",
+    "question_text": "热分解反应在高温烹饪中如何发生？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.75,
+    "reason": "高温烹饪中的热分解反应本质上涉及热能驱动的化学变化，与传热和热力学过程密切相关，但也与美拉德/焦糖化有重叠；选thermal_dynamics因题目强调'热分解'的物理化学机制而非特定褐变反应。"
+  },
+  {
+    "question_id": "L0-Q-CR-028",
+    "question_text": "为什么盐能增强甜味感知？",
+    "old_domain": "chemical_reaction",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "盐增强甜味属于味觉相互作用/感知机制，与味觉受体和感知直接相关。"
+  },
+  {
+    "question_id": "L0-Q-PC-001",
+    "question_text": "冰的结晶对食材质地有什么影响？",
+    "old_domain": "physical_change",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "冰晶形成直接影响食材的质构（细胞破裂、组织软化），属于质地/质构变化范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-002",
+    "question_text": "为什么冷冻后的肉解冻会出水？",
+    "old_domain": "physical_change",
+    "new_domain": "mass_transfer",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "冷冻解冻出水涉及冰晶破坏细胞结构后的水分迁移与渗出，属于质量传递/水分迁移范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-003",
+    "question_text": "淀粉糊化的温度范围是多少？",
+    "old_domain": "physical_change",
+    "new_domain": "carbohydrate",
+    "changed": true,
+    "confidence": 0.99,
+    "reason": "淀粉糊化是典型的碳水化合物物理化学变化，直接归属carbohydrate域。"
+  },
+  {
+    "question_id": "L0-Q-PC-004",
+    "question_text": "为什么面团需要醒发？",
+    "old_domain": "physical_change",
+    "new_domain": "fermentation",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "醒发过程依赖酵母发酵产生CO2使面团膨胀，核心机制属于发酵/微生物范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-005",
+    "question_text": "蛋白质凝固的温度范围是多少？",
+    "old_domain": "physical_change",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "题目直接询问蛋白质凝固温度，属于蛋白质变性/凝固的核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-PC-006",
+    "question_text": "为什么打发的奶油会变稳定？",
+    "old_domain": "physical_change",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "打发奶油涉及气泡稳定、脂肪晶体网络形成及泡沫流变特性，属于质构与流变范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-007",
+    "question_text": "乳化液是如何形成的？",
+    "old_domain": "physical_change",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "乳化液的形成涉及乳化剂、油水界面张力等脂质科学核心概念。"
+  },
+  {
+    "question_id": "L0-Q-PC-008",
+    "question_text": "为什么巧克力需要调温？",
+    "old_domain": "physical_change",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "巧克力调温本质是可可脂多晶型结晶控制，属于脂肪结晶行为。"
+  },
+  {
+    "question_id": "L0-Q-PC-009",
+    "question_text": "凝胶化的原理是什么？",
+    "old_domain": "physical_change",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "凝胶化涉及凝胶强度、流变与质构特性，属于texture_rheology范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-010",
+    "question_text": "为什么冰淇淋需要不断搅拌？",
+    "old_domain": "physical_change",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "搅拌冰淇淋的核心目的是控制冰晶大小和引入气泡，属于质构与流变学范畴（冰晶生长、乳化体系稳定性、最终产品的质地）。"
+  },
+  {
+    "question_id": "L0-Q-PC-011",
+    "question_text": "面筋网络的物理结构是怎样的？",
+    "old_domain": "physical_change",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "面筋网络由麦谷蛋白和麦醇溶蛋白交联形成，属于蛋白质结构与凝胶范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-012",
+    "question_text": "为什么过度揉面会让面团变硬？",
+    "old_domain": "physical_change",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "过度揉面导致面筋蛋白网络过度交联变硬，属于面筋/蛋白质结构变化。"
+  },
+  {
+    "question_id": "L0-Q-PC-013",
+    "question_text": "泡沫的稳定性由什么决定？",
+    "old_domain": "physical_change",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "泡沫稳定性涉及界面张力、黏度、气泡结构等流变与质构特性。"
+  },
+  {
+    "question_id": "L0-Q-PC-014",
+    "question_text": "为什么盐能提高水的沸点？",
+    "old_domain": "physical_change",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.94,
+    "reason": "人工复核：盐提高水沸点属于依数性和相平衡问题，核心是热力学而不是盐酸碱化学。"
+  },
+  {
+    "question_id": "L0-Q-PC-015",
+    "question_text": "糖如何影响水的冰点？",
+    "old_domain": "physical_change",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "冰点降低属于溶液热力学/相变现象，与传热和相变直接相关。"
+  },
+  {
+    "question_id": "L0-Q-PC-016",
+    "question_text": "脂肪的结晶形态有哪些？",
+    "old_domain": "physical_change",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "脂肪结晶形态（α、β'、β型）是脂质科学的核心内容，属于lipid_science范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-017",
+    "question_text": "为什么黄油在不同温度下质地不同？",
+    "old_domain": "physical_change",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "黄油质地随温度变化本质是脂肪晶体结构（多晶型）的相变与结晶行为，属于脂质科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-018",
+    "question_text": "淀粉老化的原理是什么？",
+    "old_domain": "physical_change",
+    "new_domain": "carbohydrate",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "淀粉老化是淀粉分子重结晶的过程，属于碳水化合物科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-PC-019",
+    "question_text": "为什么面包放久会变硬？",
+    "old_domain": "physical_change",
+    "new_domain": "carbohydrate",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "面包变硬是淀粉老化（retrogradation）现象，属于淀粉/糊化/老化范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-020",
+    "question_text": "蒸发冷却在烹饪中的应用是什么？",
+    "old_domain": "physical_change",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "蒸发冷却涉及相变（液态水转为气态）和热量传递，属于热力学/传热范畴。"
+  },
+  {
+    "question_id": "L0-Q-PC-021",
+    "question_text": "表面张力如何影响液体行为？",
+    "old_domain": "physical_change",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.72,
+    "reason": "表面张力属于液体界面物理性质，与流变学和质构中的界面行为、乳化体系稳定性最为相关。"
+  },
+  {
+    "question_id": "L0-Q-PC-022",
+    "question_text": "为什么油水不相溶？",
+    "old_domain": "physical_change",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "油水不相溶涉及脂肪/油脂的疏水性与极性分子间相互作用，属于脂质科学基础概念。"
+  },
+  {
+    "question_id": "L0-Q-PC-023",
+    "question_text": "扩散作用在腌制中的角色是什么？",
+    "old_domain": "physical_change",
+    "new_domain": "mass_transfer",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "腌制中盐分扩散属于质量传递/扩散过程，虽涉及腌制场景，但核心机制是扩散作用这一传质现象。"
+  },
+  {
+    "question_id": "L0-Q-PC-024",
+    "question_text": "为什么真空包装能延长保质期？",
+    "old_domain": "physical_change",
+    "new_domain": "food_safety",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "真空包装通过去除氧气抑制需氧微生物生长和氧化反应，核心机制指向微生物控制与食品安全。"
+  },
+  {
+    "question_id": "L0-Q-WA-001",
+    "question_text": "水分活度(Aw)的定义是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.99,
+    "reason": "题目直接考查水分活度的定义，属于water_activity核心概念。"
+  },
+  {
+    "question_id": "L0-Q-WA-002",
+    "question_text": "水分活度如何影响微生物生长？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目核心是水分活度对微生物生长的影响，属于水分活度领域的基础知识，尽管涉及微生物但重点在aw参数本身。"
+  },
+  {
+    "question_id": "L0-Q-WA-003",
+    "question_text": "为什么干燥能保存食物？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "干燥通过降低水分活度抑制微生物生长和化学反应，核心概念属于水分活度领域"
+  },
+  {
+    "question_id": "L0-Q-WA-004",
+    "question_text": "盐和糖如何降低水分活度？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "盐和糖通过溶质效应降低水分活度，属于水分活度核心机制。"
+  },
+  {
+    "question_id": "L0-Q-WA-005",
+    "question_text": "不同食品的典型水分活度是多少？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接询问不同食品的典型水分活度数值，核心概念即为水分活度。"
+  },
+  {
+    "question_id": "L0-Q-WA-006",
+    "question_text": "为什么蜂蜜不容易变质？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "蜂蜜不易变质的核心原因是其极低的水分活度（aw≈0.6），抑制微生物生长，属于水分活度的典型应用场景。"
+  },
+  {
+    "question_id": "L0-Q-WA-007",
+    "question_text": "结合水和自由水的区别是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "结合水与自由水的区分是水分活度理论的核心概念，直接关联食品中水的存在状态与可利用性。"
+  },
+  {
+    "question_id": "L0-Q-WA-008",
+    "question_text": "水分活度与水分含量的关系是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接讨论水分活度与水分含量的关系，属于水分活度核心概念。"
+  },
+  {
+    "question_id": "L0-Q-WA-009",
+    "question_text": "为什么饼干暴露在空气中会变软？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "饼干变软是因为从空气中吸收水分（吸湿），导致水分活度升高，属于水分活度/干燥/吸湿范畴。"
+  },
+  {
+    "question_id": "L0-Q-WA-010",
+    "question_text": "临界水分活度对保质期的影响是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接讨论水分活度（aw）临界值与食品保质期的关系，属于水分活度核心概念。"
+  },
+  {
+    "question_id": "L0-Q-WA-011",
+    "question_text": "吸湿等温线的意义是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "吸湿等温线直接描述食品水分活度与含水量的关系，是水分活度领域的核心概念。"
+  },
+  {
+    "question_id": "L0-Q-WA-012",
+    "question_text": "玻璃化转变与食品稳定性的关系是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.82,
+    "reason": "玻璃化转变（Tg）直接关联食品水分活度与干燥体系的物理稳定性，是水分活度领域的核心概念之一。"
+  },
+  {
+    "question_id": "L0-Q-WA-013",
+    "question_text": "为什么冷冻干燥能更好保持风味？",
+    "old_domain": "water_activity",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "冷冻干燥保持风味的核心在于低温避免挥发性香气化合物的损失，属于挥发性香气领域，而非单纯水分活度问题。"
+  },
+  {
+    "question_id": "L0-Q-WA-014",
+    "question_text": "水分迁移在复合食品中的问题是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "mass_transfer",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "水分迁移涉及扩散和渗透压等传质机制，mass_transfer比water_activity更精准描述该过程。"
+  },
+  {
+    "question_id": "L0-Q-WA-015",
+    "question_text": "水分活度如何影响化学反应速率？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目直接讨论水分活度对化学反应速率的影响，核心概念属于水分活度领域。"
+  },
+  {
+    "question_id": "L0-Q-WA-016",
+    "question_text": "为什么糖渍和盐渍能保存食物？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.96,
+    "reason": "人工复核：糖渍和盐渍保存食物的核心机制是降低水分活度和渗透压效应，应归入 water_activity。"
+  },
+  {
+    "question_id": "L0-Q-WA-017",
+    "question_text": "喷雾干燥的原理是什么？",
+    "old_domain": "water_activity",
+    "new_domain": "equipment_physics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "喷雾干燥是一种设备工艺原理，核心在于雾化器、热风干燥室等设备机制，虽与水分去除相关，但问题聚焦于'原理'而非水分活度概念。"
+  },
+  {
+    "question_id": "L0-Q-WA-018",
+    "question_text": "为什么肉干需要控制水分活度？",
+    "old_domain": "water_activity",
+    "new_domain": "water_activity",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "肉干控制水分活度是为了抑制微生物生长和延长保质期，核心概念直接对应water_activity域。"
+  },
+  {
+    "question_id": "L0-Q-PS-001",
+    "question_text": "蛋白质热变性的温度范围是多少？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接考查蛋白质热变性温度，属于蛋白质变性核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-PS-002",
+    "question_text": "为什么过度加热的蛋会变橡皮？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "过度加热导致蛋白质过度变性交联，形成紧密网络结构，属于蛋白质变性与凝胶行为。"
+  },
+  {
+    "question_id": "L0-Q-PS-003",
+    "question_text": "肌肉蛋白在烹饪中如何变化？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "肌肉蛋白（肌球蛋白、肌动蛋白）在烹饪中的变性、凝固属于蛋白质科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-PS-004",
+    "question_text": "胶原蛋白转化为明胶的条件是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "胶原蛋白水解为明胶涉及蛋白质结构变性与转化，属于蛋白质科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-PS-005",
+    "question_text": "为什么老母鸡汤比嫩鸡汤更鲜？",
+    "old_domain": "protein_science",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "题目核心是解释鲜味来源（谷氨酸、肌苷酸等鲜味物质随老化积累），属于味觉感知与鲜味化学范畴，而非蛋白质结构变化本身。"
+  },
+  {
+    "question_id": "L0-Q-PS-006",
+    "question_text": "蛋白质的等电点在烹饪中的应用是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "等电点是蛋白质的核心化学性质，直接影响蛋白质溶解度、凝胶和沉淀行为，属于蛋白质科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-PS-007",
+    "question_text": "为什么酸奶是固态的？",
+    "old_domain": "protein_science",
+    "new_domain": "fermentation",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "酸奶固态化主要由乳酸菌发酵产酸使pH下降导致酪蛋白等电点沉淀凝胶，核心机制是发酵过程，虽涉及蛋白质凝胶但驱动力是微生物产酸。"
+  },
+  {
+    "question_id": "L0-Q-PS-008",
+    "question_text": "蛋白质发泡的机理是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "蛋白质发泡涉及蛋白质在气液界面的展开与吸附，属于蛋白质功能性质（变性/界面行为）的核心内容。"
+  },
+  {
+    "question_id": "L0-Q-PS-009",
+    "question_text": "为什么蛋白打发需要无油无水？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "蛋白打发涉及蛋白质（蛋清蛋白）在界面展开形成泡沫网络结构，油脂破坏蛋白膜稳定性属于蛋白质功能性质核心内容。"
+  },
+  {
+    "question_id": "L0-Q-PS-010",
+    "question_text": "热凝固和酸凝固的区别是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "热凝固与酸凝固均属于蛋白质变性/凝胶机制的核心内容"
+  },
+  {
+    "question_id": "L0-Q-PS-011",
+    "question_text": "为什么过熟的牛排会变干？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "过熟牛排变干的核心机制是肌肉蛋白质（肌球蛋白、肌动蛋白）过度变性收缩，导致持水能力下降，属于蛋白质变性范畴。"
+  },
+  {
+    "question_id": "L0-Q-PS-012",
+    "question_text": "蛋白质水解对风味的贡献是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "人工复核：题目强调蛋白质水解对风味的贡献，最直接的是氨基酸和短肽带来的鲜味、苦味等味觉变化，更适合 taste_perception。"
+  },
+  {
+    "question_id": "L0-Q-PS-013",
+    "question_text": "为什么肉汤冷却后会凝成冻？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "肉汤冷却成冻是胶原蛋白水解为明胶后形成热可逆凝胶的典型蛋白质凝胶现象"
+  },
+  {
+    "question_id": "L0-Q-PS-014",
+    "question_text": "酶嫩化剂的作用原理是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "enzyme",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "酶嫩化剂通过蛋白酶（如木瓜蛋白酶）水解肌肉蛋白，核心机制属于酶的催化作用而非蛋白质结构变化本身。"
+  },
+  {
+    "question_id": "L0-Q-PS-015",
+    "question_text": "为什么鱼肉比猪肉更容易熟？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.82,
+    "reason": "鱼肉易熟主要源于其胶原蛋白含量少、肌纤维短且结缔组织少，属于蛋白质结构差异导致的热变性问题。"
+  },
+  {
+    "question_id": "L0-Q-PS-016",
+    "question_text": "乳蛋白的种类和特性是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目直接考查乳蛋白（酪蛋白、乳清蛋白等）的种类与特性，属于蛋白质科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-PS-017",
+    "question_text": "肌红蛋白的颜色变化代表什么？",
+    "old_domain": "protein_science",
+    "new_domain": "color_pigment",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "肌红蛋白颜色变化属于色素/色泽变化范畴，核心是色素分子的氧化状态变化（脱氧/氧合/高铁肌红蛋白），而非蛋白质结构功能。"
+  },
+  {
+    "question_id": "L0-Q-PS-018",
+    "question_text": "为什么腌肉需要时间渗透？",
+    "old_domain": "protein_science",
+    "new_domain": "mass_transfer",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "腌肉渗透本质是盐分/腌料通过扩散和渗透压向肉组织内部迁移的传质过程，而非蛋白质科学问题。"
+  },
+  {
+    "question_id": "L0-Q-PS-019",
+    "question_text": "蛋白质变性是可逆的吗？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接考查蛋白质变性的可逆性，属于蛋白质科学核心概念。"
+  },
+  {
+    "question_id": "L0-Q-PS-020",
+    "question_text": "为什么蛋黄能乳化油脂？",
+    "old_domain": "protein_science",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "蛋黄乳化油脂的核心机制是卵磷脂作为乳化剂在油水界面的作用，属于乳化剂/脂质科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-PS-021",
+    "question_text": "球蛋白和纤维蛋白的区别是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接考查蛋白质结构分类（球蛋白vs纤维蛋白），属于蛋白质科学核心概念。"
+  },
+  {
+    "question_id": "L0-Q-PS-022",
+    "question_text": "为什么豆腐需要凝固剂？",
+    "old_domain": "protein_science",
+    "new_domain": "protein_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "豆腐凝固涉及大豆蛋白在凝固剂作用下发生变性与凝胶化，属于蛋白质凝胶形成机制。"
+  },
+  {
+    "question_id": "L0-Q-PS-023",
+    "question_text": "蛋白酶在嫩肉中的作用是什么？",
+    "old_domain": "protein_science",
+    "new_domain": "enzyme",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "蛋白酶嫩肉属于酶的催化作用（蛋白酶水解肌肉蛋白），核心是酶的功能而非蛋白质结构变化。"
+  },
+  {
+    "question_id": "L0-Q-PS-024",
+    "question_text": "为什么鸡蛋煮太久蛋黄会变绿？",
+    "old_domain": "protein_science",
+    "new_domain": "color_pigment",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "蛋黄变绿是硫化亚铁（FeS）色素生成的颜色变化现象，属于色素化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-LS-001",
+    "question_text": "饱和脂肪和不饱和脂肪的区别是什么？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接考查脂肪酸饱和度结构差异，属于脂质科学核心概念。"
+  },
+  {
+    "question_id": "L0-Q-LS-002",
+    "question_text": "为什么不同油脂的烟点不同？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "烟点是油脂的核心物理化学特性，直接与脂肪酸组成、游离脂肪酸含量及精炼程度相关，属于脂质科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-LS-003",
+    "question_text": "油脂氧化的机理是什么？",
+    "old_domain": "lipid_science",
+    "new_domain": "oxidation_reduction",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "油脂氧化机理（自由基链式反应）属于氧化还原化学范畴，而非脂肪酸结构或乳化等lipid_science核心内容。"
+  },
+  {
+    "question_id": "L0-Q-LS-004",
+    "question_text": "为什么橄榄油不适合高温烹饪？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "橄榄油不适合高温烹饪的核心原因是其烟点较低，属于脂肪/油脂的烟点特性，直接对应lipid_science领域。"
+  },
+  {
+    "question_id": "L0-Q-LS-005",
+    "question_text": "反式脂肪是如何形成的？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "反式脂肪的形成涉及氢化过程中脂肪酸双键构型转变，属于脂肪酸化学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-LS-006",
+    "question_text": "乳化在烹饪中的应用有哪些？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "乳化是脂质与水相互作用的核心概念，乳化剂属于lipid_science的核心内容。"
+  },
+  {
+    "question_id": "L0-Q-LS-007",
+    "question_text": "为什么黄油比人造黄油风味好？",
+    "old_domain": "lipid_science",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "黄油风味优于人造黄油主要源于其天然挥发性香气成分（如双乙酰、丁酸等短链脂肪酸），属于挥发性香气领域，而非脂肪酸结构或乳化等脂质科学核心议题。"
+  },
+  {
+    "question_id": "L0-Q-LS-008",
+    "question_text": "油脂的结晶对巧克力质地的影响是什么？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "巧克力质地与可可脂多晶型结晶直接相关，属于脂肪结晶行为的核心议题。"
+  },
+  {
+    "question_id": "L0-Q-LS-009",
+    "question_text": "为什么椰子油在室温下是固态？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "椰子油固态源于其高饱和脂肪酸含量导致的脂肪结晶特性，属于脂质科学核心概念。"
+  },
+  {
+    "question_id": "L0-Q-LS-010",
+    "question_text": "脂肪酸组成如何影响油脂特性？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接讨论脂肪酸组成对油脂特性的影响，属于脂质科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-LS-011",
+    "question_text": "为什么重复使用的油会变质？",
+    "old_domain": "lipid_science",
+    "new_domain": "oxidation_reduction",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "重复使用的油变质主要机制是脂肪氧化（热氧化、水解酸败），属于氧化还原范畴，虽与脂质相关，但核心是氧化变质过程。"
+  },
+  {
+    "question_id": "L0-Q-LS-012",
+    "question_text": "油炸时油脂发生了什么变化？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "油炸过程中油脂的氧化、水解、聚合等变化属于脂质科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-LS-013",
+    "question_text": "为什么奶油比植物油风味更香？",
+    "old_domain": "lipid_science",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "题目核心是奶油风味来源（短链脂肪酸、双乙酰等挥发性香气物质）与植物油的对比，属于挥发性香气化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-LS-014",
+    "question_text": "乳脂肪球膜的功能是什么？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "乳脂肪球膜是包裹乳脂肪球的磷脂/蛋白质界面结构，核心属于脂质乳化与界面化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-LS-015",
+    "question_text": "为什么冷压油比精炼油风味更好？",
+    "old_domain": "lipid_science",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "冷压油风味更好的核心原因是保留了更多挥发性香气化合物，精炼过程（脱臭、高温）会破坏这些挥发性成分。"
+  },
+  {
+    "question_id": "L0-Q-LS-016",
+    "question_text": "油脂对烘焙质地的影响是什么？",
+    "old_domain": "lipid_science",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "油脂影响烘焙产品的质地（酥脆性、柔软度、层次感）属于流变与质构范畴，而非脂质化学本身。"
+  },
+  {
+    "question_id": "L0-Q-LS-017",
+    "question_text": "为什么起酥油能让酥皮层次分明？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "起酥油的层次分明效果源于其固态脂肪结晶结构在面团中形成物理隔层，属于脂肪结晶与功能性质的核心议题。"
+  },
+  {
+    "question_id": "L0-Q-LS-018",
+    "question_text": "脂肪替代品的原理是什么？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "脂肪替代品直接涉及脂肪的功能模拟与替代，属于脂质科学核心范畴。"
+  },
+  {
+    "question_id": "L0-Q-LS-019",
+    "question_text": "为什么猪油做的点心特别酥？",
+    "old_domain": "lipid_science",
+    "new_domain": "lipid_science",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "猪油的酥性源于其固态脂肪结晶结构在烘焙中的物理作用，属于脂肪结晶与起酥性的核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-LS-020",
+    "question_text": "油脂在面团中的层压作用是什么？",
+    "old_domain": "lipid_science",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "层压作用描述的是油脂在面团中形成物理层状结构、影响质构和流变特性的机制，属于质构/流变范畴，而非脂肪酸化学性质。"
+  },
+  {
+    "question_id": "L0-Q-CB-001",
+    "question_text": "淀粉糊化的机理是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.99,
+    "reason": "淀粉糊化是典型的淀粉科学核心概念，直接归属carbohydrate域。"
+  },
+  {
+    "question_id": "L0-Q-CB-002",
+    "question_text": "为什么不同淀粉的糊化温度不同？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "糊化温度是淀粉颗粒结构与晶体特性的核心问题，属于淀粉科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CB-003",
+    "question_text": "直链淀粉和支链淀粉的区别是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.98,
+    "reason": "直链淀粉与支链淀粉是淀粉结构的核心概念，属于碳水化合物科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CB-004",
+    "question_text": "淀粉老化(回生)的原理是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.99,
+    "reason": "淀粉老化（回生）是淀粉链重新结晶的过程，属于典型的碳水化合物科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CB-005",
+    "question_text": "为什么冷饭比热饭更抗消化？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "冷饭抗消化源于淀粉老化（回生），直链淀粉重结晶形成抗性淀粉，属于淀粉老化核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-CB-006",
+    "question_text": "糖的种类如何影响烘焙效果？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "题目核心是糖的种类（蔗糖、果糖、葡萄糖等）对烘焙的影响，主要涉及糖的吸湿性、甜度、结晶性等碳水化合物特性，虽与美拉德/焦糖化有关联，但分类主体仍属碳水化合物科学。"
+  },
+  {
+    "question_id": "L0-Q-CB-007",
+    "question_text": "为什么果糖比葡萄糖更甜？",
+    "old_domain": "carbohydrate",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "题目核心是解释甜度差异的感知机制（受体结合/构型），属于味觉感知范畴，而非糖的化学结构或反应。"
+  },
+  {
+    "question_id": "L0-Q-CB-008",
+    "question_text": "焦糖化反应的产物有哪些？",
+    "old_domain": "carbohydrate",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "焦糖化反应是糖在高温下的非酶褐变反应，直接归属maillard_caramelization域，而非carbohydrate的糊化/老化范畴。"
+  },
+  {
+    "question_id": "L0-Q-CB-009",
+    "question_text": "糖在烘焙中的多重作用是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "糖是碳水化合物的核心成分，其在烘焙中的作用（甜味、保湿、焦糖化、质构）主要围绕糖的化学性质展开。"
+  },
+  {
+    "question_id": "L0-Q-CB-010",
+    "question_text": "为什么糖能保持蛋糕湿润？",
+    "old_domain": "carbohydrate",
+    "new_domain": "water_activity",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "糖保持蛋糕湿润的核心机制是糖降低水分活度、结合自由水，属于水分活度/吸湿范畴，而非淀粉糊化等碳水化合物结构变化。"
+  },
+  {
+    "question_id": "L0-Q-CB-011",
+    "question_text": "果胶的凝胶机理是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "果胶是多糖类碳水化合物，其凝胶机理属于碳水化合物结构与功能范畴。"
+  },
+  {
+    "question_id": "L0-Q-CB-012",
+    "question_text": "为什么果酱需要加糖才能凝固？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "果酱凝固依赖果胶在高糖浓度下形成凝胶网络，属于果胶/糖的碳水化合物凝胶化机制。"
+  },
+  {
+    "question_id": "L0-Q-CB-013",
+    "question_text": "糖醇类甜味剂的特点是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "糖醇是糖的衍生物，属于碳水化合物范畴，其甜味特性虽涉及味觉但核心知识点在于糖醇的化学结构与性质。"
+  },
+  {
+    "question_id": "L0-Q-CB-014",
+    "question_text": "为什么木薯淀粉做的甜品更Q弹？",
+    "old_domain": "carbohydrate",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "木薯淀粉的Q弹口感本质是其糊化后形成的凝胶质构与流变特性，属于质构/凝胶强度范畴，而非单纯淀粉化学。"
+  },
+  {
+    "question_id": "L0-Q-CB-015",
+    "question_text": "膳食纤维在烹饪中的作用是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "膳食纤维属于多糖类碳水化合物，其烹饪作用涉及持水性、质构影响等，归属carbohydrate最合适。"
+  },
+  {
+    "question_id": "L0-Q-CB-016",
+    "question_text": "为什么全麦面包比白面包更快变干？",
+    "old_domain": "carbohydrate",
+    "new_domain": "water_activity",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "全麦面包变干涉及麸皮吸湿性差异和水分迁移/散失机制，核心是水分活度与水分迁移，而非淀粉糊化/老化等碳水化合物化学。"
+  },
+  {
+    "question_id": "L0-Q-CB-017",
+    "question_text": "糊精是如何形成的？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "糊精是淀粉水解的中间产物，属于碳水化合物降解过程。"
+  },
+  {
+    "question_id": "L0-Q-CB-018",
+    "question_text": "为什么炒面粉会改变风味？",
+    "old_domain": "carbohydrate",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "炒面粉风味改变的核心机制是美拉德反应和焦糖化，而非淀粉的糊化/老化等碳水化合物结构变化。"
+  },
+  {
+    "question_id": "L0-Q-CB-019",
+    "question_text": "还原糖在美拉德反应中的角色是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "题目核心是美拉德反应，还原糖只是其中的反应物角色，主题归属美拉德反应域更准确。"
+  },
+  {
+    "question_id": "L0-Q-CB-020",
+    "question_text": "为什么蜂蜜比蔗糖更容易吸潮？",
+    "old_domain": "carbohydrate",
+    "new_domain": "water_activity",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "蜂蜜吸潮本质是其水分活度特性及果糖的吸湿性，属于水分活度/吸湿范畴，而非淀粉/糖化学反应。"
+  },
+  {
+    "question_id": "L0-Q-CB-021",
+    "question_text": "变性淀粉的用途是什么？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "变性淀粉是对天然淀粉进行化学或物理改性的产物，核心知识点属于淀粉科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CB-022",
+    "question_text": "为什么玉米淀粉适合做勾芡？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "玉米淀粉勾芡涉及淀粉糊化、增稠特性，属于淀粉科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-CB-023",
+    "question_text": "糖的溶解度曲线有什么应用？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "糖的溶解度曲线直接涉及糖类物质的物理化学性质，属于碳水化合物科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CB-024",
+    "question_text": "为什么糖浆加热后会结晶？",
+    "old_domain": "carbohydrate",
+    "new_domain": "carbohydrate",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "糖浆结晶涉及蔗糖/葡萄糖等碳水化合物的过饱和溶液结晶机制，属于碳水化合物化学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-EN-001",
+    "question_text": "酶在烹饪中的主要作用是什么？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目直接询问酶在烹饪中的作用，核心概念是酶，属于enzyme domain。"
+  },
+  {
+    "question_id": "L0-Q-EN-002",
+    "question_text": "为什么菠萝能嫩化肉类？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "菠萝含有菠萝蛋白酶，属于蛋白酶类，通过水解肉类蛋白质实现嫩化，核心机制是酶的催化作用。"
+  },
+  {
+    "question_id": "L0-Q-EN-003",
+    "question_text": "酶失活的温度范围是多少？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "酶失活温度直接涉及酶的热稳定性与失活机制，属于酶科学核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-EN-004",
+    "question_text": "为什么生洋葱切开会让人流泪？",
+    "old_domain": "enzyme",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "洋葱切开后释放含硫挥发性化合物（蒜素类物质）刺激眼睛，属于挥发性香气/化学物质释放机制，而非酶促褐变。"
+  },
+  {
+    "question_id": "L0-Q-EN-005",
+    "question_text": "脂肪酶对奶酪风味的贡献是什么？",
+    "old_domain": "enzyme",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "脂肪酶水解脂肪产生游离脂肪酸及挥发性风味物质（如甲基酮、酯类），核心贡献在于香气形成，属于挥发性香气范畴；虽涉及酶，但问题焦点是风味而非酶促机制本身。"
+  },
+  {
+    "question_id": "L0-Q-EN-006",
+    "question_text": "为什么蔬菜焯水能保持颜色？",
+    "old_domain": "enzyme",
+    "new_domain": "color_pigment",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "焯水保持蔬菜颜色的核心机制涉及叶绿素的稳定性及酶促褐变的抑制，主要属于色素变化范畴。"
+  },
+  {
+    "question_id": "L0-Q-EN-007",
+    "question_text": "淀粉酶在发酵中的作用是什么？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "题目核心是淀粉酶的功能机制，虽涉及发酵场景，但考查点是酶的催化作用而非发酵过程本身。"
+  },
+  {
+    "question_id": "L0-Q-EN-008",
+    "question_text": "蛋白酶如何影响面团特性？",
+    "old_domain": "enzyme",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "题目核心是蛋白酶对面团（面筋蛋白网络）特性的影响，属于蛋白质科学范畴，酶只是作用手段而非主题。"
+  },
+  {
+    "question_id": "L0-Q-EN-009",
+    "question_text": "果胶酶在果汁澄清中的应用是什么？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "果胶酶是酶的应用场景，通过酶解果胶降低果汁黏度实现澄清，核心知识点属于酶的功能与应用。"
+  },
+  {
+    "question_id": "L0-Q-EN-010",
+    "question_text": "为什么苹果切开会变色？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "苹果切开变色是多酚氧化酶（PPO）催化的酶促褐变反应，属于酶的核心应用场景。"
+  },
+  {
+    "question_id": "L0-Q-EN-011",
+    "question_text": "酶促褐变如何控制？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "酶促褐变的控制直接涉及多酚氧化酶等酶的抑制机制，属于酶科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-EN-012",
+    "question_text": "为什么木瓜酶可以做嫩肉粉？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "木瓜酶（木瓜蛋白酶）通过水解肌肉蛋白质肽键使肉质软化，属于蛋白酶催化反应的核心应用。"
+  },
+  {
+    "question_id": "L0-Q-EN-013",
+    "question_text": "转谷氨酰胺酶的应用是什么？",
+    "old_domain": "enzyme",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "转谷氨酰胺酶通过催化蛋白质间共价交联（谷氨酰胺-赖氨酸键）改善蛋白质凝胶结构和质构，核心属于蛋白质科学范畴，而非一般酶促反应。"
+  },
+  {
+    "question_id": "L0-Q-EN-014",
+    "question_text": "为什么生姜能凝固牛奶？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "生姜中含有蛋白酶（姜蛋白酶），能水解牛奶中的酪蛋白，导致凝固，属于酶促反应。"
+  },
+  {
+    "question_id": "L0-Q-EN-015",
+    "question_text": "内源酶和外源酶的区别是什么？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "内源酶与外源酶是酶学基础分类概念，直接属于酶的范畴。"
+  },
+  {
+    "question_id": "L0-Q-EN-016",
+    "question_text": "为什么冷冻能暂时抑制酶活性？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "题目核心是酶活性受温度影响的机制，属于酶学范畴，冷冻抑制酶活是酶促反应动力学的基本概念。"
+  },
+  {
+    "question_id": "L0-Q-EN-017",
+    "question_text": "酶在面包风味形成中的角色是什么？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "题目核心是酶（蛋白酶、淀粉酶等）在面包中的作用机制，属于酶促反应范畴，尽管风味形成也涉及发酵和美拉德反应，但主语是酶的角色。"
+  },
+  {
+    "question_id": "L0-Q-EN-018",
+    "question_text": "为什么某些水果不能和明胶一起用？",
+    "old_domain": "enzyme",
+    "new_domain": "enzyme",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "菠萝、木瓜等水果含蛋白酶（如菠萝蛋白酶），会水解明胶蛋白质导致无法凝固，核心机制是酶促蛋白质降解。"
+  },
+  {
+    "question_id": "L0-Q-FS-001",
+    "question_text": "五种基本味觉是什么？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.99,
+    "reason": "五种基本味觉直接涉及味觉受体与感知，属于taste_perception核心内容。"
+  },
+  {
+    "question_id": "L0-Q-FS-002",
+    "question_text": "鲜味(umami)的化学基础是什么？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "鲜味(umami)属于味觉受体与化学感知范畴，直接对应taste_perception域。"
+  },
+  {
+    "question_id": "L0-Q-FS-003",
+    "question_text": "为什么味精能增强鲜味？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "味精（谷氨酸钠）增强鲜味的机制涉及味觉受体（mGluR4/T1R1+T1R3）的激活，属于味觉受体与鲜味感知范畴。"
+  },
+  {
+    "question_id": "L0-Q-FS-004",
+    "question_text": "香气物质如何到达嗅觉受体？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "题目涉及香气物质（挥发性化合物）的传输路径及其到达嗅觉受体的过程，属于挥发性香气与嗅觉感知的核心内容。"
+  },
+  {
+    "question_id": "L0-Q-FS-005",
+    "question_text": "为什么食物温度影响风味感知？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "温度影响味觉受体的敏感性和挥发性香气释放，核心机制涉及味觉感知，归入taste_perception最合适。"
+  },
+  {
+    "question_id": "L0-Q-FS-006",
+    "question_text": "辣是一种味觉吗？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "辣觉涉及味觉受体与感知机制（TRPV1受体），属于味觉感知分类。"
+  },
+  {
+    "question_id": "L0-Q-FS-007",
+    "question_text": "为什么加盐能提升甜味？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "盐提升甜味属于味觉相互作用机制，涉及味觉受体与感知调节。"
+  },
+  {
+    "question_id": "L0-Q-FS-008",
+    "question_text": "风味协同作用的原理是什么？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "风味协同作用涉及多种味觉/嗅觉信号的相互增强，核心机制与味觉受体感知密切相关。"
+  },
+  {
+    "question_id": "L0-Q-FS-009",
+    "question_text": "为什么感冒时吃东西没味道？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "感冒时味觉减退涉及嗅觉/味觉受体感知机制，属于味觉与感官感知范畴"
+  },
+  {
+    "question_id": "L0-Q-FS-010",
+    "question_text": "烹饪如何产生新的风味物质？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "烹饪产生新风味物质的核心机制是美拉德反应和焦糖化，这两类反应是烹饪中风味生成的主要来源。"
+  },
+  {
+    "question_id": "L0-Q-FS-011",
+    "question_text": "为什么陈年食物风味更复杂？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.75,
+    "reason": "陈年食物风味复杂化主要源于长期储存中挥发性香气化合物的缓慢生成与转化（如酯化、氧化等反应产生新香气分子）。"
+  },
+  {
+    "question_id": "L0-Q-FS-012",
+    "question_text": "脂肪如何影响风味释放？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "脂肪影响风味释放的核心机制是脂溶性香气分子的溶解与挥发行为，属于挥发性香气/嗅觉感知范畴。"
+  },
+  {
+    "question_id": "L0-Q-FS-013",
+    "question_text": "为什么质地影响风味感知？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "题目核心是质地（texture）如何影响风味感知，质地属于质构/流变范畴，而风味感知为次要维度。"
+  },
+  {
+    "question_id": "L0-Q-FS-014",
+    "question_text": "涩味的形成机制是什么？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "涩味是单宁等多酚与唾液蛋白结合引发的味觉感知机制，属于味觉受体与口腔感知范畴。"
+  },
+  {
+    "question_id": "L0-Q-FS-015",
+    "question_text": "为什么有些人觉得香菜有肥皂味？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "香菜肥皂味源于特定挥发性醛类化合物（如反式-2-癸烯醛），属于挥发性香气感知机制。"
+  },
+  {
+    "question_id": "L0-Q-FS-016",
+    "question_text": "风味阈值是什么概念？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "风味阈值涉及感官感知的最低可检测浓度，属于味觉/嗅觉感知范畴，与taste_perception最相关。"
+  },
+  {
+    "question_id": "L0-Q-FS-017",
+    "question_text": "挥发性和非挥发性风味物质的区别是什么？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "题目核心区分挥发性与非挥发性风味物质，挥发性部分直接对应嗅觉/香气感知，是aroma_volatiles的典型内容。"
+  },
+  {
+    "question_id": "L0-Q-FS-018",
+    "question_text": "为什么烤面包比蒸面包更香？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "烤面包比蒸面包更香的核心原因是高温干热环境触发美拉德反应和焦糖化，产生大量挥发性香气物质，而蒸制温度不足以驱动这些褐变反应。"
+  },
+  {
+    "question_id": "L0-Q-FS-019",
+    "question_text": "后味是如何产生的？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "后味属于味觉感知机制，涉及味觉受体的持续激活或代谢产物对感受器的延迟刺激。"
+  },
+  {
+    "question_id": "L0-Q-FS-020",
+    "question_text": "为什么甜和酸能相互平衡？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "甜味与酸味的相互平衡涉及味觉受体的感知机制与味觉交互作用，属于味觉感知范畴。"
+  },
+  {
+    "question_id": "L0-Q-FS-021",
+    "question_text": "温度如何影响香气挥发？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "题目直接涉及香气挥发性物质与温度的关系，属于挥发性香气/嗅觉核心范畴。"
+  },
+  {
+    "question_id": "L0-Q-FS-022",
+    "question_text": "为什么油炸食物特别香？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "油炸食物的香气主要来源于高温下的美拉德反应和焦糖化反应产生的挥发性风味物质。"
+  },
+  {
+    "question_id": "L0-Q-FS-023",
+    "question_text": "咸味感知有上限吗？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "咸味感知上限属于味觉受体与感知机制的核心问题"
+  },
+  {
+    "question_id": "L0-Q-FS-024",
+    "question_text": "为什么有些苦味让人愉悦？",
+    "old_domain": "flavor_sensory",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "苦味愉悦感涉及味觉受体对苦味物质的感知及心理适应机制，属于味觉感知范畴。"
+  },
+  {
+    "question_id": "L0-Q-FM-001",
+    "question_text": "酒精发酵的化学方程式是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.99,
+    "reason": "酒精发酵是典型的微生物发酵过程，直接对应fermentation域。"
+  },
+  {
+    "question_id": "L0-Q-FM-002",
+    "question_text": "乳酸发酵和酒精发酵的区别是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接比较两种发酵途径（乳酸发酵与酒精发酵），核心概念完全属于发酵/微生物代谢范畴。"
+  },
+  {
+    "question_id": "L0-Q-FM-003",
+    "question_text": "为什么面团发酵能产生气孔？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "面团发酵产生气孔的核心机制是酵母菌发酵产生CO2气体，属于微生物发酵过程；虽然气孔保留涉及面筋网络，但题目问的是'为什么能产生气孔'，重点在发酵产气机制。"
+  },
+  {
+    "question_id": "L0-Q-FM-004",
+    "question_text": "酵母的最适生长温度是多少？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "酵母最适生长温度是发酵微生物学的基础知识，直接属于发酵/微生物领域。"
+  },
+  {
+    "question_id": "L0-Q-FM-005",
+    "question_text": "为什么过度发酵的面团会塌陷？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "面团塌陷源于酵母过度产气导致面筋网络结构被破坏，核心机制仍属发酵过程中气体生成与面团结构的关系。"
+  },
+  {
+    "question_id": "L0-Q-FM-006",
+    "question_text": "醋是如何酿造的？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "醋的酿造涉及乙醇发酵和醋酸菌发酵两个微生物发酵过程，属于典型发酵领域。"
+  },
+  {
+    "question_id": "L0-Q-FM-007",
+    "question_text": "酱油发酵的主要微生物是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接询问酱油发酵过程中的微生物，核心概念为发酵与微生物。"
+  },
+  {
+    "question_id": "L0-Q-FM-008",
+    "question_text": "为什么泡菜能保存很久？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "泡菜保存原理核心是乳酸菌发酵产生乳酸降低pH，属于发酵/微生物范畴。"
+  },
+  {
+    "question_id": "L0-Q-FM-009",
+    "question_text": "发酵如何增加食物的营养价值？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目直接讨论发酵过程对营养价值的影响，核心主题是发酵机制，属于fermentation领域。"
+  },
+  {
+    "question_id": "L0-Q-FM-010",
+    "question_text": "为什么啤酒有气泡？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "啤酒气泡来源于酵母发酵产生的CO₂，属于发酵过程的核心产物。"
+  },
+  {
+    "question_id": "L0-Q-FM-011",
+    "question_text": "乳酸菌对肠道健康的影响是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "乳酸菌是发酵微生物的核心研究对象，其肠道健康影响属于发酵/微生物领域。"
+  },
+  {
+    "question_id": "L0-Q-FM-012",
+    "question_text": "为什么天然发酵比商业酵母风味更复杂？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目核心是天然发酵与商业酵母的风味差异，涉及多菌种微生物代谢产物，属于发酵微生物领域。"
+  },
+  {
+    "question_id": "L0-Q-FM-013",
+    "question_text": "曲霉在酿造中的作用是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "曲霉是酿造发酵中的核心微生物，直接属于发酵/微生物领域。"
+  },
+  {
+    "question_id": "L0-Q-FM-014",
+    "question_text": "为什么有些奶酪有蓝色霉纹？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "蓝纹奶酪的霉纹由青霉菌（Penicillium roqueforti）发酵产生，属于微生物/发酵范畴。"
+  },
+  {
+    "question_id": "L0-Q-FM-015",
+    "question_text": "康普茶发酵的原理是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "康普茶依赖SCOBY中的细菌和酵母进行酒精发酵与乳酸/醋酸发酵，核心是微生物发酵原理。"
+  },
+  {
+    "question_id": "L0-Q-FM-016",
+    "question_text": "为什么发酵能产生鲜味？",
+    "old_domain": "fermentation",
+    "new_domain": "taste_perception",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "题目核心问题是鲜味的产生机制（谷氨酸、核苷酸等鲜味物质与味觉受体的关系），发酵只是背景条件，分类重心在味觉感知而非发酵过程本身。"
+  },
+  {
+    "question_id": "L0-Q-FM-017",
+    "question_text": "米酒和葡萄酒发酵的区别是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接比较两种酒的发酵过程，核心涉及微生物和发酵机制。"
+  },
+  {
+    "question_id": "L0-Q-FM-018",
+    "question_text": "盐在发酵中的作用是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "题目核心是盐在发酵过程中的功能作用，属于发酵机制范畴，尽管涉及盐/pH，但语境明确指向发酵。"
+  },
+  {
+    "question_id": "L0-Q-FM-019",
+    "question_text": "为什么面包酵母和啤酒酵母不同？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "题目涉及酵母菌株的生物学差异，属于发酵微生物范畴。"
+  },
+  {
+    "question_id": "L0-Q-FM-020",
+    "question_text": "发酵温度如何影响风味？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "题目核心是发酵温度对风味的影响，主体仍是发酵过程中微生物代谢产物的变化，风味是结果而非主题。"
+  },
+  {
+    "question_id": "L0-Q-FM-021",
+    "question_text": "为什么老面比鲜酵母做的馒头更香？",
+    "old_domain": "fermentation",
+    "new_domain": "aroma_volatiles",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "老面发酵产生更多挥发性香气物质（酯类、有机酸等），问题核心是香气来源而非发酵机制本身。"
+  },
+  {
+    "question_id": "L0-Q-FM-022",
+    "question_text": "厌氧和有氧发酵的区别是什么？",
+    "old_domain": "fermentation",
+    "new_domain": "fermentation",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "题目直接考查厌氧/有氧发酵的代谢差异，属于核心发酵微生物学概念。"
+  },
+  {
+    "question_id": "L0-Q-SF-001",
+    "question_text": "食品危险温度区间是多少？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "危险温度区间是食品安全核心概念，直接关联病原体繁殖与杀菌控制。"
+  },
+  {
+    "question_id": "L0-Q-SF-002",
+    "question_text": "为什么冷藏不能完全阻止细菌生长？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目涉及冷藏温度对细菌生长的抑制机制，属于食品安全中病原体与温度控制的核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-SF-003",
+    "question_text": "交叉污染如何发生？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "交叉污染是食品安全核心概念，涉及病原体传播与污染控制。"
+  },
+  {
+    "question_id": "L0-Q-SF-004",
+    "question_text": "为什么剩菜需要快速冷却？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "快速冷却剩菜的核心是防止病原体在危险温度区间（4-60°C）大量繁殖，属于食品安全微生物控制范畴。"
+  },
+  {
+    "question_id": "L0-Q-SF-005",
+    "question_text": "肉类安全烹饪温度是多少？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "安全烹饪温度直接关联病原体灭活与食品安全标准，属于food_safety核心内容。"
+  },
+  {
+    "question_id": "L0-Q-SF-006",
+    "question_text": "为什么鸡蛋需要冷藏？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "鸡蛋冷藏涉及抑制沙门氏菌等病原体繁殖及延缓腐败，属于食品安全范畴。"
+  },
+  {
+    "question_id": "L0-Q-SF-007",
+    "question_text": "巴氏杀菌的原理是什么？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "巴氏杀菌是针对病原体的热处理杀菌技术，核心属于食品安全中的杀菌原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-SF-008",
+    "question_text": "为什么罐头食品能长期保存？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "罐头保存原理涉及高温杀菌（D值/F值）、密封隔氧、消灭病原体（肉毒杆菌）等食品安全核心概念。"
+  },
+  {
+    "question_id": "L0-Q-SF-009",
+    "question_text": "黄曲霉毒素的危害是什么？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "黄曲霉毒素是真菌产生的致癌毒素，属于食品安全中的生物性危害范畴。"
+  },
+  {
+    "question_id": "L0-Q-SF-010",
+    "question_text": "为什么解冻后不能再冷冻？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.82,
+    "reason": "解冻后再冷冻的核心风险是微生物在解冻过程中大量繁殖，属于食品安全范畴，尽管也涉及冰晶形成等物理变化。"
+  },
+  {
+    "question_id": "L0-Q-SF-011",
+    "question_text": "亚硝酸盐的安全剂量是多少？",
+    "old_domain": "food_safety",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "亚硝酸盐属于腌制化学与食品添加剂范畴，其安全剂量涉及pH/酸碱化学及亚硝酸盐的化学性质，而非直接的病原体/杀菌等食品安全操作概念。"
+  },
+  {
+    "question_id": "L0-Q-SF-012",
+    "question_text": "为什么生食有风险？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "生食风险核心涉及病原体（细菌、寄生虫）及未经杀菌处理的食品安全问题"
+  },
+  {
+    "question_id": "L0-Q-SF-013",
+    "question_text": "食品辐照的原理是什么？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "辐照是通过电离辐射杀灭病原体和延长货架期的食品安全处理技术，核心属于杀菌/食品安全范畴。"
+  },
+  {
+    "question_id": "L0-Q-SF-014",
+    "question_text": "为什么真空包装需要冷藏？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "真空包装冷藏涉及厌氧病原体（如肉毒杆菌）在低氧环境中的生长风险与温度控制，属于食品安全核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-SF-015",
+    "question_text": "细菌繁殖的倍增时间是多少？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "细菌倍增时间属于微生物生长动力学，直接关联食品安全中的病原体繁殖控制。"
+  },
+  {
+    "question_id": "L0-Q-SF-016",
+    "question_text": "为什么海鲜更容易变质？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "海鲜易变质涉及病原体、腐败微生物及低温保存安全性，核心属于食品安全范畴。"
+  },
+  {
+    "question_id": "L0-Q-SF-017",
+    "question_text": "组胺中毒的原因是什么？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "组胺中毒属于食品安全中的化学性危害（组胺由细菌脱羧酶分解组氨酸产生），核心是食品安全风险与中毒机制。"
+  },
+  {
+    "question_id": "L0-Q-SF-018",
+    "question_text": "为什么某些野生蘑菇有毒？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "野生蘑菇毒性属于天然毒素/食品安全范畴，与病原体和食品安全风险评估直接相关。"
+  },
+  {
+    "question_id": "L0-Q-SF-019",
+    "question_text": "食品pH对安全性的影响是什么？",
+    "old_domain": "food_safety",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "题目核心是pH对食品安全的影响，涉及酸碱化学机制，salt_acid_chemistry更精准覆盖pH/酸碱主题，food_safety偏向病原体/杀菌操作层面。"
+  },
+  {
+    "question_id": "L0-Q-SF-020",
+    "question_text": "为什么冷冻能保存食物但不能杀菌？",
+    "old_domain": "food_safety",
+    "new_domain": "food_safety",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "题目核心是冷冻对微生物的抑制而非杀灭机制，属于食品安全中病原体与温度控制的基础概念。"
+  },
+  {
+    "question_id": "L0-Q-EC-001",
+    "question_text": "乳化液的基本结构是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "乳化液涉及乳化剂与油水界面结构，属于脂肪/乳化剂范畴"
+  },
+  {
+    "question_id": "L0-Q-EC-002",
+    "question_text": "为什么蛋黄是好的乳化剂？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "蛋黄中的卵磷脂是典型乳化剂，属于脂质界面化学范畴"
+  },
+  {
+    "question_id": "L0-Q-EC-003",
+    "question_text": "水包油和油包水乳化液的区别是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "乳化液类型（O/W vs W/O）属于脂肪/乳化剂领域的核心概念"
+  },
+  {
+    "question_id": "L0-Q-EC-004",
+    "question_text": "为什么蛋黄酱会分离？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "蛋黄酱分离涉及乳化体系破坏，核心是脂肪/油相与乳化剂（卵磷脂）的相互作用，属于脂肪科学中的乳化剂范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-005",
+    "question_text": "乳化剂的HLB值是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "HLB值是描述乳化剂亲水亲油平衡的核心参数，属于脂肪/乳化剂科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-006",
+    "question_text": "牛奶是什么类型的胶体？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.72,
+    "reason": "牛奶作为胶体体系涉及分散体系结构，最接近质构/流变/胶体分类，但列表中无乳胶体专项，texture_rheology最为贴近。"
+  },
+  {
+    "question_id": "L0-Q-EC-007",
+    "question_text": "为什么奶油打发会变稠？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "奶油打发涉及气泡引入导致质构变化、黏度增加和流变行为，属于质构/流变范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-008",
+    "question_text": "黄油是如何从奶油中分离的？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "黄油从奶油中分离涉及脂肪球破坏、脂肪聚集与结晶等脂质科学原理。"
+  },
+  {
+    "question_id": "L0-Q-EC-009",
+    "question_text": "为什么酱汁需要不断搅拌？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.75,
+    "reason": "酱汁搅拌涉及流变性质（防止沉降、维持均匀悬浮/乳化状态）和黏度变化，属于质构流变范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-010",
+    "question_text": "泡沫的稳定机制是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.75,
+    "reason": "泡沫稳定性涉及界面膜强度、黏弹性等流变与质构特性，与texture_rheology最为接近。"
+  },
+  {
+    "question_id": "L0-Q-EC-011",
+    "question_text": "为什么啤酒泡沫能持久？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.75,
+    "reason": "啤酒泡沫持久性涉及泡沫稳定性、气泡界面膜的流变特性（蛋白质/异葎草酮吸附形成弹性膜）及泡沫排液动力学，属于质构与流变范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-012",
+    "question_text": "果胶的胶凝机理是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "carbohydrate",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "果胶是多糖类碳水化合物，其胶凝机理属于碳水化合物科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-013",
+    "question_text": "为什么明胶需要冷却才能凝固？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "明胶凝固涉及胶原蛋白水解后肽链在冷却时重新形成三螺旋结构的蛋白质凝胶机制"
+  },
+  {
+    "question_id": "L0-Q-EC-014",
+    "question_text": "淀粉糊的流变特性是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "淀粉糊的流变特性直接涉及黏度、弹性等流变学概念，属于质构与流变范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-015",
+    "question_text": "为什么摇晃的奶油会变成黄油？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "奶油变黄油的过程是脂肪球膜破裂、脂肪结晶聚集的物理化学过程，核心涉及脂肪结构与乳化体系的破坏。"
+  },
+  {
+    "question_id": "L0-Q-EC-016",
+    "question_text": "卵磷脂的乳化作用原理是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "卵磷脂是典型的磷脂类乳化剂，其乳化原理属于脂质界面化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-017",
+    "question_text": "为什么色拉酱需要芥末？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "芥末作为乳化剂帮助稳定色拉酱中的油水乳化体系，属于乳化剂功能范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-018",
+    "question_text": "凝胶和溶胶的区别是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "凝胶与溶胶的区别涉及流变学和质构特性，属于质构/流变/凝胶强度范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-019",
+    "question_text": "为什么巧克力需要调温？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "巧克力调温本质是可可脂晶型控制（多晶型结晶），属于脂肪结晶行为。"
+  },
+  {
+    "question_id": "L0-Q-EC-020",
+    "question_text": "乳清蛋白的起泡性如何？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "protein_science",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "乳清蛋白的起泡性属于蛋白质功能特性（界面吸附、变性展开），核心在蛋白质结构与行为。"
+  },
+  {
+    "question_id": "L0-Q-EC-021",
+    "question_text": "阿拉伯胶的增稠机理是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "阿拉伯胶作为亲水胶体，其增稠机理涉及黏度提升与流变特性，属于质构/流变范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-022",
+    "question_text": "为什么冰淇淋需要乳化剂？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "冰淇淋乳化剂的核心作用是稳定脂肪球界面、控制脂肪结晶与聚集，属于乳化剂/脂肪科学范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-023",
+    "question_text": "油脂结晶对巧克力光泽的影响是什么？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "lipid_science",
+    "changed": true,
+    "confidence": 0.95,
+    "reason": "巧克力光泽直接由可可脂的多晶型结晶形态（尤其是V型晶体）决定，属于脂肪结晶范畴。"
+  },
+  {
+    "question_id": "L0-Q-EC-024",
+    "question_text": "为什么过度搅拌会破坏奶油？",
+    "old_domain": "emulsion_colloid",
+    "new_domain": "texture_rheology",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "过度搅拌破坏奶油涉及脂肪球聚集、乳化结构崩溃及质构变化，属于流变与质构范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-001",
+    "question_text": "叶绿素为什么遇酸变黄？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "叶绿素遇酸脱镁变成脱镁叶绿素（黄褐色）是典型的色素化学变化。"
+  },
+  {
+    "question_id": "L0-Q-CP-002",
+    "question_text": "为什么焯水能保持蔬菜翠绿？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "焯水保持蔬菜翠绿涉及叶绿素在热处理过程中的稳定性变化，属于色素化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-003",
+    "question_text": "花青素的颜色如何随pH变化？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "花青素随pH变化呈现不同颜色是典型的色素化学问题，属于color_pigment核心内容。"
+  },
+  {
+    "question_id": "L0-Q-CP-004",
+    "question_text": "为什么紫甘蓝遇碱变蓝？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "花青素在碱性条件下结构变化导致颜色改变，属于色素化学核心内容"
+  },
+  {
+    "question_id": "L0-Q-CP-005",
+    "question_text": "类胡萝卜素的稳定性如何？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "类胡萝卜素是天然色素，其稳定性属于色素变化范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-006",
+    "question_text": "为什么番茄加热后更红？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "番茄加热后更红涉及番茄红素（类胡萝卜素）的释放与顺反异构转变，属于色素变化范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-007",
+    "question_text": "肌红蛋白的三种状态是什么？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "肌红蛋白的三种状态（脱氧肌红蛋白、氧合肌红蛋白、高铁肌红蛋白）直接决定肉类的颜色变化，属于色素科学核心内容。"
+  },
+  {
+    "question_id": "L0-Q-CP-008",
+    "question_text": "为什么真空包装的肉是紫色？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "真空包装肉呈紫色是因为肌红蛋白在无氧环境下以脱氧肌红蛋白形式存在，属于色素/肌红蛋白状态变化的核心知识点。"
+  },
+  {
+    "question_id": "L0-Q-CP-009",
+    "question_text": "褐变反应产生什么颜色物质？",
+    "old_domain": "color_pigment",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "褐变反应（美拉德/焦糖化）产生的有色物质属于maillard_caramelization域的核心内容，而非单纯色素分类。"
+  },
+  {
+    "question_id": "L0-Q-CP-010",
+    "question_text": "为什么白色蔬菜煮久会变黄？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "白色蔬菜（如花椰菜）中含有黄酮类色素，加热后细胞破坏、pH变化导致色素结构改变而变黄，属于色素化学变化。"
+  },
+  {
+    "question_id": "L0-Q-CP-011",
+    "question_text": "甜菜红素为什么不稳定？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "甜菜红素是天然色素，其不稳定性涉及色素结构在热、光、pH下的降解变化，属于色素化学范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-012",
+    "question_text": "焦糖色素是如何形成的？",
+    "old_domain": "color_pigment",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.97,
+    "reason": "焦糖色素由糖在高温下焦糖化反应形成，属于焦糖化/褐变范畴，而非色素本身的变化。"
+  },
+  {
+    "question_id": "L0-Q-CP-013",
+    "question_text": "为什么蛋黄颜色深浅不同？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "蛋黄颜色深浅由类胡萝卜素（叶黄素、玉米黄质等）含量决定，属于色素变化范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-014",
+    "question_text": "姜黄素的颜色特性是什么？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "姜黄素是天然色素，其颜色特性（黄色、pH变色等）属于色素变化范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-015",
+    "question_text": "为什么加铜锅煮蔬菜更绿？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "铜离子取代叶绿素中的镁离子形成铜叶绿素，属于色素化学变化。"
+  },
+  {
+    "question_id": "L0-Q-CP-016",
+    "question_text": "黑蒜的颜色是怎么形成的？",
+    "old_domain": "color_pigment",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.92,
+    "reason": "黑蒜颜色主要来自长时间低温熟化过程中发生的美拉德反应，产生类黑素，属于非酶褐变范畴。"
+  },
+  {
+    "question_id": "L0-Q-CP-017",
+    "question_text": "为什么酱油是深色的？",
+    "old_domain": "color_pigment",
+    "new_domain": "maillard_caramelization",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "酱油深色主要来自酿造过程中美拉德反应产生的类黑素，而非天然色素。"
+  },
+  {
+    "question_id": "L0-Q-CP-018",
+    "question_text": "叶黄素和玉米黄质的区别是什么？",
+    "old_domain": "color_pigment",
+    "new_domain": "color_pigment",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "叶黄素和玉米黄质均为类胡萝卜素色素，属于食品色素分类范畴。"
+  },
+  {
+    "question_id": "L0-Q-EP-001",
+    "question_text": "不同锅具材料的导热性如何比较？",
+    "old_domain": "equipment_physics",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "锅具材料导热性比较的核心是导热系数等传热物理性质，属于热力学/传热范畴，而非设备工作原理。"
+  },
+  {
+    "question_id": "L0-Q-EP-002",
+    "question_text": "为什么不粘锅涂层会失效？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "不粘锅涂层失效涉及PTFE等材料的物理化学性质及设备表面结构，属于设备原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-EP-003",
+    "question_text": "铸铁锅的蓄热原理是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "铸铁锅蓄热涉及比热容、热容量和热惯性等传热热力学原理，而非设备操作机制。"
+  },
+  {
+    "question_id": "L0-Q-EP-004",
+    "question_text": "为什么铝锅不能煮酸性食物？",
+    "old_domain": "equipment_physics",
+    "new_domain": "salt_acid_chemistry",
+    "changed": true,
+    "confidence": 0.88,
+    "reason": "铝锅与酸性食物反应的核心是pH/酸碱与金属的化学反应，属于酸碱化学范畴，而非设备物理原理。"
+  },
+  {
+    "question_id": "L0-Q-EP-005",
+    "question_text": "感应炉的加热原理是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.97,
+    "reason": "感应炉通过电磁感应原理加热，属于典型的设备物理原理题目。"
+  },
+  {
+    "question_id": "L0-Q-EP-006",
+    "question_text": "为什么不锈钢锅容易粘锅？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.85,
+    "reason": "粘锅现象涉及不锈钢锅的导热特性、热点分布及金属表面与食物蛋白质/淀粉的物理吸附，核心仍属设备物理原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-EP-007",
+    "question_text": "烤箱的上下火原理是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "上下火原理涉及烤箱加热元件的辐射传热机制，属于设备物理原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-EP-008",
+    "question_text": "微波炉为什么不能用金属容器？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "题目核心是微波炉工作原理与金属反射微波的物理机制，属于设备原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-EP-009",
+    "question_text": "压力锅的工作原理是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "压力锅属于典型的厨房设备原理题，核心是密封加压提升沸点的物理机制。"
+  },
+  {
+    "question_id": "L0-Q-EP-010",
+    "question_text": "为什么搅拌机会让食物发热？",
+    "old_domain": "equipment_physics",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "搅拌机发热涉及机械能转化为热能的传热原理，属于热力学范畴，而非设备结构原理。"
+  },
+  {
+    "question_id": "L0-Q-EP-011",
+    "question_text": "真空包装机的工作原理是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "真空包装机属于食品加工设备，其工作原理涉及机械抽气、密封等设备物理原理。"
+  },
+  {
+    "question_id": "L0-Q-EP-012",
+    "question_text": "为什么温度计插入位置很重要？",
+    "old_domain": "equipment_physics",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "温度计插入位置影响测温准确性，本质是传热与温度分布的热力学问题，而非设备原理本身。"
+  },
+  {
+    "question_id": "L0-Q-EP-013",
+    "question_text": "冰箱的制冷原理是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.95,
+    "reason": "冰箱制冷原理属于制冷设备的物理工作原理，核心是压缩机循环与相变制冷，归属设备原理类。"
+  },
+  {
+    "question_id": "L0-Q-EP-014",
+    "question_text": "为什么燃气灶比电炉反应更快？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.88,
+    "reason": "题目核心是燃气灶与电炉的响应速度差异，属于加热设备工作原理的比较，归属设备物理范畴。"
+  },
+  {
+    "question_id": "L0-Q-EP-015",
+    "question_text": "速冻和慢冻对食材的影响是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "速冻与慢冻的核心差异在于冷却速率与冰晶形成的热力学过程（相变、传热速率），属于热力学范畴而非设备原理。"
+  },
+  {
+    "question_id": "L0-Q-EP-016",
+    "question_text": "为什么铜锅适合做果酱？",
+    "old_domain": "equipment_physics",
+    "new_domain": "carbohydrate",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "铜锅做果酱的核心原因是铜离子与果胶的交互作用（稳定果胶结构）以及铜的导热性影响糖的焦糖化，主要涉及果胶/糖的碳水化合物科学，而非设备原理本身。"
+  },
+  {
+    "question_id": "L0-Q-EP-017",
+    "question_text": "蒸锅的蒸汽循环原理是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "蒸锅蒸汽循环涉及设备工作原理，属于设备物理范畴，尽管有相变传热成分，但核心是设备原理。"
+  },
+  {
+    "question_id": "L0-Q-EP-018",
+    "question_text": "为什么砂锅适合炖煮？",
+    "old_domain": "equipment_physics",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.85,
+    "reason": "砂锅适合炖煮的核心原因在于其导热性差、比热容大、蓄热均匀，属于传热与热力学特性问题。"
+  },
+  {
+    "question_id": "L0-Q-EP-019",
+    "question_text": "食品加工中均质机的作用是什么？",
+    "old_domain": "equipment_physics",
+    "new_domain": "equipment_physics",
+    "changed": false,
+    "confidence": 0.92,
+    "reason": "均质机是食品加工设备，其作用原理涉及机械力使颗粒细化/乳化，属于设备原理范畴。"
+  },
+  {
+    "question_id": "L0-Q-EP-020",
+    "question_text": "为什么烤盘颜色影响烘焙效果？",
+    "old_domain": "equipment_physics",
+    "new_domain": "thermal_dynamics",
+    "changed": true,
+    "confidence": 0.82,
+    "reason": "烤盘颜色影响辐射热吸收率（深色吸热多、浅色反射多），本质是热传递/辐射传热问题，属于热力学范畴。"
+  }
+]
