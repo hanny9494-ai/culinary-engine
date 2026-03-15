@@ -1,99 +1,67 @@
-# 餐饮研发引擎 — 子对话启动模板
+# Agent交接文档
 
-## 通用前置步骤
-```bash
-git clone https://github.com/hanny9494-ai/culinary-engine.git
-cd culinary-engine
-cat STATUS.md
-```
+> 最后更新: 2026-03-16
+> 母对话维护此文件
 
-## 跑一本新书的完整流程
-```bash
-python3 scripts/run_book.py \
-  --book-id <book_id> \
-  --output-root ~/l0-knowledge-engine/output \
-  --questions ~/l0-knowledge-engine/data/l0_question_master.json \
-  --config config/api.yaml \
-  --books config/books.yaml \
-  --toc config/mc_toc.json \
-  --domains config/domains_v2.json
-```
+---
 
-## 单独跑某个 Stage
+## 当前活跃任务
 
-Stage 1:
-```bash
-python3 scripts/stage1_pipeline.py \
-  --book-id <book_id> \
-  --output-dir ~/l0-knowledge-engine/output/<book_id>/stage1 \
-  --config config/api.yaml \
-  --books config/books.yaml \
-  --toc config/mc_toc.json
-```
+### Stage3B 因果链增强（进行中）
+- 输入: `~/l0-knowledge-engine/output/stage3/l0_principles_all.jsonl` (597条)
+- 输出: `~/l0-knowledge-engine/output/stage3/l0_principles_v2.jsonl`
+- 模型: claude-sonnet-4-6
+- 配置: config/api.yaml (causal字段已改为sonnet)
 
-Stage 2:
-```bash
-python3 scripts/stage2_match.py \
-  --chunks ~/l0-knowledge-engine/output/<book_a>/stage1/chunks_smart.json \
-           ~/l0-knowledge-engine/output/<book_b>/stage1/chunks_smart.json \
-  --questions ~/l0-knowledge-engine/data/l0_question_master.json \
-  --output ~/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --config config/api.yaml
-```
+### 冰淇淋风味学 Stage1（进行中）
+- book_id: ice_cream_flavor
+- 输出目录: `~/l0-knowledge-engine/output/ice_cream_flavor/`
+- 注意: auto-chapter-split已修复，按heading自动切分
 
-Stage 3:
-```bash
-python3 scripts/stage3_distill.py \
-  --matches ~/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --chunks ~/l0-knowledge-engine/output/stage3/merged_chunks.json \
-  --output-dir ~/l0-knowledge-engine/output/stage3 \
-  --config config/api.yaml \
-  --domains config/domains_v2.json \
-  --append
-```
+---
 
-Stage 3B:
-```bash
-python3 scripts/stage3b_causal.py \
-  --input ~/l0-knowledge-engine/output/stage3/l0_principles.jsonl \
-  --matches ~/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --output ~/l0-knowledge-engine/output/stage3/l0_principles_v2.jsonl \
-  --report ~/l0-knowledge-engine/output/stage3/stage3b_report.txt \
-  --config config/api.yaml
-```
+## 下一步任务队列
 
-## 常用参数
-- `--start-stage 2`：从 Stage 2 开始跑
-- `--stop-stage 3`：只跑到 Stage 3 停止
-- `--skip-stage1`：复用已有 chunks
-- `--dry-run`：只输出计划命令，不实际执行子进程
+### P1: 阶段B — 597条原理domain→v2域
+- 等Stage3B完成后做
+- 输入: `l0_principles_v2.jsonl` + `question_domain_remap.json`
+- 逻辑: 每条原理的 `question_id` 对应到 remap 表的 `new_domain`
 
-## 质量门禁
-- Stage 1：`chunks_smart.json` 必须存在且 chunk 数量大于 0
-- Stage 2：`question_chunk_matches.json` 必须有记录；`match_rate <= 0.8` 仅警告
-- Stage 3：本次运行必须新增至少 1 条原理
-- Stage 3B：`l0_principles_v2.jsonl` 必须有记录
-- 汇总报告保存在 `output_root/run_report.json`
+### P1: 冰淇淋Stage2+3
+- 等Stage1完成后做
+- **必须用v2题库**: `data/l0_question_master_v2.json`
+- Stage2要合并已有OFC+MC chunks一起匹配
 
-## 环境变量
-```bash
-export MINERU_API_KEY=""
-export DASHSCOPE_API_KEY=""
-export GEMINI_API_KEY=""
-export L0_API_ENDPOINT="http://1.95.142.151:3000"
-export L0_API_KEY="Bearer"
-```
+### P2: 补题
+- mass_transfer: 当前4题，补到10-12题
+- oxidation_reduction: 当前5题，补到10-12题
+- salt_acid_chemistry: 当前8题，补到10-12题
+- Jeff审核后入库
 
-## 依赖清单
-- Python 3.10+
-- `requests`
-- `PyYAML`
-- MinerU API
-- DashScope / Qwen-VL
-- Gemini Embedding
-- Claude 代理 API
+---
 
-## 常见排查
-- 如果当前仓库缺少 `scripts/stage1_pipeline.py` 或 `scripts/stage2_match.py`，`run_book.py` 在真实执行时会直接报缺失依赖；`--dry-run` 仍可用于检查命令拼装。
-- 如果 `--skip-stage1` 失败，先确认 `output_root` 下已经存在目标书的 `stage1/chunks_smart.json`。
-- 如果 Stage 3 映射不到 chunk，检查 `output_root/stage3/merged_chunks.json` 是否包含目标书的 chunk 记录。
+## 关键文件路径
+
+| 文件 | 路径 | 说明 |
+|------|------|------|
+| v2题库 | data/l0_question_master_v2.json | 306题v2域 ✅ |
+| v1题库(归档) | ~/l0-knowledge-engine/data/l0_question_master.json | 306题旧14域 |
+| domain映射 | data/question_domain_remap.json | 旧→新域变更记录 |
+| OFC原理 | ~/l0-knowledge-engine/output/stage3/l0_principles_fixed.jsonl | 303条 |
+| MC原理 | ~/l0-knowledge-engine/output/stage3_mc/l0_principles.jsonl | 294条 |
+| 合并原理 | ~/l0-knowledge-engine/output/stage3/l0_principles_all.jsonl | 597条 |
+| API配置 | config/api.yaml | |
+| 书目注册 | config/books.yaml | |
+| v2域定义 | config/domains_v2.json | 当前配置17域 |
+| MC TOC | config/mc_toc.json | |
+
+---
+
+## 技术决策速查
+
+1. v2题库已生效，新任务一律用v2
+2. 旧原理不重新蒸馏，只刷domain标签
+3. OFC+MC双来源保留，不合并
+4. 无TOC书按heading自动切分（已修复）
+5. Stage3B逐条独立跑，不需要跨书
+6. Neo4j入库时做跨书实体对齐
