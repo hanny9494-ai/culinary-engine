@@ -1,0 +1,4176 @@
+{
+  "version": "master-2.0",
+  "created_at": "2026-03-16",
+  "total": 306,
+  "domains": [
+    "protein_science",
+    "carbohydrate",
+    "lipid_science",
+    "fermentation",
+    "food_safety",
+    "water_activity",
+    "enzyme",
+    "color_pigment",
+    "equipment_physics",
+    "maillard_caramelization",
+    "oxidation_reduction",
+    "salt_acid_chemistry",
+    "taste_perception",
+    "aroma_volatiles",
+    "thermal_dynamics",
+    "mass_transfer",
+    "texture_rheology"
+  ],
+  "questions": [
+    {
+      "question_id": "L0-Q-HT-001",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么水煮的温度上限是100°C，而油炸可以到180°C？",
+      "question_keywords": [
+        "沸点差异",
+        "热传递介质",
+        "水油特性",
+        "相变温度",
+        "烹饪介质"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-002",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "热传导、热对流、热辐射在烹饪中如何体现？",
+      "question_keywords": [
+        "热传导",
+        "热对流",
+        "热辐射",
+        "烹饪过程",
+        "传热机制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-003",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "为什么铜锅比不锈钢锅加热更均匀？",
+      "question_keywords": [
+        "导热性能",
+        "热扩散系数",
+        "锅底传热",
+        "温度分布",
+        "金属材质"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-004",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么厚底锅比薄底锅更不容易糊？",
+      "question_keywords": [
+        "热容差异",
+        "温度缓冲",
+        "导热性能",
+        "受热均匀"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-005",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "微波加热的原理是什么？",
+      "question_keywords": [
+        "介电加热",
+        "水分子旋转",
+        "偶极子取向",
+        "能量转化",
+        "热效应"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-006",
+      "domain": "maillard_caramelization",
+      "question_type": "mechanism",
+      "question_text": "为什么焗烤时表面会先变色？",
+      "question_keywords": [
+        "美拉德反应",
+        "焦糖化作用",
+        "表面褐变",
+        "高温烘烤"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-007",
+      "domain": "thermal_dynamics",
+      "question_type": "comparison",
+      "question_text": "蒸和煮的传热效率有什么区别？",
+      "question_keywords": [
+        "蒸汽传热",
+        "沸水对流",
+        "温度差异",
+        "热传递效率"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-008",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么炒菜要大火快炒？",
+      "question_keywords": [
+        "高温快炒",
+        "营养保留",
+        "酶活性抑制",
+        "水分保持",
+        "口感质地"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-009",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "余温烹饪(carryover cooking)的原理是什么？",
+      "question_keywords": [
+        "余温烹饪",
+        "热传导",
+        "中心温度",
+        "蛋白质变性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-010",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "为什么烤箱需要预热？",
+      "question_keywords": [
+        "热传导机制",
+        "蛋白质凝固",
+        "水分蒸发",
+        "淀粉糊化"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-011",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么同样温度的水比空气感觉更热？",
+      "question_keywords": [
+        "热传导率",
+        "接触换热",
+        "热容差异",
+        "体感温度"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-012",
+      "domain": "maillard_caramelization",
+      "question_type": "boundary",
+      "question_text": "美拉德反应和焦糖化的起始温度分别是多少？",
+      "question_keywords": [
+        "美拉德反应",
+        "焦糖化",
+        "起始温度",
+        "反应条件"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-013",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "为什么高压锅能缩短烹饪时间？",
+      "question_keywords": [
+        "沸升效应",
+        "蒸汽压力",
+        "热传递效率",
+        "细胞壁软化",
+        "水分活性"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-014",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "食物的比热容如何影响烹饪时间？",
+      "question_keywords": [
+        "比热容",
+        "加热速率",
+        "温度升高",
+        "传热特性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-015",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "为什么金属烤盘比玻璃烤盘烤得更快？",
+      "question_keywords": [
+        "金属导热",
+        "玻璃导热",
+        "热传导率",
+        "加热速率"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-016",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "低温慢煮(sous vide)的温度控制原理是什么？",
+      "question_keywords": [
+        "低温慢煮",
+        "温度控制",
+        "蛋白质变性",
+        "水分保持",
+        "热传递"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-017",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么解冻时室温解冻不如冷藏解冻安全？",
+      "question_keywords": [
+        "解冻温度",
+        "微生物增殖",
+        "冷藏条件",
+        "食品安全",
+        "室温风险"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-018",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "热点(hot spot)是如何形成的？",
+      "question_keywords": [
+        "微波加热",
+        "局部过热",
+        "热分布不均",
+        "温度梯度",
+        "能量吸收"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-019",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么烤面包时要喷水？",
+      "question_keywords": [
+        "表皮硬壳",
+        "淀粉糊化",
+        "水蒸气凝结",
+        "延展性增强"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-020",
+      "domain": "equipment_physics",
+      "question_type": "comparison",
+      "question_text": "对流烤箱和普通烤箱的区别是什么？",
+      "question_keywords": [
+        "热风循环",
+        "温度分布",
+        "热传递效率",
+        "加热均匀性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-HT-021",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么煎牛排要先室温放置？",
+      "question_keywords": [
+        "温度均匀",
+        "马氏反应",
+        "美拉德反应",
+        "内部加热"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-HT-022",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "食材大小如何影响烹饪时间？",
+      "question_keywords": [
+        "热传导速率",
+        "食材尺寸",
+        "中心温度",
+        "热扩散系数"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-001",
+      "domain": "maillard_caramelization",
+      "question_type": "definition",
+      "question_text": "美拉德反应的化学机理是什么？",
+      "question_keywords": [
+        "褐色色素生成"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-CR-002",
+      "domain": "maillard_caramelization",
+      "question_type": "definition",
+      "question_text": "美拉德反应需要什么条件才能发生？",
+      "question_keywords": [
+        "还原糖类",
+        "氨基化合物",
+        "加热温度",
+        "水分活性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-003",
+      "domain": "maillard_caramelization",
+      "question_type": "comparison",
+      "question_text": "焦糖化和美拉德反应的区别是什么？",
+      "question_keywords": [
+        "焦糖化反应",
+        "美拉德反应",
+        "还原糖参与",
+        "氨基酸参与",
+        "褐变机理"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-004",
+      "domain": "salt_acid_chemistry",
+      "question_type": "mechanism",
+      "question_text": "为什么碱水能让面条变黄？",
+      "question_keywords": [
+        "碱水处理",
+        "面条变色",
+        "美拉德反应",
+        "类胡萝卜素",
+        "蛋白质变性"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-005",
+      "domain": "oxidation_reduction",
+      "question_type": "mechanism",
+      "question_text": "为什么柠檬汁能防止苹果变色？",
+      "question_keywords": [
+        "抗坏血酸",
+        "多酚氧化酶",
+        "酶促褐变",
+        "活性抑制"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-006",
+      "domain": "salt_acid_chemistry",
+      "question_type": "mechanism",
+      "question_text": "为什么小苏打能让肉变嫩？",
+      "question_keywords": [
+        "小苏打",
+        "蛋白质结构",
+        "肌原纤维",
+        "肉质软化"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-007",
+      "domain": "oxidation_reduction",
+      "question_type": "mechanism",
+      "question_text": "氧化反应如何影响油脂的风味？",
+      "question_keywords": [
+        "油脂氧化",
+        "风味劣变",
+        "醛类物质",
+        "酮类物质",
+        "自由基链式"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-008",
+      "domain": "salt_acid_chemistry",
+      "question_type": "mechanism",
+      "question_text": "为什么腌制能改变肉的质地？",
+      "question_keywords": [
+        "腌制工艺",
+        "肌肉蛋白",
+        "肌纤维",
+        "保水性",
+        "肉质结构"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-009",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "酸碱度如何影响蔬菜的颜色？",
+      "question_keywords": [
+        "酸碱度",
+        "蔬菜色泽",
+        "花青素结构",
+        "类黄酮变色",
+        "色素稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-010",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么过度加热的油会产生有害物质？",
+      "question_keywords": [
+        "油脂氧化",
+        "聚合反应",
+        "反式脂肪酸",
+        "极性组分"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-011",
+      "domain": "fermentation",
+      "question_type": "definition",
+      "question_text": "发酵过程中的主要化学变化是什么？",
+      "question_keywords": [
+        "微生物代谢",
+        "糖类转化",
+        "有机酸生成",
+        "醇类合成",
+        "风味物质"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-012",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么盐能加速冰的融化？",
+      "question_keywords": [
+        "凝固点降低",
+        "盐分溶解",
+        "冰点下降",
+        "相变过程"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-013",
+      "domain": "maillard_caramelization",
+      "question_type": "boundary",
+      "question_text": "糖的焦糖化温度是多少？",
+      "question_keywords": [
+        "糖的焦糖化",
+        "温度范围",
+        "热分解反应",
+        "美拉德反应"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-014",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么炖煮时加酒能去腥？",
+      "question_keywords": [
+        "乙醇溶解",
+        "腥味物质",
+        "加热挥发",
+        "美拉德反应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-015",
+      "domain": "enzyme",
+      "question_type": "definition",
+      "question_text": "酶促褐变的机理是什么？",
+      "question_keywords": [
+        "酶促褐变",
+        "多酚氧化酶",
+        "酪氨酸",
+        "醌类聚合",
+        "美拉德反应"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-CR-016",
+      "domain": "salt_acid_chemistry",
+      "question_type": "mechanism",
+      "question_text": "为什么醋能软化骨头？",
+      "question_keywords": [
+        "醋酸溶解",
+        "羟基磷灰石",
+        "钙离子流失",
+        "骨骼结构"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-017",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "烟熏保存食物的化学原理是什么？",
+      "question_keywords": [
+        "烟熏成分",
+        "抗氧化作用",
+        "防腐机制",
+        "渗透脱水",
+        "表面杀菌"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-018",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么蛋白打发时加塔塔粉？",
+      "question_keywords": [
+        "塔塔粉",
+        "蛋白质",
+        "稳定泡沫",
+        "酸性物质",
+        "电荷排斥"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-019",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "面筋形成的化学过程是什么？",
+      "question_keywords": [
+        "麦谷蛋白",
+        "醇溶蛋白",
+        "二硫键形成",
+        "疏水相互作用",
+        "面筋网络"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-020",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么果胶需要糖和酸才能凝固？",
+      "question_keywords": [
+        "果胶凝胶",
+        "糖分浓度",
+        "氢离子浓度",
+        "交联网络形成"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-021",
+      "domain": "oxidation_reduction",
+      "question_type": "mechanism",
+      "question_text": "抗氧化剂如何延缓食物变质？",
+      "question_keywords": [
+        "抗氧化剂",
+        "自由基清除",
+        "脂质氧化",
+        "食品变质",
+        "反应机制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-022",
+      "domain": "salt_acid_chemistry",
+      "question_type": "mechanism",
+      "question_text": "为什么亚硝酸盐能保持肉的粉红色？",
+      "question_keywords": [
+        "亚硝酸盐",
+        "肌红蛋白",
+        "氮氧肌红蛋白",
+        "热稳定性"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-023",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "水解反应在烹饪中的作用是什么？",
+      "question_keywords": [
+        "水解反应",
+        "烹饪过程",
+        "大分子分解",
+        "风味形成",
+        "质地改变"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-024",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么酸能使牛奶凝固？",
+      "question_keywords": [
+        "酪蛋白胶束",
+        "等电点沉淀",
+        "酸性条件",
+        "电荷中和"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-025",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "乳化剂的作用机理是什么？",
+      "question_keywords": [
+        "界面张力",
+        "亲水亲油",
+        "胶束形成",
+        "双电层排斥"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-CR-026",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么糖能抑制面筋形成？",
+      "question_keywords": [
+        "糖吸湿性",
+        "面筋网络",
+        "水分活度",
+        "蛋白质水合"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CR-027",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "热分解反应在高温烹饪中如何发生？",
+      "question_keywords": [
+        "热分解反应",
+        "高温烹饪",
+        "分子断裂",
+        "自由基生成",
+        "产物形成"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CR-028",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么盐能增强甜味感知？",
+      "question_keywords": [
+        "咸味掩蔽",
+        "味觉交互",
+        "甜味感知",
+        "神经传导"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-001",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "冰的结晶对食材质地有什么影响？",
+      "question_keywords": [
+        "冰晶生长",
+        "细胞损伤",
+        "质地劣变",
+        "微观结构",
+        "复水性下降"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-002",
+      "domain": "mass_transfer",
+      "question_type": "mechanism",
+      "question_text": "为什么冷冻后的肉解冻会出水？",
+      "question_keywords": [
+        "冰晶形成",
+        "细胞膜损伤",
+        "水分流失",
+        "蛋白质变性",
+        "解冻液析出"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-003",
+      "domain": "carbohydrate",
+      "question_type": "boundary",
+      "question_text": "淀粉糊化的温度范围是多少？",
+      "question_keywords": [
+        "淀粉糊化",
+        "起始温度",
+        "终止温度",
+        "温度范围"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-004",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么面团需要醒发？",
+      "question_keywords": [
+        "面筋形成",
+        "气体保留",
+        "酶促反应",
+        "体积膨胀"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-005",
+      "domain": "protein_science",
+      "question_type": "boundary",
+      "question_text": "蛋白质凝固的温度范围是多少？",
+      "question_keywords": [
+        "蛋白质凝固",
+        "温度范围",
+        "热变性",
+        "聚集沉淀"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-006",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么打发的奶油会变稳定？",
+      "question_keywords": [
+        "蛋白质变性",
+        "脂肪球网络",
+        "空气包埋",
+        "乳化稳定",
+        "气泡结构"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-007",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "乳化液是如何形成的？",
+      "question_keywords": [
+        "表面活性剂",
+        "分散相",
+        "界面张力",
+        "液滴形成"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-008",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么巧克力需要调温？",
+      "question_keywords": [
+        "可可脂结晶",
+        "调温工艺",
+        "晶体形态",
+        "熔点特性",
+        "稳定性控制"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-009",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "凝胶化的原理是什么？",
+      "question_keywords": [
+        "凝胶化机制",
+        "大分子网络",
+        "交联结构",
+        "溶剂固定"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-010",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么冰淇淋需要不断搅拌？",
+      "question_keywords": [
+        "结晶控制",
+        "冰晶生长",
+        "空气搅入",
+        "质地改善"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-011",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "面筋网络的物理结构是怎样的？",
+      "question_keywords": [
+        "面筋网络",
+        "物理结构",
+        "麦胶蛋白",
+        "麦谷蛋白",
+        "疏水作用"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-012",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么过度揉面会让面团变硬？",
+      "question_keywords": [
+        "面筋蛋白",
+        "网络结构",
+        "机械应力",
+        "面团硬化"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-013",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "泡沫的稳定性由什么决定？",
+      "question_keywords": [
+        "表面张力",
+        "液膜排液",
+        "气泡兼并",
+        "界面粘弹性",
+        "马兰戈尼效应"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-014",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么盐能提高水的沸点？",
+      "question_keywords": [
+        "沸点升高",
+        "溶质加入",
+        "蒸汽压下降",
+        "依数性",
+        "水溶液"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-015",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "糖如何影响水的冰点？",
+      "question_keywords": [
+        "糖类溶解",
+        "冰点降低",
+        "水活度",
+        "凝固点下降",
+        "分子相互作用"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-016",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "脂肪的结晶形态有哪些？",
+      "question_keywords": [
+        "脂肪结晶",
+        "晶体结构",
+        "晶型分类",
+        "多晶现象",
+        "稳定形态"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-017",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么黄油在不同温度下质地不同？",
+      "question_keywords": [
+        "脂肪晶体结构",
+        "温度影响",
+        "塑性变化",
+        "晶型转变",
+        "乳浊液体系"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-018",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "淀粉老化的原理是什么？",
+      "question_keywords": [
+        "淀粉老化",
+        "氢键重组",
+        "分子排列",
+        "直链淀粉"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-019",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么面包放久会变硬？",
+      "question_keywords": [
+        "淀粉老化",
+        "水分迁移",
+        "结晶度",
+        "回生现象",
+        "质地硬化"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-020",
+      "domain": "thermal_dynamics",
+      "question_type": "definition",
+      "question_text": "蒸发冷却在烹饪中的应用是什么？",
+      "question_keywords": [
+        "蒸发冷却",
+        "热量转移",
+        "水分挥发",
+        "烹饪应用",
+        "温度控制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-021",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "表面张力如何影响液体行为？",
+      "question_keywords": [
+        "表面张力",
+        "液滴形态",
+        "润湿现象",
+        "毛细上升",
+        "界面行为"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-022",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么油水不相溶？",
+      "question_keywords": [
+        "极性差异",
+        "疏水作用",
+        "界面张力",
+        "分子结构"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PC-023",
+      "domain": "mass_transfer",
+      "question_type": "definition",
+      "question_text": "扩散作用在腌制中的角色是什么？",
+      "question_keywords": [
+        "扩散作用",
+        "腌制过程",
+        "物质迁移",
+        "浓度梯度",
+        "传质机制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PC-024",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么真空包装能延长保质期？",
+      "question_keywords": [
+        "真空包装",
+        "好氧微生物",
+        "氧化反应",
+        "保质期"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-WA-001",
+      "domain": "water_activity",
+      "question_type": "definition",
+      "question_text": "水分活度(Aw)的定义是什么？",
+      "question_keywords": [
+        "水分活度",
+        "饱和蒸气压",
+        "自由水",
+        "化学势"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-002",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "水分活度如何影响微生物生长？",
+      "question_keywords": [
+        "水分活度",
+        "微生物生长",
+        "细胞失水",
+        "渗透压平衡",
+        "代谢抑制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-003",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么干燥能保存食物？",
+      "question_keywords": [
+        "水分活度",
+        "微生物生长",
+        "酶促反应",
+        "氧化分解",
+        "食品稳定性"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-WA-004",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "盐和糖如何降低水分活度？",
+      "question_keywords": [
+        "水分活度",
+        "吸附水",
+        "渗透压"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-005",
+      "domain": "water_activity",
+      "question_type": "boundary",
+      "question_text": "不同食品的典型水分活度是多少？",
+      "question_keywords": [
+        "水分活度",
+        "干燥食品",
+        "腌制食品",
+        "肉类食品",
+        "烘焙食品"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-006",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么蜂蜜不容易变质？",
+      "question_keywords": [
+        "高渗透压",
+        "低水分活度",
+        "氢过氧化物",
+        "抑制微生物"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-WA-007",
+      "domain": "water_activity",
+      "question_type": "comparison",
+      "question_text": "结合水和自由水的区别是什么？",
+      "question_keywords": [
+        "结合水",
+        "自由水",
+        "水分状态",
+        "氢键作用",
+        "流动性差异"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-008",
+      "domain": "water_activity",
+      "question_type": "definition",
+      "question_text": "水分活度与水分含量的关系是什么？",
+      "question_keywords": [
+        "水分活度",
+        "水分含量",
+        "平衡曲线",
+        "吸附等温线"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-009",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么饼干暴露在空气中会变软？",
+      "question_keywords": [
+        "水分吸收",
+        "淀粉老化",
+        "吸湿性",
+        "玻璃化转变",
+        "结构软化"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-WA-010",
+      "domain": "water_activity",
+      "question_type": "definition",
+      "question_text": "临界水分活度对保质期的影响是什么？",
+      "question_keywords": [
+        "临界水分活度",
+        "保质期",
+        "化学反应速率",
+        "微生物生长",
+        "食品稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-011",
+      "domain": "water_activity",
+      "question_type": "definition",
+      "question_text": "吸湿等温线的意义是什么？",
+      "question_keywords": [
+        "吸湿等温线",
+        "水分活度",
+        "吸附机理",
+        "平衡含水量",
+        "食品稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-012",
+      "domain": "water_activity",
+      "question_type": "definition",
+      "question_text": "玻璃化转变与食品稳定性的关系是什么？",
+      "question_keywords": [
+        "玻璃化转变",
+        "自由体积",
+        "分子运动",
+        "结构稳定性",
+        "无定形体系"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-013",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么冷冻干燥能更好保持风味？",
+      "question_keywords": [
+        "冷冻干燥",
+        "风味物质",
+        "低温升华",
+        "热敏成分",
+        "香气保留"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-WA-014",
+      "domain": "mass_transfer",
+      "question_type": "definition",
+      "question_text": "水分迁移在复合食品中的问题是什么？",
+      "question_keywords": [
+        "水分迁移",
+        "复合食品",
+        "质构劣变",
+        "界面反应",
+        "货架期缩短"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-015",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "水分活度如何影响化学反应速率？",
+      "question_keywords": [
+        "水分活度",
+        "反应速率",
+        "自由水",
+        "氢键作用",
+        "扩散限制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-016",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么糖渍和盐渍能保存食物？",
+      "question_keywords": [
+        "高渗透压",
+        "水分活度",
+        "微生物脱水",
+        "酶活性抑制"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-WA-017",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "喷雾干燥的原理是什么？",
+      "question_keywords": [
+        "雾化过程",
+        "热质传递",
+        "水分蒸发",
+        "干燥原理"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-WA-018",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么肉干需要控制水分活度？",
+      "question_keywords": [
+        "水分活度",
+        "微生物生长",
+        "酶促反应",
+        "氧化变质"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-001",
+      "domain": "protein_science",
+      "question_type": "boundary",
+      "question_text": "蛋白质热变性的温度范围是多少？",
+      "question_keywords": [
+        "蛋白质热变性",
+        "温度范围",
+        "结构解折叠",
+        "氢键断裂"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-002",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么过度加热的蛋会变橡皮？",
+      "question_keywords": [
+        "蛋清凝胶化",
+        "二硫键重组",
+        "蛋白质变性",
+        "水分丧失",
+        "热致凝固"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-003",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "肌肉蛋白在烹饪中如何变化？",
+      "question_keywords": [
+        "肌肉蛋白",
+        "热变性",
+        "蛋白质凝聚",
+        "水分损失",
+        "肌纤维收缩"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-004",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "胶原蛋白转化为明胶的条件是什么？",
+      "question_keywords": [
+        "胶原蛋白",
+        "水解条件",
+        "肽键断裂",
+        "温度时间",
+        "水合过程"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-005",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么老母鸡汤比嫩鸡汤更鲜？",
+      "question_keywords": [
+        "呈味物质",
+        "核苷酸",
+        "氨基酸",
+        "风味差异",
+        "熬煮时间"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-006",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "蛋白质的等电点在烹饪中的应用是什么？",
+      "question_keywords": [
+        "等电点",
+        "蛋白质沉淀",
+        "持水性降低",
+        "质地变化"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-007",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么酸奶是固态的？",
+      "question_keywords": [
+        "乳酸菌发酵",
+        "蛋白质凝固",
+        "酪蛋白沉淀",
+        "凝乳结构"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-008",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "蛋白质发泡的机理是什么？",
+      "question_keywords": [
+        "表面张力",
+        "界面吸附",
+        "分子展开",
+        "薄膜形成",
+        "弹性模量"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-PS-009",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么蛋白打发需要无油无水？",
+      "question_keywords": [
+        "蛋白质起泡",
+        "表面活性剂",
+        "油水互斥",
+        "泡沫稳定性",
+        "油脂破坏"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-010",
+      "domain": "protein_science",
+      "question_type": "comparison",
+      "question_text": "热凝固和酸凝固的区别是什么？",
+      "question_keywords": [
+        "热凝固",
+        "酸凝固",
+        "蛋白质变性",
+        "凝胶结构"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-011",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么过熟的牛排会变干？",
+      "question_keywords": [
+        "肌肉收缩",
+        "水分流失",
+        "蛋白质变性",
+        "汁液渗出"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-012",
+      "domain": "taste_perception",
+      "question_type": "definition",
+      "question_text": "蛋白质水解对风味的贡献是什么？",
+      "question_keywords": [
+        "蛋白质水解",
+        "风味物质",
+        "氨基酸释放",
+        "肽链断裂"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-013",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么肉汤冷却后会凝成冻？",
+      "question_keywords": [
+        "胶原蛋白转化",
+        "热凝固机制",
+        "冷却凝胶化",
+        "可溶性蛋白",
+        "明胶形成"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-014",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "酶嫩化剂的作用原理是什么？",
+      "question_keywords": [
+        "酶促反应",
+        "肌肉蛋白",
+        "肽键水解",
+        "组织软化"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-015",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么鱼肉比猪肉更容易熟？",
+      "question_keywords": [
+        "蛋白质结构",
+        "肌肉纤维",
+        "热传递",
+        "肌球蛋白"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-016",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "乳蛋白的种类和特性是什么？",
+      "question_keywords": [
+        "酪蛋白",
+        "乳清蛋白",
+        "结构特征",
+        "功能性质",
+        "热稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-017",
+      "domain": "color_pigment",
+      "question_type": "definition",
+      "question_text": "肌红蛋白的颜色变化代表什么？",
+      "question_keywords": [
+        "肌红蛋白",
+        "氧化状态",
+        "变性",
+        "血红素",
+        "亚铁离子"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-018",
+      "domain": "mass_transfer",
+      "question_type": "mechanism",
+      "question_text": "为什么腌肉需要时间渗透？",
+      "question_keywords": [
+        "腌制过程",
+        "水分迁移",
+        "渗透作用",
+        "盐分扩散",
+        "时间因素"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-019",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "蛋白质变性是可逆的吗？",
+      "question_keywords": [
+        "蛋白质变性",
+        "可逆过程",
+        "空间结构",
+        "氢键破坏",
+        "疏水作用"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-020",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么蛋黄能乳化油脂？",
+      "question_keywords": [
+        "卵磷脂作用",
+        "乳浊液稳定",
+        "亲水基团",
+        "疏水基团",
+        "界面张力"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-021",
+      "domain": "protein_science",
+      "question_type": "comparison",
+      "question_text": "球蛋白和纤维蛋白的区别是什么？",
+      "question_keywords": [
+        "球蛋白溶解度",
+        "凝血酶作用",
+        "血凝块形成"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-022",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么豆腐需要凝固剂？",
+      "question_keywords": [
+        "大豆蛋白",
+        "凝固作用",
+        "钙盐添加",
+        "凝胶网络"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-PS-023",
+      "domain": "enzyme",
+      "question_type": "definition",
+      "question_text": "蛋白酶在嫩肉中的作用是什么？",
+      "question_keywords": [
+        "蛋白酶",
+        "蛋白质水解",
+        "肌肉纤维",
+        "嫩化作用",
+        "活性位点"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-PS-024",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么鸡蛋煮太久蛋黄会变绿？",
+      "question_keywords": [
+        "硫化亚铁",
+        "蛋白硫氨",
+        "还原反应",
+        "绿色变色"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-001",
+      "domain": "lipid_science",
+      "question_type": "comparison",
+      "question_text": "饱和脂肪和不饱和脂肪的区别是什么？",
+      "question_keywords": [
+        "碳链结构",
+        "氢原子饱和度",
+        "双键数量",
+        "熔点差异"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-002",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么不同油脂的烟点不同？",
+      "question_keywords": [
+        "不饱和脂肪酸",
+        "游离脂肪酸",
+        "热稳定性",
+        "氧化产物"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-003",
+      "domain": "oxidation_reduction",
+      "question_type": "definition",
+      "question_text": "油脂氧化的机理是什么？",
+      "question_keywords": [
+        "自由基引发",
+        "氢过氧化物",
+        "自动氧化",
+        "不饱和键",
+        "链式反应"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-LS-004",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么橄榄油不适合高温烹饪？",
+      "question_keywords": [
+        "热稳定性",
+        "氧化聚合",
+        "发烟点"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-005",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "反式脂肪是如何形成的？",
+      "question_keywords": [
+        "油脂氢化",
+        "双键异构",
+        "反式结构",
+        "脂肪酸链",
+        "工业催化"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-006",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "乳化在烹饪中的应用有哪些？",
+      "question_keywords": [
+        "乳化作用",
+        "稳定机理",
+        "油水混合",
+        "烹饪应用",
+        "分散体系"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-007",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么黄油比人造黄油风味好？",
+      "question_keywords": [
+        "天然乳脂",
+        "乳固体",
+        "短链脂肪酸",
+        "发酵工艺"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-008",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "油脂的结晶对巧克力质地的影响是什么？",
+      "question_keywords": [
+        "油脂结晶",
+        "巧克力质地",
+        "晶体结构",
+        "多晶型转变",
+        "熔融特性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-009",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么椰子油在室温下是固态？",
+      "question_keywords": [
+        "脂肪酸组成",
+        "饱和脂肪",
+        "熔聚现象",
+        "室温状态"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-010",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "脂肪酸组成如何影响油脂特性？",
+      "question_keywords": [
+        "脂肪酸组成",
+        "不饱和度",
+        "氧化稳定性",
+        "熔点特征",
+        "结晶行为"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-011",
+      "domain": "oxidation_reduction",
+      "question_type": "mechanism",
+      "question_text": "为什么重复使用的油会变质？",
+      "question_keywords": [
+        "油脂氧化",
+        "热聚合反应",
+        "游离脂肪酸",
+        "极性组分",
+        "反复加热"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-012",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "油炸时油脂发生了什么变化？",
+      "question_keywords": [
+        "氧化聚合",
+        "热分解",
+        "自由基生成",
+        "极性组分增加",
+        "挥发性醛类"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-013",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么奶油比植物油风味更香？",
+      "question_keywords": [
+        "短链脂肪酸",
+        "脂肪晶体结构",
+        "酯类化合物"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-014",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "乳脂肪球膜的功能是什么？",
+      "question_keywords": [
+        "乳脂肪球膜",
+        "乳化稳定",
+        "结构组成",
+        "物理性质",
+        "生物功能"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-015",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么冷压油比精炼油风味更好？",
+      "question_keywords": [
+        "热敏成分",
+        "芳香物质",
+        "精炼工艺",
+        "风味前体"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-016",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "油脂对烘焙质地的影响是什么？",
+      "question_keywords": [
+        "油脂乳化",
+        "面筋形成",
+        "面包体积",
+        "蛋糕质地",
+        "水分保持"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-017",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么起酥油能让酥皮层次分明？",
+      "question_keywords": [
+        "起酥油",
+        "面筋形成",
+        "水蒸气压力",
+        "层状结构"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-018",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "脂肪替代品的原理是什么？",
+      "question_keywords": [
+        "脂肪替代品",
+        "结构重组",
+        "流变特性",
+        "质构模拟",
+        "口感还原"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-LS-019",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么猪油做的点心特别酥？",
+      "question_keywords": [
+        "猪油脂特性",
+        "晶体结构",
+        "面筋隔离",
+        "层次形成",
+        "酥脆口感"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-LS-020",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "油脂在面团中的层压作用是什么？",
+      "question_keywords": [
+        "面筋网络",
+        "层压结构",
+        "润滑作用",
+        "油脂分布",
+        "饼层分离"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-001",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "淀粉糊化的机理是什么？",
+      "question_keywords": [
+        "淀粉颗粒",
+        "水分吸收",
+        "晶体结构",
+        "双折射消失"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-CB-002",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么不同淀粉的糊化温度不同？",
+      "question_keywords": [
+        "淀粉结构",
+        "糊化温度",
+        "氢键断裂",
+        "直链支链比",
+        "水分活度"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-003",
+      "domain": "carbohydrate",
+      "question_type": "comparison",
+      "question_text": "直链淀粉和支链淀粉的区别是什么？",
+      "question_keywords": [
+        "直链淀粉",
+        "支链淀粉",
+        "分子结构",
+        "空间构象"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-004",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "淀粉老化(回生)的原理是什么？",
+      "question_keywords": [
+        "淀粉分子重排",
+        "氢键形成",
+        "结晶结构",
+        "双螺旋聚集",
+        "直链淀粉作用"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-005",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么冷饭比热饭更抗消化？",
+      "question_keywords": [
+        "冷饭抗性淀粉",
+        "淀粉回生",
+        "酶解速率",
+        "消化特性",
+        "结构重组"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-006",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "糖的种类如何影响烘焙效果？",
+      "question_keywords": [
+        "糖类特性",
+        "美拉德反应",
+        "褐变程度",
+        "吸水保水",
+        "膨发性能"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-007",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么果糖比葡萄糖更甜？",
+      "question_keywords": [
+        "果糖结构",
+        "葡萄糖结构",
+        "甜味受体",
+        "分子构象",
+        "甜度差异"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-008",
+      "domain": "maillard_caramelization",
+      "question_type": "definition",
+      "question_text": "焦糖化反应的产物有哪些？",
+      "question_keywords": [
+        "焦糖化反应",
+        "反应产物",
+        "类黑精",
+        "呋喃衍生物",
+        "挥发性物质"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-009",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "糖在烘焙中的多重作用是什么？",
+      "question_keywords": [
+        "美拉德反应",
+        "焦糖化",
+        "水分保持",
+        "热凝固"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-010",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么糖能保持蛋糕湿润？",
+      "question_keywords": [
+        "糖吸湿性",
+        "水分保持",
+        "渗透压调节",
+        "结构稳定",
+        "烘焙工艺"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-011",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "果胶的凝胶机理是什么？",
+      "question_keywords": [
+        "果胶凝胶",
+        "钙离子交联",
+        "氢键作用",
+        "亲水胶体"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-CB-012",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么果酱需要加糖才能凝固？",
+      "question_keywords": [
+        "果胶凝胶",
+        "蔗糖浓度",
+        "水分活度",
+        "氢键网络",
+        "交联作用"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-013",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "糖醇类甜味剂的特点是什么？",
+      "question_keywords": [
+        "糖醇结构",
+        "热稳定性",
+        "代谢特性",
+        "渗透性",
+        "甜度"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-014",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么木薯淀粉做的甜品更Q弹？",
+      "question_keywords": [
+        "木薯淀粉",
+        "直链淀粉",
+        "凝胶强度",
+        "弹性复合物",
+        "糊化特性"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-015",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "膳食纤维在烹饪中的作用是什么？",
+      "question_keywords": [
+        "膳食纤维",
+        "烹饪过程",
+        "持水能力",
+        "质地变化",
+        "营养保留"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-016",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么全麦面包比白面包更快变干？",
+      "question_keywords": [
+        "淀粉老化",
+        "水分迁移",
+        "膳食纤维",
+        "全麦面包",
+        "白面包"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-017",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "糊精是如何形成的？",
+      "question_keywords": [
+        "淀粉水解",
+        "糖苷键断裂",
+        "脱水反应",
+        "糊精生成"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-018",
+      "domain": "maillard_caramelization",
+      "question_type": "mechanism",
+      "question_text": "为什么炒面粉会改变风味？",
+      "question_keywords": [
+        "美拉德反应",
+        "热加工",
+        "淀粉糊化",
+        "挥发性物质"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-019",
+      "domain": "maillard_caramelization",
+      "question_type": "definition",
+      "question_text": "还原糖在美拉德反应中的角色是什么？",
+      "question_keywords": [
+        "还原糖",
+        "美拉德反应",
+        "羰基化合物",
+        "氨基参与",
+        "褐变产物"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-020",
+      "domain": "water_activity",
+      "question_type": "mechanism",
+      "question_text": "为什么蜂蜜比蔗糖更容易吸潮？",
+      "question_keywords": [
+        "葡萄糖转化酶",
+        "果糖亲水",
+        "吸湿性增强",
+        "水分活度",
+        "结晶抑制"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-021",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "变性淀粉的用途是什么？",
+      "question_keywords": [
+        "变性淀粉",
+        "应用领域",
+        "加工性能",
+        "凝胶形成",
+        "稳定性增强"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-022",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么玉米淀粉适合做勾芡？",
+      "question_keywords": [
+        "玉米淀粉",
+        "糊化特性",
+        "增稠作用",
+        "凝胶形成",
+        "直链淀粉"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CB-023",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "糖的溶解度曲线有什么应用？",
+      "question_keywords": [
+        "溶解度曲线",
+        "结晶分离",
+        "过饱和现象",
+        "糖浆生产",
+        "重结晶工艺"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CB-024",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么糖浆加热后会结晶？",
+      "question_keywords": [
+        "蔗糖晶体",
+        "过饱和溶液",
+        "晶核形成",
+        "热诱导结晶",
+        "葡萄糖转化"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-001",
+      "domain": "enzyme",
+      "question_type": "definition",
+      "question_text": "酶在烹饪中的主要作用是什么？",
+      "question_keywords": [
+        "酶催化反应",
+        "蛋白质变性",
+        "风味物质",
+        "质地软化",
+        "营养保留"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-002",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "为什么菠萝能嫩化肉类？",
+      "question_keywords": [
+        "菠萝蛋白酶",
+        "蛋白质水解",
+        "肉类嫩化",
+        "酶解作用"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-003",
+      "domain": "enzyme",
+      "question_type": "boundary",
+      "question_text": "酶失活的温度范围是多少？",
+      "question_keywords": [
+        "酶失活",
+        "热稳定性",
+        "温度阈值",
+        "蛋白质变性",
+        "结构破坏"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-004",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么生洋葱切开会让人流泪？",
+      "question_keywords": [
+        "含硫氨基酸",
+        "蒜氨酸酶",
+        "催泪因子"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-005",
+      "domain": "aroma_volatiles",
+      "question_type": "definition",
+      "question_text": "脂肪酶对奶酪风味的贡献是什么？",
+      "question_keywords": [
+        "脂肪酶水解",
+        "游离脂肪酸",
+        "风味物质",
+        "酯类化合物",
+        "奶酪成熟"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-006",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么蔬菜焯水能保持颜色？",
+      "question_keywords": [
+        "热烫处理",
+        "酶促失活",
+        "氧化反应",
+        "色泽固定"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-007",
+      "domain": "enzyme",
+      "question_type": "definition",
+      "question_text": "淀粉酶在发酵中的作用是什么？",
+      "question_keywords": [
+        "淀粉酶活性",
+        "发酵过程",
+        "糖类转化",
+        "糊精生成",
+        "乙醇产量"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-008",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "蛋白酶如何影响面团特性？",
+      "question_keywords": [
+        "蛋白酶作用",
+        "面团流变",
+        "面筋蛋白",
+        "网络结构",
+        "加工性能"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-009",
+      "domain": "enzyme",
+      "question_type": "definition",
+      "question_text": "果胶酶在果汁澄清中的应用是什么？",
+      "question_keywords": [
+        "果胶酶水解",
+        "果汁澄清",
+        "细胞壁降解",
+        "悬浮物去除",
+        "粘度降低"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-010",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "为什么苹果切开会变色？",
+      "question_keywords": [
+        "酶促褐变",
+        "多酚氧化酶",
+        "酚类物质",
+        "氧气接触",
+        "醌类聚合"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-011",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "酶促褐变如何控制？",
+      "question_keywords": [
+        "多酚氧化酶",
+        "活性抑制",
+        "底物阻断",
+        "氧气隔绝"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-012",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "为什么木瓜酶可以做嫩肉粉？",
+      "question_keywords": [
+        "木瓜蛋白酶",
+        "蛋白质水解",
+        "肌肉纤维",
+        "嫩化机理"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-013",
+      "domain": "protein_science",
+      "question_type": "definition",
+      "question_text": "转谷氨酰胺酶的应用是什么？",
+      "question_keywords": [
+        "转谷氨酰胺酶",
+        "交联反应",
+        "蛋白质修饰",
+        "凝胶特性",
+        "风味增强"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-014",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "为什么生姜能凝固牛奶？",
+      "question_keywords": [
+        "生姜蛋白酶",
+        "牛奶凝固",
+        "酪蛋白变性",
+        "酶促反应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-015",
+      "domain": "enzyme",
+      "question_type": "comparison",
+      "question_text": "内源酶和外源酶的区别是什么？",
+      "question_keywords": [
+        "内源酶来源",
+        "外源酶添加",
+        "催化特性差异",
+        "稳定性比较",
+        "作用对象区别"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-016",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "为什么冷冻能暂时抑制酶活性？",
+      "question_keywords": [
+        "低温处理",
+        "酶活性抑制",
+        "分子运动减慢",
+        "冷冻效应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EN-017",
+      "domain": "enzyme",
+      "question_type": "definition",
+      "question_text": "酶在面包风味形成中的角色是什么？",
+      "question_keywords": [
+        "酶促反应",
+        "面包风味",
+        "底物转化",
+        "挥发性物质",
+        "发酵过程"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EN-018",
+      "domain": "enzyme",
+      "question_type": "mechanism",
+      "question_text": "为什么某些水果不能和明胶一起用？",
+      "question_keywords": [
+        "菠萝蛋白酶",
+        "木瓜蛋白酶",
+        "猕猴桃酶",
+        "明胶水解",
+        "凝胶失败"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-001",
+      "domain": "taste_perception",
+      "question_type": "definition",
+      "question_text": "五种基本味觉是什么？",
+      "question_keywords": [
+        "基本味觉",
+        "甜味",
+        "咸味",
+        "酸味",
+        "苦味"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-002",
+      "domain": "taste_perception",
+      "question_type": "definition",
+      "question_text": "鲜味(umami)的化学基础是什么？",
+      "question_keywords": [
+        "谷氨酸钠",
+        "氨基酸",
+        "呈味肽",
+        "受体识别",
+        "鲜味机制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-003",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么味精能增强鲜味？",
+      "question_keywords": [
+        "谷氨酸钠",
+        "鲜味受体",
+        "味觉协同",
+        "呈味机理",
+        "钠离子效应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-004",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "香气物质如何到达嗅觉受体？",
+      "question_keywords": [
+        "香气挥发",
+        "鼻腔传输",
+        "黏膜溶解",
+        "受体结合",
+        "神经信号"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-005",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么食物温度影响风味感知？",
+      "question_keywords": [
+        "风味物质挥发",
+        "味觉受体活性",
+        "嗅觉阈值",
+        "热效应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-006",
+      "domain": "taste_perception",
+      "question_type": "definition",
+      "question_text": "辣是一种味觉吗？",
+      "question_keywords": [
+        "痛觉受体",
+        "三叉神经",
+        "辣椒素",
+        "感觉传导"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-007",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么加盐能提升甜味？",
+      "question_keywords": [
+        "味觉交互",
+        "钠离子效应",
+        "味觉掩蔽",
+        "感知增强",
+        "阈值改变"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-008",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "风味协同作用的原理是什么？",
+      "question_keywords": [
+        "风味物质",
+        "协同作用",
+        "受体结合",
+        "阈值降低",
+        "感官增强"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-009",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么感冒时吃东西没味道？",
+      "question_keywords": [
+        "嗅觉功能",
+        "味觉感知",
+        "鼻腔阻塞",
+        "病毒刺激",
+        "神经传导"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-010",
+      "domain": "maillard_caramelization",
+      "question_type": "mechanism",
+      "question_text": "烹饪如何产生新的风味物质？",
+      "question_keywords": [
+        "美拉德反应",
+        "焦糖化反应",
+        "风味前体",
+        "挥发性化合物",
+        "热加工"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-011",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么陈年食物风味更复杂？",
+      "question_keywords": [
+        "美拉德反应",
+        "脂质氧化",
+        "酶促褐变",
+        "风味化合物"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-012",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "脂肪如何影响风味释放？",
+      "question_keywords": [
+        "脂肪基质",
+        "风味化合物",
+        "挥发性物质",
+        "分配系数",
+        "释放机制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-013",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么质地影响风味感知？",
+      "question_keywords": [
+        "质地属性",
+        "风味释放",
+        "口腔摩擦",
+        "味觉感知",
+        "香气扩散"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-014",
+      "domain": "taste_perception",
+      "question_type": "definition",
+      "question_text": "涩味的形成机制是什么？",
+      "question_keywords": [
+        "多酚聚合",
+        "单宁结合",
+        "口腔黏膜",
+        "蛋白质交联",
+        "涩味感知"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-FS-015",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么有些人觉得香菜有肥皂味？",
+      "question_keywords": [
+        "醛类化合物",
+        "嗅觉受体",
+        "基因多态性",
+        "风味感知",
+        "肥皂味"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-016",
+      "domain": "taste_perception",
+      "question_type": "definition",
+      "question_text": "风味阈值是什么概念？",
+      "question_keywords": [
+        "风味阈值",
+        "味觉感知",
+        "检测浓度",
+        "嗅觉识别",
+        "最小可觉差"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-017",
+      "domain": "aroma_volatiles",
+      "question_type": "comparison",
+      "question_text": "挥发性和非挥发性风味物质的区别是什么？",
+      "question_keywords": [
+        "挥发性物质",
+        "非挥发性",
+        "风味特征",
+        "分子结构",
+        "热稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-018",
+      "domain": "maillard_caramelization",
+      "question_type": "mechanism",
+      "question_text": "为什么烤面包比蒸面包更香？",
+      "question_keywords": [
+        "美拉德反应",
+        "淀粉焦糖化",
+        "挥发性香气",
+        "热加工差异"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-019",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "后味是如何产生的？",
+      "question_keywords": [
+        "味觉信号",
+        "神经传递",
+        "余味残留",
+        "口腔滞留",
+        "分子结合"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-020",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么甜和酸能相互平衡？",
+      "question_keywords": [
+        "甜味感知",
+        "酸性物质",
+        "味觉抑制",
+        "感官平衡"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-021",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "温度如何影响香气挥发？",
+      "question_keywords": [
+        "温度调控",
+        "香气挥发",
+        "挥发性成分",
+        "蒸气压",
+        "热稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-022",
+      "domain": "maillard_caramelization",
+      "question_type": "mechanism",
+      "question_text": "为什么油炸食物特别香？",
+      "question_keywords": [
+        "美拉德反应",
+        "脂质氧化",
+        "香气物质",
+        "挥发性化合物"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FS-023",
+      "domain": "taste_perception",
+      "question_type": "definition",
+      "question_text": "咸味感知有上限吗？",
+      "question_keywords": [
+        "咸味感知",
+        "味觉饱和",
+        "钠离子浓度",
+        "阈值效应"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FS-024",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么有些苦味让人愉悦？",
+      "question_keywords": [
+        "苦味感知",
+        "愉悦机制",
+        "生物碱化合物",
+        "风味评价",
+        "心理效应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-001",
+      "domain": "fermentation",
+      "question_type": "definition",
+      "question_text": "酒精发酵的化学方程式是什么？",
+      "question_keywords": [
+        "酒精发酵",
+        "葡萄糖",
+        "乙醇",
+        "二氧化碳",
+        "化学方程式"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-002",
+      "domain": "fermentation",
+      "question_type": "comparison",
+      "question_text": "乳酸发酵和酒精发酵的区别是什么？",
+      "question_keywords": [
+        "乳酸发酵",
+        "酒精发酵",
+        "代谢途径",
+        "产物差异",
+        "酶系统"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-003",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么面团发酵能产生气孔？",
+      "question_keywords": [
+        "酵母代谢",
+        "二氧化碳生成",
+        "面筋网络",
+        "气体保留",
+        "体积膨胀"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-004",
+      "domain": "fermentation",
+      "question_type": "boundary",
+      "question_text": "酵母的最适生长温度是多少？",
+      "question_keywords": [
+        "酵母生长",
+        "最适温度",
+        "繁殖速率",
+        "温度范围"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-005",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么过度发酵的面团会塌陷？",
+      "question_keywords": [
+        "面筋网络",
+        "气泡合并",
+        "二氧化碳流失",
+        "结构支撑"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-006",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "醋是如何酿造的？",
+      "question_keywords": [
+        "醋酸发酵",
+        "乙醇氧化",
+        "乙酸杆菌",
+        "有氧条件"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-007",
+      "domain": "fermentation",
+      "question_type": "definition",
+      "question_text": "酱油发酵的主要微生物是什么？",
+      "question_keywords": [
+        "酱油发酵",
+        "米曲霉",
+        "酵母菌",
+        "乳酸菌",
+        "微生物群落"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-008",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么泡菜能保存很久？",
+      "question_keywords": [
+        "乳酸发酵",
+        "微生物抑制",
+        "渗透压作用",
+        "厌氧条件"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-009",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "发酵如何增加食物的营养价值？",
+      "question_keywords": [
+        "发酵过程",
+        "营养成分",
+        "生物活性物质",
+        "微生物代谢",
+        "氨基酸合成"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-010",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么啤酒有气泡？",
+      "question_keywords": [
+        "二氧化碳溶解",
+        "开瓶释压",
+        "成核作用",
+        "气泡形成"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-011",
+      "domain": "fermentation",
+      "question_type": "definition",
+      "question_text": "乳酸菌对肠道健康的影响是什么？",
+      "question_keywords": [
+        "乳酸菌",
+        "肠道健康",
+        "短链脂肪酸",
+        "免疫调节"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-012",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么天然发酵比商业酵母风味更复杂？",
+      "question_keywords": [
+        "天然发酵",
+        "商业酵母",
+        "微生物群落",
+        "代谢产物",
+        "风味物质"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-013",
+      "domain": "fermentation",
+      "question_type": "definition",
+      "question_text": "曲霉在酿造中的作用是什么？",
+      "question_keywords": [
+        "曲霉发酵",
+        "淀粉糖化",
+        "蛋白质水解",
+        "风味物质",
+        "酶活性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-014",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么有些奶酪有蓝色霉纹？",
+      "question_keywords": [
+        "青霉菌",
+        "蓝纹奶酪",
+        "孢子扩散",
+        "发酵成熟",
+        "代谢产物"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-015",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "康普茶发酵的原理是什么？",
+      "question_keywords": [
+        "康普茶发酵",
+        "共生菌群",
+        "代谢产物",
+        "有机酸生成",
+        "多糖合成"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-016",
+      "domain": "taste_perception",
+      "question_type": "mechanism",
+      "question_text": "为什么发酵能产生鲜味？",
+      "question_keywords": [
+        "蛋白质水解",
+        "氨基酸释放",
+        "核苷酸生成",
+        "谷氨酸积累"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-017",
+      "domain": "fermentation",
+      "question_type": "comparison",
+      "question_text": "米酒和葡萄酒发酵的区别是什么？",
+      "question_keywords": [
+        "米酒发酵",
+        "葡萄酒发酵",
+        "酵母菌种",
+        "淀粉糖化",
+        "发酵产物"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-018",
+      "domain": "fermentation",
+      "question_type": "definition",
+      "question_text": "盐在发酵中的作用是什么？",
+      "question_keywords": [
+        "微生物抑制",
+        "渗透压调节",
+        "水分活度",
+        "风味物质形成",
+        "质构改善"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-019",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "为什么面包酵母和啤酒酵母不同？",
+      "question_keywords": [
+        "面包酵母",
+        "啤酒酵母",
+        "菌株差异",
+        "发酵特性",
+        "应用区别"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-020",
+      "domain": "fermentation",
+      "question_type": "mechanism",
+      "question_text": "发酵温度如何影响风味？",
+      "question_keywords": [
+        "发酵温度",
+        "风味物质",
+        "代谢途径",
+        "微生物活性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-FM-021",
+      "domain": "aroma_volatiles",
+      "question_type": "mechanism",
+      "question_text": "为什么老面比鲜酵母做的馒头更香？",
+      "question_keywords": [
+        "老化面团",
+        "挥发性风味",
+        "发酵代谢",
+        "美拉德反应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-FM-022",
+      "domain": "fermentation",
+      "question_type": "comparison",
+      "question_text": "厌氧和有氧发酵的区别是什么？",
+      "question_keywords": [
+        "厌氧发酵",
+        "有氧发酵",
+        "代谢产物",
+        "电子受体",
+        "能量产出"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-001",
+      "domain": "food_safety",
+      "question_type": "boundary",
+      "question_text": "食品危险温度区间是多少？",
+      "question_keywords": [
+        "危险温度区间",
+        "微生物繁殖",
+        "温度范围",
+        "食品安全"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-002",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么冷藏不能完全阻止细菌生长？",
+      "question_keywords": [
+        "低温抑菌",
+        "菌种适应性",
+        "生长速率",
+        "冷藏极限"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-003",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "交叉污染如何发生？",
+      "question_keywords": [
+        "交叉传播路径",
+        "污染载体",
+        "微生物迁移",
+        "生熟接触",
+        "清洁消毒"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-004",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么剩菜需要快速冷却？",
+      "question_keywords": [
+        "微生物增殖",
+        "细菌繁殖",
+        "快速冷却",
+        "温度控制",
+        "中心温度"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-005",
+      "domain": "food_safety",
+      "question_type": "boundary",
+      "question_text": "肉类安全烹饪温度是多少？",
+      "question_keywords": [
+        "肉类",
+        "安全烹饪",
+        "中心温度",
+        "致病菌",
+        "杀菌效果"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-006",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么鸡蛋需要冷藏？",
+      "question_keywords": [
+        "细菌繁殖",
+        "气室膨胀",
+        "蛋壳透气",
+        "哈夫单位",
+        "冷藏保鲜"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-007",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "巴氏杀菌的原理是什么？",
+      "question_keywords": [
+        "热力致死",
+        "菌体失活",
+        "蛋白质变性",
+        "酶活性抑制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-008",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么罐头食品能长期保存？",
+      "question_keywords": [
+        "商业无菌",
+        "金属容器密封",
+        "高温杀菌",
+        "微生物抑制",
+        "厌氧环境"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-009",
+      "domain": "food_safety",
+      "question_type": "definition",
+      "question_text": "黄曲霉毒素的危害是什么？",
+      "question_keywords": [
+        "黄曲霉毒素",
+        "致癌作用",
+        "肝脏损伤",
+        "毒性机制",
+        "食品安全"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-010",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么解冻后不能再冷冻？",
+      "question_keywords": [
+        "冰晶形成",
+        "细胞破裂",
+        "汁液流失",
+        "微生物增殖",
+        "品质劣变"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-011",
+      "domain": "salt_acid_chemistry",
+      "question_type": "boundary",
+      "question_text": "亚硝酸盐的安全剂量是多少？",
+      "question_keywords": [
+        "亚硝酸盐",
+        "安全剂量",
+        "急性毒性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-012",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么生食有风险？",
+      "question_keywords": [
+        "病原微生物",
+        "寄生虫感染",
+        "热杀菌缺失",
+        "生物胺积累"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-013",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "食品辐照的原理是什么？",
+      "question_keywords": [
+        "电离辐射",
+        "自由基生成",
+        "分子损伤",
+        "微生物失活",
+        "能量传递"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-014",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么真空包装需要冷藏？",
+      "question_keywords": [
+        "真空包装",
+        "冷藏保存",
+        "微生物生长",
+        "厌氧菌繁殖",
+        "酶促反应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-015",
+      "domain": "food_safety",
+      "question_type": "boundary",
+      "question_text": "细菌繁殖的倍增时间是多少？",
+      "question_keywords": [
+        "细菌繁殖",
+        "倍增时间",
+        "对数生长",
+        "分裂速度"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-016",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么海鲜更容易变质？",
+      "question_keywords": [
+        "组织水分含量",
+        "微生物繁殖",
+        "蛋白质分解",
+        "脂肪氧化",
+        "腐败速率"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-017",
+      "domain": "food_safety",
+      "question_type": "definition",
+      "question_text": "组胺中毒的原因是什么？",
+      "question_keywords": [
+        "组胺积累",
+        "微生物污染",
+        "氨基酸脱羧",
+        "鱼体腐败"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-018",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么某些野生蘑菇有毒？",
+      "question_keywords": [
+        "野生蘑菇",
+        "毒素合成",
+        "防御机制",
+        "生物碱"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-SF-019",
+      "domain": "salt_acid_chemistry",
+      "question_type": "definition",
+      "question_text": "食品pH对安全性的影响是什么？",
+      "question_keywords": [
+        "微生物生长",
+        "毒素抑制",
+        "腐败控制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-SF-020",
+      "domain": "food_safety",
+      "question_type": "mechanism",
+      "question_text": "为什么冷冻能保存食物但不能杀菌？",
+      "question_keywords": [
+        "冷冻保存",
+        "微生物活性",
+        "细胞损伤",
+        "杀菌机制",
+        "水分活度"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-001",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "乳化液的基本结构是什么？",
+      "question_keywords": [
+        "乳化体系",
+        "分散相结构",
+        "连续相基质",
+        "界面膜组成"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-002",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么蛋黄是好的乳化剂？",
+      "question_keywords": [
+        "卵磷脂结构",
+        "乳化稳定性",
+        "界面张力",
+        "蛋黄膜成分",
+        "疏水基团"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-003",
+      "domain": "lipid_science",
+      "question_type": "comparison",
+      "question_text": "水包油和油包水乳化液的区别是什么？",
+      "question_keywords": [
+        "水包油乳化液",
+        "油包水乳化液",
+        "连续相分散",
+        "界面张力差异",
+        "乳液稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-004",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么蛋黄酱会分离？",
+      "question_keywords": [
+        "乳液破乳",
+        "油水分离",
+        "乳化剂失效",
+        "界面张力",
+        "稳定性破坏"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-005",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "乳化剂的HLB值是什么？",
+      "question_keywords": [
+        "分子结构",
+        "极性基团",
+        "非极性链段",
+        "表面活性剂"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-006",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "牛奶是什么类型的胶体？",
+      "question_keywords": [
+        "牛奶胶体",
+        "酪蛋白胶束",
+        "亲水胶体",
+        "分散体系"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-007",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么奶油打发会变稠？",
+      "question_keywords": [
+        "脂肪球聚集",
+        "空气掺入",
+        "乳化稳定",
+        "体积膨胀",
+        "蛋白网络"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-008",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "黄油是如何从奶油中分离的？",
+      "question_keywords": [
+        "脂肪球聚结",
+        "乳脂分离",
+        "机械搅拌",
+        "相分离机制",
+        "酪蛋白胶束"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-009",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么酱汁需要不断搅拌？",
+      "question_keywords": [
+        "酱汁搅拌",
+        "热传递",
+        "防止结块",
+        "水分蒸发",
+        "乳化稳定"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-010",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "泡沫的稳定机制是什么？",
+      "question_keywords": [
+        "表面张力",
+        "液膜排液",
+        "弹性模量",
+        "疏水作用"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-EC-011",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么啤酒泡沫能持久？",
+      "question_keywords": [
+        "蛋白质结构",
+        "表面活性剂",
+        "气泡稳定性",
+        "疏水基团",
+        "麦汁蛋白"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-012",
+      "domain": "carbohydrate",
+      "question_type": "definition",
+      "question_text": "果胶的胶凝机理是什么？",
+      "question_keywords": [
+        "果胶分子",
+        "氢键交联",
+        "钙离子桥连",
+        "多糖网络",
+        "低酯条件"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-EC-013",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "为什么明胶需要冷却才能凝固？",
+      "question_keywords": [
+        "明胶凝胶",
+        "冷却条件",
+        "氢键形成",
+        "分子交联"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-014",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "淀粉糊的流变特性是什么？",
+      "question_keywords": [
+        "淀粉糊化",
+        "流变特性",
+        "粘度变化",
+        "剪切稀化",
+        "凝胶结构"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-015",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么摇晃的奶油会变成黄油？",
+      "question_keywords": [
+        "脂肪聚集",
+        "膜结构破裂",
+        "油水分离",
+        "酪蛋白变性",
+        "相态转变"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-016",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "卵磷脂的乳化作用原理是什么？",
+      "question_keywords": [
+        "卵磷脂结构",
+        "亲水基团",
+        "疏水基团",
+        "乳化稳定性",
+        "界面张力"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-017",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么色拉酱需要芥末？",
+      "question_keywords": [
+        "乳化稳定性",
+        "卵磷脂",
+        "油水混合",
+        "芥末籽提取物"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-018",
+      "domain": "texture_rheology",
+      "question_type": "comparison",
+      "question_text": "凝胶和溶胶的区别是什么？",
+      "question_keywords": [
+        "凝胶结构",
+        "溶胶状态",
+        "水分结合",
+        "相变机制",
+        "质地差异"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-019",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么巧克力需要调温？",
+      "question_keywords": [
+        "可可脂结晶",
+        "调温工艺",
+        "晶体转化",
+        "熔点控制",
+        "质感形成"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-020",
+      "domain": "protein_science",
+      "question_type": "mechanism",
+      "question_text": "乳清蛋白的起泡性如何？",
+      "question_keywords": [
+        "乳清蛋白",
+        "起泡性",
+        "表面张力",
+        "蛋白质变性",
+        "泡沫稳定性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-021",
+      "domain": "texture_rheology",
+      "question_type": "definition",
+      "question_text": "阿拉伯胶的增稠机理是什么？",
+      "question_keywords": [
+        "阿拉伯胶",
+        "空间位阻",
+        "氢键作用",
+        "链段伸展",
+        "粘度提升"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "question_id": "L0-Q-EC-022",
+      "domain": "lipid_science",
+      "question_type": "mechanism",
+      "question_text": "为什么冰淇淋需要乳化剂？",
+      "question_keywords": [
+        "冰淇淋质构",
+        "脂肪分散",
+        "蛋白质稳定",
+        "冰晶控制",
+        "气孔结构"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EC-023",
+      "domain": "lipid_science",
+      "question_type": "definition",
+      "question_text": "油脂结晶对巧克力光泽的影响是什么？",
+      "question_keywords": [
+        "油脂结晶",
+        "晶体形态",
+        "表面光泽",
+        "可可脂多晶型"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EC-024",
+      "domain": "texture_rheology",
+      "question_type": "mechanism",
+      "question_text": "为什么过度搅拌会破坏奶油？",
+      "question_keywords": [
+        "脂肪球膜破裂",
+        "乳化体系破坏",
+        "油水分离",
+        "过度搅拌",
+        "脂肪结晶"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-001",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "叶绿素为什么遇酸变黄？",
+      "question_keywords": [
+        "叶绿素",
+        "酸性条件",
+        "脱镁反应",
+        "黄色物质"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-002",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么焯水能保持蔬菜翠绿？",
+      "question_keywords": [
+        "焯水处理",
+        "叶绿素结构",
+        "脱镁反应",
+        "酶活性抑制",
+        "色素稳定性"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-003",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "花青素的颜色如何随pH变化？",
+      "question_keywords": [
+        "花青素",
+        "酸碱度",
+        "显色机理",
+        "结构转换",
+        "色泽转变"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CP-004",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么紫甘蓝遇碱变蓝？",
+      "question_keywords": [
+        "花青素结构",
+        "碱性条件",
+        "色素降解",
+        "发色基团"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-005",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "类胡萝卜素的稳定性如何？",
+      "question_keywords": [
+        "类胡萝卜素",
+        "光氧化作用",
+        "热稳定性",
+        "异构化反应",
+        "抗氧化性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CP-006",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么番茄加热后更红？",
+      "question_keywords": [
+        "番茄红素",
+        "热稳定性",
+        "细胞壁破碎",
+        "光吸收增强",
+        "色素释放"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-007",
+      "domain": "color_pigment",
+      "question_type": "definition",
+      "question_text": "肌红蛋白的三种状态是什么？",
+      "question_keywords": [
+        "肌红蛋白",
+        "氧合肌红蛋白",
+        "高铁肌红蛋白",
+        "脱氧肌红蛋白"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CP-008",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么真空包装的肉是紫色？",
+      "question_keywords": [
+        "肌红蛋白",
+        "脱氧状态",
+        "真空包装",
+        "紫色呈现"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-009",
+      "domain": "maillard_caramelization",
+      "question_type": "definition",
+      "question_text": "褐变反应产生什么颜色物质？",
+      "question_keywords": [
+        "美拉德反应",
+        "类黑精形成",
+        "褐色聚合物",
+        "还原糖氧化"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CP-010",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么白色蔬菜煮久会变黄？",
+      "question_keywords": [
+        "白色蔬菜",
+        "长时间加热",
+        "类胡萝卜素",
+        "酶促褐变",
+        "色素释放"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-011",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "甜菜红素为什么不稳定？",
+      "question_keywords": [
+        "甜菜红素",
+        "结构降解",
+        "氧化作用",
+        "热稳定性"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-012",
+      "domain": "maillard_caramelization",
+      "question_type": "mechanism",
+      "question_text": "焦糖色素是如何形成的？",
+      "question_keywords": [
+        "美拉德反应",
+        "碳水化合物",
+        "高温加热",
+        "脱水缩合",
+        "褐色产物"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CP-013",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么蛋黄颜色深浅不同？",
+      "question_keywords": [
+        "叶黄素含量",
+        "玉米黄质比例",
+        "饲料色素",
+        "鸡只品种",
+        "沉积量差异"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-014",
+      "domain": "color_pigment",
+      "question_type": "definition",
+      "question_text": "姜黄素的颜色特性是什么？",
+      "question_keywords": [
+        "姜黄素",
+        "酸碱变色",
+        "结构异构",
+        "色泽特征"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CP-015",
+      "domain": "color_pigment",
+      "question_type": "mechanism",
+      "question_text": "为什么加铜锅煮蔬菜更绿？",
+      "question_keywords": [
+        "铜离子结合",
+        "叶绿素稳定",
+        "色泽保护",
+        "金属络合",
+        "脱镁反应抑制"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-016",
+      "domain": "maillard_caramelization",
+      "question_type": "definition",
+      "question_text": "黑蒜的颜色是怎么形成的？",
+      "question_keywords": [
+        "美拉德反应",
+        "花青素合成",
+        "焦糖化作用",
+        "褐变机制",
+        "多糖降解"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-CP-017",
+      "domain": "maillard_caramelization",
+      "question_type": "mechanism",
+      "question_text": "为什么酱油是深色的？",
+      "question_keywords": [
+        "美拉德反应",
+        "氨基酸还原糖",
+        "黑色素生成",
+        "褐变反应"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-CP-018",
+      "domain": "color_pigment",
+      "question_type": "comparison",
+      "question_text": "叶黄素和玉米黄质的区别是什么？",
+      "question_keywords": [
+        "叶黄素结构",
+        "玉米黄质分布",
+        "化学异构",
+        "视觉功能",
+        "抗氧化活性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-001",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "不同锅具材料的导热性如何比较？",
+      "question_keywords": [
+        "锅具材料",
+        "导热性能",
+        "热传导速率",
+        "金属材质",
+        "温度梯度"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-002",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "为什么不粘锅涂层会失效？",
+      "question_keywords": [
+        "聚四氟乙烯",
+        "表面磨损",
+        "热分解",
+        "涂层脱落",
+        "机械损伤"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-003",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "铸铁锅的蓄热原理是什么？",
+      "question_keywords": [
+        "铸铁材质",
+        "比热容特性",
+        "热容量机制",
+        "蓄热性能",
+        "导热系数"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-004",
+      "domain": "salt_acid_chemistry",
+      "question_type": "mechanism",
+      "question_text": "为什么铝锅不能煮酸性食物？",
+      "question_keywords": [
+        "铝锅腐蚀",
+        "酸性食物",
+        "铝离子溶出",
+        "金属反应",
+        "食品安全"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-005",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "感应炉的加热原理是什么？",
+      "question_keywords": [
+        "电磁感应",
+        "涡流效应",
+        "焦耳热",
+        "交变磁场",
+        "导磁材料"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-006",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "为什么不锈钢锅容易粘锅？",
+      "question_keywords": [
+        "不锈钢表面",
+        "蛋白质变性",
+        "微观结构",
+        "高温氧化",
+        "食物粘附"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-007",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "烤箱的上下火原理是什么？",
+      "question_keywords": [
+        "热辐射传热",
+        "热对流循环",
+        "加热管配置",
+        "温度梯度控制"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-008",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "微波炉为什么不能用金属容器？",
+      "question_keywords": [
+        "金属反射",
+        "电磁波谐振",
+        "电弧放电",
+        "能量损耗"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-009",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "压力锅的工作原理是什么？",
+      "question_keywords": [
+        "饱和蒸汽压",
+        "沸点升高",
+        "热力学平衡",
+        "密闭系统"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-010",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么搅拌机会让食物发热？",
+      "question_keywords": [
+        "机械能转化",
+        "摩擦生热",
+        "温度升高",
+        "能量耗散"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-011",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "真空包装机的工作原理是什么？",
+      "question_keywords": [
+        "真空包装",
+        "气泵抽气",
+        "密封加热",
+        "热合封口",
+        "空气抽出"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-012",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么温度计插入位置很重要？",
+      "question_keywords": [
+        "温度计位置",
+        "测量精度",
+        "热平衡",
+        "玻璃泡接触",
+        "温度梯度"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-013",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "冰箱的制冷原理是什么？",
+      "question_keywords": [
+        "制冷循环",
+        "蒸发器吸热",
+        "冷凝器散热",
+        "制冷剂相变",
+        "压缩机做功"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-014",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "为什么燃气灶比电炉反应更快？",
+      "question_keywords": [
+        "热传递效率",
+        "燃烧特性",
+        "加热速度",
+        "能量转换"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-015",
+      "domain": "thermal_dynamics",
+      "question_type": "definition",
+      "question_text": "速冻和慢冻对食材的影响是什么？",
+      "question_keywords": [
+        "冰晶形成",
+        "细胞损伤",
+        "质地变化",
+        "水分迁移",
+        "复水性"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-016",
+      "domain": "carbohydrate",
+      "question_type": "mechanism",
+      "question_text": "为什么铜锅适合做果酱？",
+      "question_keywords": [
+        "铜锅催化",
+        "果胶提取",
+        "酸性介质",
+        "金属离子",
+        "色泽稳定"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-017",
+      "domain": "equipment_physics",
+      "question_type": "mechanism",
+      "question_text": "蒸锅的蒸汽循环原理是什么？",
+      "question_keywords": [
+        "蒸汽循环",
+        "温度梯度",
+        "湿热传递",
+        "压力平衡"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-018",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么砂锅适合炖煮？",
+      "question_keywords": [
+        "多孔结构",
+        "热传导特性",
+        "均匀受热",
+        "保温性能"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "question_id": "L0-Q-EP-019",
+      "domain": "equipment_physics",
+      "question_type": "definition",
+      "question_text": "食品加工中均质机的作用是什么？",
+      "question_keywords": [
+        "均质机",
+        "粒径减小",
+        "分散均匀",
+        "乳状液稳定",
+        "细胞破碎"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "question_id": "L0-Q-EP-020",
+      "domain": "thermal_dynamics",
+      "question_type": "mechanism",
+      "question_text": "为什么烤盘颜色影响烘焙效果？",
+      "question_keywords": [
+        "烤盘颜色",
+        "热辐射吸收",
+        "烘焙温度",
+        "传热效率",
+        "上色差异"
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}
