@@ -694,10 +694,90 @@ def build_toc_section_chapters(book: BookSpec, markdown_text: str, toc_config: d
 
 
 def split_markdown_into_chapters(markdown_text: str) -> list[Chapter]:
+    """无TOC配置时，按markdown heading自动切分章节。"""
     stripped = markdown_text.strip()
     if not stripped:
         return []
-    return [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]
+
+    lines = stripped.splitlines()
+    headings = find_heading_positions(lines)
+
+    if not headings:
+        return [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]
+
+    min_level = 6
+    for idx, _title, _key in headings:
+        level = len(lines[idx]) - len(lines[idx].lstrip("#"))
+        if level < min_level:
+            min_level = level
+
+    top_headings = []
+    for idx, title, key in headings:
+        level = len(lines[idx]) - len(lines[idx].lstrip("#"))
+        if level <= min_level + 1:
+            top_headings.append((idx, title, key))
+
+    if not top_headings:
+        return [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]
+
+    def clean_auto_title(title: str) -> str:
+        cleaned = re.sub(r"\\[A-Za-z]+", " ", title)
+        cleaned = re.sub(r"\$+", " ", cleaned)
+        cleaned = re.sub(r"^[^A-Za-zÀ-ÿ\u4e00-\u9fff]+", "", cleaned)
+        cleaned = re.sub(
+            r"^(Rightarrow|therefore|because|scriptscriptstyle|mathfrak|textdegree|frac|mathrm|textcircled|subset|sim|star)+",
+            "",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
+        cleaned = re.sub(r"^[^A-Za-zÀ-ÿ\u4e00-\u9fff]+", "", cleaned)
+        cleaned = re.sub(r"\s+", " ", cleaned).strip(" -#,:;.!?+*/_=()[]{}\\'")
+        return cleaned.strip()
+
+    def is_auto_chapter_heading(title: str) -> bool:
+        cleaned = clean_auto_title(title)
+        if len(cleaned) < 6 or len(cleaned) > 80:
+            return False
+        alpha_words = re.findall(r"[A-Za-zÀ-ÿ]{3,}", cleaned)
+        cjk_words = re.findall(r"[\u4e00-\u9fff]{2,}", cleaned)
+        if len(alpha_words) + len(cjk_words) < 2:
+            return False
+        if re.search(r"\d{4,}", cleaned):
+            return False
+        normalized = re.sub(r"[^A-Z]", "", cleaned.upper())
+        if normalized in {"POINT", "STEP", "STEPT", "SOFTSERVE", "GELATO", "SORBET", "GRANITE"}:
+            return False
+        return True
+
+    filtered_headings: list[tuple[int, str]] = []
+    last_heading_idx = -10_000
+    min_heading_gap = 120
+    for idx, title, _key in top_headings:
+        cleaned_title = clean_auto_title(title)
+        if not is_auto_chapter_heading(title):
+            continue
+        if idx - last_heading_idx < min_heading_gap:
+            continue
+        filtered_headings.append((idx, cleaned_title))
+        last_heading_idx = idx
+
+    if not filtered_headings:
+        return [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]
+
+    chapters = []
+    if filtered_headings[0][0] > 0:
+        preamble = "\n".join(lines[: filtered_headings[0][0]]).strip()
+        if preamble and len(preamble) > 200:
+            chapters.append(Chapter(0, "Preamble", "Start of book", filtered_headings[0][1], preamble))
+
+    for idx, (start_idx, title) in enumerate(filtered_headings):
+        next_idx = filtered_headings[idx + 1][0] if idx + 1 < len(filtered_headings) else len(lines)
+        next_title = filtered_headings[idx + 1][1] if idx + 1 < len(filtered_headings) else "End of book"
+        text = "\n".join(lines[start_idx:next_idx]).strip()
+        if text and len(text) > 200:
+            chapters.append(Chapter(idx + 1, title, title, next_title, text))
+
+    return chapters or [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]
 
 
 def sanitize_chunk_text(text: str) -> str:
