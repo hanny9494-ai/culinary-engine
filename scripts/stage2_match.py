@@ -31,10 +31,10 @@ import yaml
 # ── 默认值 ────────────────────────────────────────────────────────────────────
 DEFAULT_TOP_K = 3
 DEFAULT_THRESHOLD = 0.70
-GEMINI_BATCH_SIZE = 100       # Gemini 一次最多100条
-GEMINI_RPS_LIMIT = 5          # 每秒不超过5请求
-MAX_RETRIES = 3
-RETRY_BACKOFF = 2.0           # 指数退避基数
+GEMINI_BATCH_SIZE = 20        # 小批次避免429
+GEMINI_BATCH_DELAY = 6.0      # 批次间延迟（秒）
+MAX_RETRIES = 5
+RETRY_BACKOFF = 3.0           # 指数退避基数
 
 
 # ── 数据加载 ──────────────────────────────────────────────────────────────────
@@ -171,27 +171,33 @@ def gemini_embed_batch(texts: list[str], api_key: str, model: str) -> list[list[
 
 # ── Ollama Embedding API ─────────────────────────────────────────────────────
 
+def _ollama_session(base_url: str) -> requests.Session:
+    """创建绕过代理的 Ollama session。"""
+    s = requests.Session()
+    s.trust_env = False  # 忽略 http_proxy / https_proxy
+    return s
+
+
 def ollama_embed_batch(texts: list[str], base_url: str, model: str) -> list[list[float]]:
-    """调用 Ollama embedding API，逐条请求。"""
-    results = []
-    for t in texts:
-        for attempt in range(1, MAX_RETRIES + 1):
-            try:
-                resp = requests.post(
-                    f"{base_url}/api/embed",
-                    json={"model": model, "input": t},
-                    timeout=30,
-                )
-                resp.raise_for_status()
-                data = resp.json()
-                results.append(data["embeddings"][0])
-                break
-            except (requests.RequestException, KeyError) as e:
-                if attempt < MAX_RETRIES:
-                    time.sleep(RETRY_BACKOFF ** attempt)
-                else:
-                    raise RuntimeError(f"Ollama API 失败: {e}")
-    return results
+    """调用 Ollama embedding API，批量请求。"""
+    session = _ollama_session(base_url)
+    # Ollama /api/embed 支持 input 为 list
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = session.post(
+                f"{base_url}/api/embed",
+                json={"model": model, "input": texts},
+                timeout=120,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            return data["embeddings"]
+        except (requests.RequestException, KeyError) as e:
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF ** attempt)
+            else:
+                raise RuntimeError(f"Ollama API 失败: {e}")
+    return []
 
 
 # ── 统一 Embedding 接口 ──────────────────────────────────────────────────────
@@ -201,6 +207,7 @@ def embed_texts(
     cache: dict,
     use_ollama: bool,
     config: dict,
+    cache_path: str = "",
 ) -> np.ndarray:
     """对一组文本进行 embedding 编码，使用缓存避免重复调用。返回 (N, dim) 的 numpy 矩阵。"""
 
@@ -212,22 +219,22 @@ def embed_texts(
         uncached_texts = [texts[i] for i in uncached_indices]
         print(f"  需要编码 {len(uncached_texts)} 条（缓存命中 {len(texts) - len(uncached_texts)} 条）")
 
-        all_embeddings = []
+        emb_idx = 0  # 跟踪已完成的 embedding 数
         if use_ollama:
             ollama_cfg = config.get("ollama", {})
             base_url = ollama_cfg.get("url", "http://localhost:11434")
             model = ollama_cfg.get("models", {}).get("embedding", "qwen3-embedding:8b")
-            # Ollama 逐条，不需要批处理
             batch_size = 50
             for start in range(0, len(uncached_texts), batch_size):
                 batch = uncached_texts[start:start + batch_size]
                 embs = ollama_embed_batch(batch, base_url, model)
-                all_embeddings.extend(embs)
-                print(f"    Ollama: {start + len(batch)}/{len(uncached_texts)}")
+                for j, emb in enumerate(embs):
+                    cache[hashes[uncached_indices[emb_idx + j]]] = emb
+                emb_idx += len(embs)
+                print(f"    Ollama: {emb_idx}/{len(uncached_texts)}")
         else:
             gemini_cfg = config.get("gemini", {})
             api_key = os.environ.get("GEMINI_API_KEY") or gemini_cfg.get("api_key", "")
-            # 展开环境变量引用
             if api_key.startswith("${") and api_key.endswith("}"):
                 api_key = os.environ.get(api_key[2:-1], "")
             model = gemini_cfg.get("model", "gemini-embedding-2-preview")
@@ -239,16 +246,18 @@ def embed_texts(
             for start in range(0, len(uncached_texts), GEMINI_BATCH_SIZE):
                 batch = uncached_texts[start:start + GEMINI_BATCH_SIZE]
                 embs = gemini_embed_batch(batch, api_key, model)
-                all_embeddings.extend(embs)
-                done = start + len(batch)
-                print(f"    Gemini: {done}/{len(uncached_texts)}")
-                # 限速
-                if done < len(uncached_texts):
-                    time.sleep(1.0 / GEMINI_RPS_LIMIT)
-
-        # 写入缓存
-        for idx, emb in zip(uncached_indices, all_embeddings):
-            cache[hashes[idx]] = emb
+                for j, emb in enumerate(embs):
+                    cache[hashes[uncached_indices[emb_idx + j]]] = emb
+                emb_idx += len(embs)
+                print(f"    Gemini: {emb_idx}/{len(uncached_texts)}")
+                # 每批次后保存缓存（防崩溃丢失）
+                if cache_path:
+                    save_cache(cache, cache_path)
+                # 限速：批次间延迟
+                if emb_idx < len(uncached_texts):
+                    time.sleep(GEMINI_BATCH_DELAY)
+    else:
+        print(f"  全部缓存命中（{len(texts)} 条）")
 
     # 组装结果矩阵
     vectors = [cache[h] for h in hashes]
@@ -469,12 +478,12 @@ def main():
 
     # Embedding 编码
     print("\n编码题目...")
-    q_matrix = embed_texts(q_texts, cache, args.use_ollama, config)
+    q_matrix = embed_texts(q_texts, cache, args.use_ollama, config, cache_path)
 
     print("\n编码 chunks...")
-    c_matrix = embed_texts(c_texts, cache, args.use_ollama, config)
+    c_matrix = embed_texts(c_texts, cache, args.use_ollama, config, cache_path)
 
-    # 保存缓存
+    # 最终保存缓存
     save_cache(cache, cache_path)
     print(f"\n缓存已保存: {cache_path}（{len(cache)} 条）")
 
