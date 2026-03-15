@@ -1,0 +1,148 @@
+{
+  "mc_vol2": [
+    {
+      "chapter_num": 7,
+      "chapter_title": "TRADITIONAL COOKING",
+      "sections": [
+        "GRILLING",
+        "BROILING",
+        "ROASTING",
+        "PANFRYING A LA PLANCHA",
+        "SAUTEING",
+        "STIR-FRYING",
+        "COVERED SAUTEING",
+        "BOILING",
+        "STEAMING",
+        "CANNING",
+        "POT-ROASTING AND STEWING",
+        "BAKING",
+        "COOKING IN OIL",
+        "SMOKING"
+      ]
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "COOKING IN MODERN OVENS",
+      "sections": [
+        "COOKING WITH MOIST AIR",
+        "COOKING WITH MICROWAVES"
+      ]
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "COOKING SOUS VIDE",
+      "sections": [
+        "WHY SOUS VIDE",
+        "PACKAGING FOOD FOR SOUS VIDE",
+        "SOUS VIDE EQUIPMENT",
+        "STRATEGIES FOR COOKING SOUS VIDE",
+        "STRATEGIES FOR CHILLING AND REHEATING",
+        "BLANCHING AND SEARING FOR SOUS VIDE"
+      ]
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "THE MODERNIST KITCHEN",
+      "sections": [
+        "EXTRACTING FLAVORS",
+        "INFUSING ESSENCES",
+        "JUICING",
+        "FILTERING",
+        "CONCENTRATE",
+        "CUTTING EM DOWN TO SIZE",
+        "DRYING",
+        "CRYOGENIC FREEZING AND CARBONATING"
+      ]
+    }
+  ],
+  "mc_vol3": [
+    {
+      "chapter_num": 11,
+      "chapter_title": "MEAT AND SEAFOOD",
+      "sections": [
+        "HOW MUSCLE WORKS",
+        "CONVERTING MUSCLE INTO MEAT",
+        "CUTTING",
+        "COOKING MEAT AND SEAFOOD",
+        "COOKING SKIN AND INNARDS",
+        "SALTING AND DRYING",
+        "MARINATING",
+        "SMOKING",
+        "RESTRUCTURING"
+      ]
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "PLANT FOODS",
+      "sections": [
+        "PLANTS AS FOOD",
+        "COOKING SOUS VIDE",
+        "PRESSURE-COOKING",
+        "MICROWAVING",
+        "FRYING",
+        "PRESERVING",
+        "MODIFYING TEXTURES"
+      ]
+    }
+  ],
+  "mc_vol4": [
+    {
+      "chapter_num": 13,
+      "chapter_title": "THICKENERS",
+      "sections": [
+        "HOW THICKENING WORKS",
+        "STRATEGIES FOR THICKENING",
+        "STARCHES",
+        "HYDROCOLLOIDS"
+      ]
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "GELS",
+      "sections": [
+        "HOW GELLING WORKS",
+        "EGG GELS",
+        "DAIRY AND TOFU GELS",
+        "GELLING WITH HYDROCOLLOIDS",
+        "FLUID GELS",
+        "SPHERIFICATION"
+      ]
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "EMULSIONS",
+      "sections": [
+        "HOW EMULSIFICATION WORKS",
+        "METHODS OF EMULSIFYING",
+        "MODERNIST EMULSIONS"
+      ]
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "FOAMS",
+      "sections": [
+        "HOW FOAMS WORK",
+        "FORMING FOAMS"
+      ]
+    },
+    {
+      "chapter_num": 17,
+      "chapter_title": "WINE",
+      "sections": [
+        "WHAT MAKES A GREAT WINE",
+        "TASTING WINE"
+      ]
+    },
+    {
+      "chapter_num": 18,
+      "chapter_title": "COFFEE",
+      "sections": [
+        "FROM CHERRY TO BEAN",
+        "BREWING",
+        "ESPRESSO",
+        "THE ART OF MILK AND COFFEE",
+        "ACHIEVING CONSISTENCY"
+      ]
+    }
+  ]
+}
