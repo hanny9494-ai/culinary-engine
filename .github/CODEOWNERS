@@ -1,0 +1,30 @@
+# CODEOWNERS — 文件所有权
+# 母对话维护此文件，配合branch protection使用
+
+# 全局文件 — 只有Jeff/母对话能改
+STATUS.md           @hanny9494-ai
+README.md           @hanny9494-ai
+AGENTS.md           @hanny9494-ai
+.github/            @hanny9494-ai
+
+# 配置文件 — 只有母对话能改
+config/             @hanny9494-ai
+
+# 各Stage脚本 — 按agent分配
+# Agent A: Stage1
+scripts/stage1_pipeline.py    @hanny9494-ai
+scripts/utils/mineru_client.py @hanny9494-ai
+scripts/utils/vision_client.py @hanny9494-ai
+scripts/utils/merge.py        @hanny9494-ai
+
+# Agent B: Stage2
+scripts/stage2_match.py       @hanny9494-ai
+
+# Agent C: Stage3 + Stage3B
+scripts/stage3_distill.py     @hanny9494-ai
+scripts/stage3b_causal.py     @hanny9494-ai
+scripts/scan_low_hit.py       @hanny9494-ai
+
+# Agent D: Orchestrator
+scripts/run_book.py           @hanny9494-ai
+scripts/utils/quality.py      @hanny9494-ai

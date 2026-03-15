@@ -1,0 +1,33 @@
+# 书目注册表
+# 每本书一个条目，pipeline通过 --book-id 引用
+
+books:
+  - id: ofc
+    title: "On Food and Cooking"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/On Food and Cooking.pdf"
+    type: pdf
+    toc_config: null  # OFC不用MC的TOC切分
+
+  - id: mc_vol2
+    title: "Modernist Cuisine Vol 2 - Techniques and Equipment"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/Volume 2 - Techniques and Equipment.pdf"
+    type: pdf
+    toc_config: mc_toc.json
+
+  - id: mc_vol3
+    title: "Modernist Cuisine Vol 3 - Animals and Plants"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/Volume 3 - Animals and Plants.pdf"
+    type: pdf
+    toc_config: mc_toc.json
+
+  - id: mc_vol4
+    title: "Modernist Cuisine Vol 4 - Ingredients and Preparations"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/Volume 4 - Ingredients and Preparations.pdf"
+    type: pdf
+    toc_config: mc_toc.json
+
+  - id: mc_vol1
+    title: "Modernist Cuisine Vol 1 - History and Fundamentals"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/volume-1-History+and+Fundamentals.epub"
+    type: epub
+    toc_config: mc_toc.json

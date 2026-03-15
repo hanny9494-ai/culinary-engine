@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 数据文件（不进仓库，太大）
+*.jsonl
+*.json
+!config/*.json
+!config/*.yaml
+!package.json
+
+# 输出目录
+output/
+data/
+
+# 环境变量
+.env
+.env.local
+
+# MinerU临时文件
+mineru_parts/
+pages_150dpi/
+*.pdf
