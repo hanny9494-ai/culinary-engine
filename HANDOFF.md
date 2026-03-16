@@ -83,3 +83,15 @@ thermal_dynamics, mass_transfer, texture_rheology
 6. Neo4j入库时做跨书实体对齐
 7. 外部数据源ETL直接导入，不走蒸馏pipeline
 8. 中英食材名映射表建一次后所有数据源共用
+
+### P2: 配方蒸馏pipeline设计（L0稳定后）
+- Schema定义: docs/recipe_schema_v1.md
+- ISA-88三段分离: process/formula/equipment
+- 蒸馏顺序: 先Basic Recipes章节→再正文菜式
+- LLM三级递进: 9b判断是否配方→27b提取结构化JSON→Opus校验L0
+- 模糊量词必须转数字，只有to_taste允许null
+
+### 架构v4讨论记录
+- 文档: docs/arch_discussion_v4_20260316.docx
+- 方向: 多维因果图谱+审美驱动+多Agent
+- 状态: 设计讨论完成，等P0-P3走通后实施
