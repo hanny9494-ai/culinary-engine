@@ -7,7 +7,7 @@ claude:
   api_key: "${L0_API_KEY}"
   models:
     distill: "claude-opus-4.6"      # Stage3 蒸馏
-    causal: "claude-sonnet-4-6"     # Stage3B 因果链（省成本）
+    causal: "claude-sonnet-4-6"
     scan: "claude-sonnet-4-6"       # 补题扫描
   timeout_sec: 90
   max_retries: 3

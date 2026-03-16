@@ -31,3 +31,9 @@ books:
     path: "/Users/jeff/Documents/厨书数据库/工具科学书/volume-1-History+and+Fundamentals.epub"
     type: epub
     toc_config: mc_toc.json
+
+  - id: ice_cream_flavor
+    title: "冰淇淋风味学"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/冰淇淋风味学.pdf"
+    type: pdf
+    toc_config: null
