@@ -174,3 +174,28 @@ export L0_API_KEY="..."
 - 新仓库: https://github.com/hanny9494-ai/culinary-engine
 - 旧仓库（参考）: https://github.com/hanny9494-ai/L0-systerm
 - 本地数据: ~/l0-knowledge-engine/
+
+---
+
+## 架构演变讨论（v4方向，未实施）
+
+> 详见 docs/arch_discussion_v4_20260316.docx
+
+**当前执行：v3线性架构（不变）**
+**终局方向：多维因果图谱 + 审美驱动 + 多Agent**
+
+关键决策：
+1. 先线性走通P0→P3，再升级P4多维重构
+2. 审美层是需求驱动源（Goal节点动态组合）
+3. 多Agent分工：诊断/创作/优化/知识/替换
+4. 1159条原理中627条causal_chain已含因果边，入库时结构化解析即可
+5. 配方Schema采用ISA-88三段分离：process/formula/equipment
+
+## 配方Schema v1（ISA-88三段分离）
+
+> 详见 docs/recipe_schema_v1.md
+
+SubRecipe = process（做什么）+ formula（配多少）+ equipment（用什么）
+Recipe = components + main_ingredients + garnish + refs + assembly
+
+已验证：French Laundry / Tsuji / EMP / 手写粤菜 / 手写fusion 五种配方格式
