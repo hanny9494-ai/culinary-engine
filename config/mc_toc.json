@@ -144,5 +144,283 @@
         "ACHIEVING CONSISTENCY"
       ]
     }
+  ],
+  "ice_cream_flavor": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "什麼是冰淇淋",
+      "sections": [
+        "冰淇淋的歷史",
+        "認識義式冰淇淋",
+        "義式冰淇淋的固體組成",
+        "糖",
+        "脂肪",
+        "其他固形物"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "冰淇淋的製作流程",
+      "sections": [
+        "STEP 01",
+        "STEP 02",
+        "STEP 03"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Gelato & Sorbet 基礎作法",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "冰淇淋的配方計算",
+      "sections": [
+        "固體和水分的關係",
+        "Sorbet 的平衡",
+        "Gelato 的平衡"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "空氣的打發率計算",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "糖的轉換",
+      "sections": [
+        "糖度 Brix",
+        "有感糖是什麼",
+        "配方中有感糖的計算"
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "油脂的轉換",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "其他冰品介紹",
+      "sections": [
+        "凍糕",
+        "鑽石冰",
+        "素食冰淇淋",
+        "霜淇淋"
+      ]
+    }
+  ],
+  "salt_fat_acid_heat": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "Salt",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Fat",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Acid",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Heat",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "What to Cook",
+      "sections": []
+    }
+  ],
+  "neurogastronomy": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "The Revolution in Smell and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Dogs, Humans, and Retronasal Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "How the Mouth Fools the Brain",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "The Molecules of Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Smell Receptors for Smell Molecules",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Forming a Sensory Image",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Images of Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "A Smell Is Like a Face",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Pointillist Images of Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Enhancing the Image",
+      "sections": []
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Creating, Learning, and Remembering Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "Smell and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 13,
+      "chapter_title": "Taste and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "Mouth-Sense and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "Seeing and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "Hearing and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 17,
+      "chapter_title": "The Muscles of Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 18,
+      "chapter_title": "Putting It Together: The Human Brain Flavor System",
+      "sections": []
+    },
+    {
+      "chapter_num": 19,
+      "chapter_title": "Flavor and Emotions",
+      "sections": []
+    },
+    {
+      "chapter_num": 20,
+      "chapter_title": "Flavor and Memory",
+      "sections": []
+    },
+    {
+      "chapter_num": 21,
+      "chapter_title": "Flavor and Obesity",
+      "sections": []
+    },
+    {
+      "chapter_num": 22,
+      "chapter_title": "Decisions and the Neuroeconomics of Flavor and Nutrition",
+      "sections": []
+    },
+    {
+      "chapter_num": 23,
+      "chapter_title": "Plasticity in the Human Brain Flavor System",
+      "sections": []
+    },
+    {
+      "chapter_num": 24,
+      "chapter_title": "Smell, Flavor, and Language",
+      "sections": []
+    },
+    {
+      "chapter_num": 25,
+      "chapter_title": "Smell, Flavor, and Consciousness",
+      "sections": []
+    },
+    {
+      "chapter_num": 26,
+      "chapter_title": "Smell and Flavor in Human Evolution",
+      "sections": []
+    },
+    {
+      "chapter_num": 27,
+      "chapter_title": "Why Flavor Matters",
+      "sections": []
+    }
+  ],
+  "mc_vol1": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "THE HISTORY OF COOKING",
+      "sections": [
+        "DISCOVERING FIRE",
+        "AGRICULTURE AND ANIMAL HUSBANDRY",
+        "THE SCIENCE OF COOKING"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "THE PHYSICS OF FOOD AND WATER",
+      "sections": [
+        "HEAT AND ENERGY",
+        "WATER",
+        "OILS AND FATS"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "THE PHYSICS OF COOKING",
+      "sections": [
+        "HEAT TRANSFER",
+        "FOOD ABOVE THE BOILING POINT",
+        "FOOD BELOW THE BOILING POINT"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "THE CHEMISTRY OF FOOD AND FLAVOR",
+      "sections": [
+        "THE MAILLARD REACTION",
+        "CARAMELIZATION",
+        "ENZYMES",
+        "FLAVOR AND AROMA"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "THE MICROBIOLOGY OF FOOD",
+      "sections": [
+        "FOOD SAFETY",
+        "FERMENTATION",
+        "FOOD PRESERVATION"
+      ]
+    }
   ]
 }
