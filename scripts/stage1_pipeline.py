@@ -253,18 +253,18 @@ def infer_resume_status(book: BookSpec, output_dir: Path) -> str:
         and len(stage1_failures_data) == 0
     ):
         return "completed"
+    # step4_done 要求 step4_quality.json 存在且通过质检
     if (
         isinstance(chunks_raw_data, list)
         and len(chunks_raw_data) > 0
-        and (
-            not step4_quality
-            or (
-                int(step4_quality.get("total_chunks") or 0) == len(chunks_raw_data)
-                and int(step4_quality.get("lt50_chars") or 0) == 0
-            )
-        )
+        and step4_quality
+        and int(step4_quality.get("total_chunks") or 0) == len(chunks_raw_data)
+        and int(step4_quality.get("lt50_chars") or 0) == 0
     ):
         return "step4_done"
+    # chunks_raw存在但没有step4_quality → Step4未完成，回退到step3_done
+    if isinstance(chunks_raw_data, list) and len(chunks_raw_data) > 0 and not step4_quality:
+        return "step3_done"
     if (output_dir / "raw_merged.md").exists():
         return "step3_done"
     if (output_dir / "raw_vision.json").exists():
@@ -777,7 +777,24 @@ def split_markdown_into_chapters(markdown_text: str) -> list[Chapter]:
         if text and len(text) > 200:
             chapters.append(Chapter(idx + 1, title, title, next_title, text))
 
-    return chapters or [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]
+    # 超大章节二次切分
+    MAX_AUTO_CHAPTER_CHARS = 15000
+    final = []
+    for ch in (chapters or [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]):
+        if len(ch.text) <= MAX_AUTO_CHAPTER_CHARS:
+            final.append(ch)
+        else:
+            subs = split_chapter_text_for_model(ch.text, max_chars=MAX_AUTO_CHAPTER_CHARS)
+            for si, seg in enumerate(subs):
+                if seg.strip() and len(seg.strip()) > 200:
+                    final.append(Chapter(
+                        ch.chapter_num,
+                        f"{ch.chapter_title} (part {si+1})",
+                        ch.chapter_start if si == 0 else f"{ch.chapter_title} part {si+1}",
+                        ch.chapter_end if si == len(subs) - 1 else f"{ch.chapter_title} part {si+2}",
+                        seg.strip(),
+                    ))
+    return final or [Chapter(1, "Full Text", "Start of book", "End of book", stripped)]
 
 
 def sanitize_chunk_text(text: str) -> str:
@@ -1048,8 +1065,33 @@ def split_segment_with_qwen(chapter: Chapter, segment_text: str, split_model: st
     return [sanitized_segment]
 
 
+def split_chapter_locally(chapter_text: str, max_chars: int = 4500) -> list[str]:
+    chapter_segments = split_chapter_text_for_model(chapter_text, max_chars=max_chars)
+    combined_chunks: list[str] = []
+    for segment_text in chapter_segments:
+        sanitized_segment = sanitize_chunk_text(segment_text)
+        if not sanitized_segment:
+            continue
+        local_chunks = split_oversized_chunk(sanitized_segment, max_words=220, max_cjk=360)
+        if local_chunks:
+            combined_chunks.extend(local_chunks)
+        else:
+            combined_chunks.append(sanitized_segment)
+    return normalize_chunk_sizes(combined_chunks)
+
+
+MAX_CHAPTER_CHARS_FOR_MODEL = 12000  # 超过12000字的章节走本地切分，避免qwen 2b超时
+
+
 def split_chapter_with_model(book: BookSpec, chapter: Chapter, split_model: str, dry_run: bool) -> list[str]:
+    # 超大章节直接走本地规则切分，不调qwen
+    if len(chapter.text) > MAX_CHAPTER_CHARS_FOR_MODEL:
+        return normalize_chunk_sizes(
+            split_chapter_text_for_model(chapter.text, max_chars=4500)
+        )
     chapter_segments = split_chapter_text_for_model(chapter.text)
+    if len(chapter_segments) >= 5:
+        return split_chapter_locally(chapter.text)
     combined_chunks: list[str] = []
     total_segments = len(chapter_segments)
     for idx, chapter_segment_text in enumerate(chapter_segments, start=1):
@@ -1108,6 +1150,36 @@ def repair_short_step4_chunks(chunks: list[dict[str, Any]], min_chars: int = 150
     for new_idx, item in enumerate(repaired):
         item["chunk_idx"] = new_idx
     return repaired
+
+
+def check_vision_coverage(output_dir: Path, warn_threshold: float = 0.95) -> None:
+    """检查vision识别覆盖率，缺页>5%则警告并报错。"""
+    vision_path = output_dir / "raw_vision.json"
+    if not vision_path.exists():
+        return  # 没有vision需求的书跳过
+
+    data = load_json(vision_path, {"pages": [], "target_pages": []})
+    target = set(data.get("target_pages", []))
+    actual = set(
+        p.get("page_num", p.get("pdf_page_num", 0))
+        for p in data.get("pages", [])
+    )
+
+    if not target:
+        return
+
+    coverage = len(actual & target) / len(target)
+    missing = sorted(target - actual)
+
+    if coverage < warn_threshold:
+        print(f"⚠️ Vision覆盖率 {coverage:.1%} 低于阈值 {warn_threshold:.0%}")
+        print(f"   缺失页: {missing[:20]}{'...' if len(missing) > 20 else ''}")
+        raise PipelineError(
+            f"Vision覆盖率不足: {len(actual)}/{len(target)} ({coverage:.1%}). "
+            f"请先补跑Step2再继续。缺失页: {missing[:10]}"
+        )
+    elif missing:
+        print(f"  Vision覆盖率 {coverage:.1%}，缺失{len(missing)}页: {missing[:10]}")
 
 
 def run_step4_chunk(
@@ -1390,6 +1462,9 @@ def main() -> int:
                 save_json(output_dir / "raw_merge_report.json", {"merged_at": now_iso()})
             write_progress(output_dir, book, "step3_done")
         elif step == 4:
+            # Step2.5: Vision覆盖率检查
+            if not args.dry_run:
+                check_vision_coverage(output_dir)
             _, total_chunks = run_step4_chunk(book, output_dir, toc_config, split_model, args.dry_run, args.watchdog)
             if total_chunks > 0 or args.dry_run:
                 write_progress(output_dir, book, "step4_done")
