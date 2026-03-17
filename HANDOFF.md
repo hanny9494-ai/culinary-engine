@@ -1,99 +1,130 @@
-# 餐饮研发引擎 — 子对话启动模板
+# Agent交接文档
 
-## 通用前置步骤
-```bash
-git clone https://github.com/hanny9494-ai/culinary-engine.git
-cd culinary-engine
-cat STATUS.md
+> 最后更新: 2026-03-18
+> 母对话维护此文件
+
+---
+
+## 当前活跃任务
+
+### Stage2 匹配（进行中）
+- 7本新书 13,824 chunks × 306题
+- Embedding: Ollama qwen3-embedding:8b（本地）
+- threshold: 0.48
+- 冰淇淋(217 chunks)等7本完成后单独跑，然后全量蒸馏
+
+### 全量 Stage3 蒸馏（待启动）
+- 等 Stage2 全部完成（含冰淇淋）
+- 306题全量重跑，Claude Opus 4.6
+- 预计费用 ~$25，时间 ~1小时
+- 接 Stage3B 因果链增强 ~$5-8，~1小时
+
+---
+
+## 已完成任务
+
+### ✅ 阶段B — 1,159条原理domain→17域
+- 已刷新完成
+
+### ✅ 第二批4本 TOC + Stage1 重跑
+- TOC配置已写入 mc_toc.json
+- pipeline加了TOC强制检查（auto-chapter-split已禁用）
+- 质量报告：summary/topics 100%覆盖，chunk大小正常
+- 已知问题：TOC heading匹配偏移（不影响Stage2/3）
+
+### ✅ 第一批4本 Stage1
+- Neurogastronomy 613 / SFAH 1,055 / MC Vol1 2,148 / 冰淇淋 217
+
+### ✅ 第零批 Stage1-3B
+- OFC 303条 + MC 294条 = 597条 → 1,159条原子命题
+
+---
+
+## 蒸馏完成后任务队列
+
+### P2: 补题
+- scan_low_hit 扫描知识盲区 → candidate_questions.json → 人工审核
+- mass_transfer: 当前4题，补到10-12题
+- oxidation_reduction: 当前5题，补到10-12题
+- 补题后增量蒸馏（--append模式）
+
+### P2: 195条fallback confidence补刷
+- 重新解析JSON，不重新蒸馏
+
+### P2: 外部数据源ETL（第一批）
+- FoodAtlas → L2a+FT (GitHub TSV)
+- FlavorGraph → FT (GitHub pickle/CSV)
+- FooDB → L2a (CSV下载)
+- USDA API → L2a+L2c (JSON API)
+- 均不需要蒸馏，写ETL脚本直接导入
+- 最大工作量: 中英食材名映射表
+
+### P3: 存储层
+- Neo4j 搭建 + 实体对齐（原子命题入图谱）
+- Weaviate 填充（embedding检索）
+
+### P3: 补题第二轮
+- scan_low_hit 发现新知识盲区
+- 外部数据源第二批ETL（FlavorDB2+FoodOn）
+
+### P4: 终局架构
+- 双RAG原型 + L3推理引擎 + v4多Agent
+- 详见 docs/arch_discussion_v4_20260316.docx
+
+---
+
+## 关键文件路径
+
+| 文件 | 路径 | 说明 |
+|------|------|------|
+| v2题库 | data/l0_question_master_v2.json | 306题17域 ✅ |
+| v1题库(归档) | data/l0_question_master.json | 306题旧14域 |
+| domain映射 | data/question_domain_remap.json | 旧→新域变更记录 |
+| Stage3B原子命题 | data/stage3b/l0_principles_v2.jsonl | 1,159条 |
+| 合并原理(Stage3B前) | data/stage3b/l0_principles_all.jsonl | 597条 |
+| OFC原理 | ~/l0-knowledge-engine/output/stage3/l0_principles_fixed.jsonl | 303条 |
+| MC原理 | ~/l0-knowledge-engine/output/stage3_mc/l0_principles.jsonl | 294条 |
+| API配置 | config/api.yaml | |
+| 书目注册 | config/books.yaml | 11本书已注册 |
+| 17域定义 | config/domains_v2.json | |
+| TOC配置 | config/mc_toc.json | 11本书全部有TOC |
+
+---
+
+## 17域列表
+
+```
+protein_science, carbohydrate, lipid_science, fermentation,
+food_safety, water_activity, enzyme, color_pigment,
+equipment_physics, maillard_caramelization, oxidation_reduction,
+salt_acid_chemistry, taste_perception, aroma_volatiles,
+thermal_dynamics, mass_transfer, texture_rheology
 ```
 
-## 跑一本新书的完整流程
-```bash
-python3 scripts/run_book.py \
-  --book-id <book_id> \
-  --output-root ~/l0-knowledge-engine/output \
-  --questions ~/l0-knowledge-engine/data/l0_question_master.json \
-  --config config/api.yaml \
-  --books config/books.yaml \
-  --toc config/mc_toc.json \
-  --domains config/domains_v2.json
-```
+---
 
-## 单独跑某个 Stage
+## 技术决策速查
 
-Stage 1:
-```bash
-python3 scripts/stage1_pipeline.py \
-  --book-id <book_id> \
-  --output-dir ~/l0-knowledge-engine/output/<book_id>/stage1 \
-  --config config/api.yaml \
-  --books config/books.yaml \
-  --toc config/mc_toc.json
-```
+1. v2题库17域已生效，新任务一律用v2
+2. 旧原理domain标签已刷新（阶段B完成）
+3. OFC+MC双来源保留，不合并
+4. 新书必须先TOC检测→人工审阅→再跑Stage1（auto-chapter-split已禁用）
+5. Stage3B逐条独立跑，不需要跨书
+6. Neo4j入库时做跨书实体对齐
+7. 外部数据源ETL直接导入，不走蒸馏pipeline
+8. 中英食材名映射表建一次后所有数据源共用
+9. Ollama不能并发跑多本书，9b标注必须串行
+10. Ollama调用必须绕过http_proxy（trust_env=False）
+11. Stage2 embedding用Ollama qwen3-embedding:8b时threshold=0.48（Gemini时用0.70）
 
-Stage 2:
-```bash
-python3 scripts/stage2_match.py \
-  --chunks ~/l0-knowledge-engine/output/<book_a>/stage1/chunks_smart.json \
-           ~/l0-knowledge-engine/output/<book_b>/stage1/chunks_smart.json \
-  --questions ~/l0-knowledge-engine/data/l0_question_master.json \
-  --output ~/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --config config/api.yaml
-```
+### 配方蒸馏pipeline设计（L0稳定后）
+- Schema定义: docs/recipe_schema_v1.md
+- ISA-88三段分离: process/formula/equipment
+- 蒸馏顺序: 先Basic Recipes章节→再正文菜式
+- LLM三级递进: 9b判断是否配方→27b提取结构化JSON→Opus校验L0
+- 模糊量词必须转数字，只有to_taste允许null
 
-Stage 3:
-```bash
-python3 scripts/stage3_distill.py \
-  --matches ~/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --chunks ~/l0-knowledge-engine/output/stage3/merged_chunks.json \
-  --output-dir ~/l0-knowledge-engine/output/stage3 \
-  --config config/api.yaml \
-  --domains config/domains_v2.json \
-  --append
-```
-
-Stage 3B:
-```bash
-python3 scripts/stage3b_causal.py \
-  --input ~/l0-knowledge-engine/output/stage3/l0_principles.jsonl \
-  --matches ~/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --output ~/l0-knowledge-engine/output/stage3/l0_principles_v2.jsonl \
-  --report ~/l0-knowledge-engine/output/stage3/stage3b_report.txt \
-  --config config/api.yaml
-```
-
-## 常用参数
-- `--start-stage 2`：从 Stage 2 开始跑
-- `--stop-stage 3`：只跑到 Stage 3 停止
-- `--skip-stage1`：复用已有 chunks
-- `--dry-run`：只输出计划命令，不实际执行子进程
-
-## 质量门禁
-- Stage 1：`chunks_smart.json` 必须存在且 chunk 数量大于 0
-- Stage 2：`question_chunk_matches.json` 必须有记录；`match_rate <= 0.8` 仅警告
-- Stage 3：本次运行必须新增至少 1 条原理
-- Stage 3B：`l0_principles_v2.jsonl` 必须有记录
-- 汇总报告保存在 `output_root/run_report.json`
-
-## 环境变量
-```bash
-export MINERU_API_KEY=""
-export DASHSCOPE_API_KEY=""
-export GEMINI_API_KEY=""
-export L0_API_ENDPOINT="http://1.95.142.151:3000"
-export L0_API_KEY="Bearer"
-```
-
-## 依赖清单
-- Python 3.10+
-- `requests`
-- `PyYAML`
-- MinerU API
-- DashScope / Qwen-VL
-- Gemini Embedding
-- Claude 代理 API
-
-## 常见排查
-- 如果当前仓库缺少 `scripts/stage1_pipeline.py` 或 `scripts/stage2_match.py`，`run_book.py` 在真实执行时会直接报缺失依赖；`--dry-run` 仍可用于检查命令拼装。
-- 如果 `--skip-stage1` 失败，先确认 `output_root` 下已经存在目标书的 `stage1/chunks_smart.json`。
-- 如果 Stage 3 映射不到 chunk，检查 `output_root/stage3/merged_chunks.json` 是否包含目标书的 chunk 记录。
+### 架构v4讨论记录
+- 文档: docs/arch_discussion_v4_20260316.docx
+- 方向: 多维因果图谱+审美驱动+多Agent
+- 状态: 设计讨论完成，等P0-P3走通后实施
