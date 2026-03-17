@@ -1,97 +1,114 @@
-# Agent交接文档
+# 子对话启动模板
 
-> 最后更新: 2026-03-16
-> 母对话维护此文件
-
----
-
-## 当前活跃任务
-
-### 冰淇淋风味学 Stage1（resume跑中）
-- book_id: ice_cream_flavor
-- 输出目录: ~/l0-knowledge-engine/output/ice_cream_flavor/
-- 128 chunks已落盘，从断点续跑
-- 注意: auto-chapter-split已修复，按heading自动切分
-
----
-
-## 下一步任务队列
-
-### P1: 阶段B — 1159条原理domain→17域
-- 输入: data/stage3b/l0_principles_v2.jsonl
-- 参照: data/question_domain_remap.json
-- 逻辑: 每条原理的question_id对应到remap表的new_domain
-
-### P1: 冰淇淋Stage2+3
-- 等Stage1完成后做
-- **必须用v2题库**: data/l0_question_master_v2.json（17域）
-- Stage2要合并已有OFC+MC chunks一起匹配
-
-### P2: 补题
-- mass_transfer: 当前4题，补到10-12题
-- oxidation_reduction: 当前5题，补到10-12题
-- Jeff审核后入库
-
-### P2: 外部数据源ETL（第一批）
-- FoodAtlas → L2a+FT (GitHub TSV)
-- FlavorGraph → FT (GitHub pickle/CSV)
-- FooDB → L2a (CSV下载)
-- USDA API → L2a+L2c (JSON API)
-- 均不需要蒸馏，写ETL脚本直接导入
-- 最大工作量: 中英食材名映射表
-
----
-
-## 关键文件路径
-
-| 文件 | 路径 | 说明 |
-|------|------|------|
-| v2题库 | data/l0_question_master_v2.json | 306题17域 ✅ |
-| v1题库(归档) | data/l0_question_master.json | 306题旧14域 |
-| domain映射 | data/question_domain_remap.json | 旧→新域变更记录 |
-| Stage3B原子命题 | data/stage3b/l0_principles_v2.jsonl | 1159条 |
-| 合并原理(Stage3B前) | data/stage3b/l0_principles_all.jsonl | 597条 |
-| Stage3B报告 | data/stage3b/stage3b_report.txt | |
-| OFC原理 | ~/l0-knowledge-engine/output/stage3/l0_principles_fixed.jsonl | 303条 |
-| MC原理 | ~/l0-knowledge-engine/output/stage3_mc/l0_principles.jsonl | 294条 |
-| API配置 | config/api.yaml | |
-| 书目注册 | config/books.yaml | |
-| 17域定义 | config/domains_v2.json | |
-| MC TOC | config/mc_toc.json | |
-
----
-
-## 17域列表
+## 通用前置步骤（每个子对话开头都加）
 
 ```
-protein_science, carbohydrate, lipid_science, fermentation,
-food_safety, water_activity, enzyme, color_pigment,
-equipment_physics, maillard_caramelization, oxidation_reduction,
-salt_acid_chemistry, taste_perception, aroma_volatiles,
-thermal_dynamics, mass_transfer, texture_rheology
+请先fetch以下文件获取项目状态和脚本：
+
+状态：https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/STATUS.md
+
+脚本（按需fetch）：
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/mineru_api.py
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/merge_mineru_qwen.py
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/qwen_vision_compare.py
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/stage3_distill.py
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/stage3_debug.py
 ```
 
 ---
 
-## 技术决策速查
+## 子对话4：MC Vol2 Stage 1（🔄 进行中）
 
-1. v2题库17域已生效，新任务一律用v2
-2. 旧原理不重新蒸馏，只刷domain标签（阶段B）
-3. OFC+MC双来源保留，不合并
-4. 无TOC书按heading自动切分（已修复）
-5. Stage3B逐条独立跑，不需要跨书
-6. Neo4j入库时做跨书实体对齐
-7. 外部数据源ETL直接导入，不走蒸馏pipeline
-8. 中英食材名映射表建一次后所有数据源共用
+```
+请先fetch：
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/STATUS.md
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/mineru_api.py
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/merge_mineru_qwen.py
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/qwen_vision_compare.py
 
-### P2: 配方蒸馏pipeline设计（L0稳定后）
-- Schema定义: docs/recipe_schema_v1.md
-- ISA-88三段分离: process/formula/equipment
-- 蒸馏顺序: 先Basic Recipes章节→再正文菜式
-- LLM三级递进: 9b判断是否配方→27b提取结构化JSON→Opus校验L0
-- 模糊量词必须转数字，只有to_taste允许null
+任务：MC Stage 1 - Vol 2 文本提取+切分+标注
 
-### 架构v4讨论记录
-- 文档: docs/arch_discussion_v4_20260316.docx
-- 方向: 多维因果图谱+审美驱动+多Agent
-- 状态: 设计讨论完成，等P0-P3走通后实施
+PDF: /Users/jeff/Documents/厨书数据库/工具科学书/Volume 2 - Techniques and Equipment.pdf
+
+Step 1: MinerU文字提取 + qwen-vl图片表格识别 → 合并为 raw_merged.md
+Step 2: qwen3.5:2b 切分（Ollama, options={"think": False}）
+Step 3: qwen3.5:9b 标注（topics/summary/chapter_num）
+
+合法topics: heat_transfer, chemical_reaction, physical_change, water_activity,
+            protein_science, lipid_science, carbohydrate, enzyme, flavor_sensory,
+            fermentation, food_safety, emulsion_colloid, color_pigment, equipment_physics
+
+输出: /Users/jeff/l0-knowledge-engine/output/mc/vol2/stage1/chunks_smart.json
+完成后汇报：总chunk数、topics分布、各步骤耗时
+```
+
+---
+
+## 子对话5：MC Vol3 Stage 1（⏳ 待开）
+
+```
+同子对话4，替换：
+PDF: /Users/jeff/Documents/厨书数据库/工具科学书/Volume 3 - Animals and Plants.pdf
+输出: /Users/jeff/l0-knowledge-engine/output/mc/vol3/stage1/chunks_smart.json
+```
+
+---
+
+## 子对话6：MC Vol4 Stage 1（⏳ 待开）
+
+```
+同子对话4，替换：
+PDF: /Users/jeff/Documents/厨书数据库/工具科学书/Volume 4 - Ingredients and Preparations.pdf
+输出: /Users/jeff/l0-knowledge-engine/output/mc/vol4/stage1/chunks_smart.json
+```
+
+---
+
+## 子对话7：MC Vol1 Stage 1（⏳ 待开，需先转PDF）
+
+```
+先转换：
+ebook-convert "/Users/jeff/Documents/厨书数据库/工具科学书/volume-1-History+and+Fundamentals.epub" \
+              "/Users/jeff/Documents/厨书数据库/工具科学书/Volume 1 - History and Fundamentals.pdf"
+
+然后同子对话4流程。
+输出: /Users/jeff/l0-knowledge-engine/output/mc/vol1/stage1/chunks_smart.json
+```
+
+---
+
+## 子对话8：MC Stage 2+3 蒸馏（⏳ 待开）
+
+```
+请先fetch：
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/STATUS.md
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/stage3_distill.py
+https://raw.githubusercontent.com/hanny9494-ai/L0-systerm/main/scripts/stage3_debug.py
+
+输入: /Users/jeff/l0-knowledge-engine/output/mc/vol*/stage1/chunks_smart.json
+问题母表: /Users/jeff/l0-knowledge-engine/data/l0_question_master.json
+API: http://1.95.142.151:3000，Authorization: Bearer，model: claude-opus-4.6
+输出: /Users/jeff/l0-knowledge-engine/output/mc/stage3/l0_principles.jsonl
+```
+
+---
+
+## 子对话9：OFC L1 Pipeline（⏳ 待开）
+
+```
+输入: /Users/jeff/l0-knowledge-engine/output/stage3/l0_principles_fixed.jsonl（303条L0原理）
+任务: 为每条L0原理生成3-5条L1实践知识
+API: http://1.95.142.151:3000，Authorization: Bearer，model: claude-opus-4.6
+
+L1 Schema:
+{
+  "l1_id": "L1-HT-001-01",
+  "l0_id": "L0-HT-001",
+  "practice": "实践描述",
+  "mechanism_link": "与L0的关联",
+  "application": "适用场景",
+  "boundary": "边界条件"
+}
+
+输出: /Users/jeff/l0-knowledge-engine/output/l1/l1_practices.jsonl
+```
