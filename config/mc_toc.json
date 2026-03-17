@@ -422,5 +422,361 @@
         "FOOD PRESERVATION"
       ]
     }
+  ],
+  "flavorama": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "Introduction: The Unbridled Science of Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Taste",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Flavor First",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Putting Patterns to Work",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "The Five(ish) Tastes",
+      "sections": [
+        "Salty",
+        "Sour",
+        "Sweet",
+        "Umami",
+        "Bitter",
+        "Spicy"
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Smell Patterns",
+      "sections": [
+        "Fruity",
+        "Vegetal",
+        "Spiced",
+        "Herbal",
+        "Meaty"
+      ]
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Concentrating Flavor",
+      "sections": [
+        "Juicing and Pressing",
+        "Removing Water",
+        "Drying"
+      ]
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Extracting and Infusing Flavor",
+      "sections": [
+        "Like Dissolves Like",
+        "Extracting with Fats",
+        "Extracting with Water",
+        "Vinegar and Alcohol"
+      ]
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Creating Flavor with Heat",
+      "sections": [
+        "Caramelization",
+        "Burning Charring Smoke",
+        "Maillard Reaction"
+      ]
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Creating Flavors with Fermentation",
+      "sections": [
+        "Making Vinegar",
+        "Lactic Fermentation",
+        "Fermenting with Fungi"
+      ]
+    }
+  ],
+  "science_of_spice": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "What is a Spice",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Spices and their Flavour Compounds",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Periodic Table of Spices",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Creating Spice Pairings and Blends",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Sweet Warming Phenols",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Warming Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Fragrant Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Earthy Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Penetrating Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Citrus Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Sweet-Sour Acids",
+      "sections": []
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "Fruity Aldehydes",
+      "sections": []
+    },
+    {
+      "chapter_num": 13,
+      "chapter_title": "Toasty Pyrazines",
+      "sections": []
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "Sulphurous Compounds",
+      "sections": []
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "Pungent Compounds",
+      "sections": []
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "Unique Compounds",
+      "sections": []
+    }
+  ],
+  "professional_baking": [
+    {
+      "chapter_num": 2,
+      "chapter_title": "Basic Professional Skills: Bakeshop Math and Food Safety",
+      "sections": [
+        "Food Safety and Sanitation",
+        "Food Hazards",
+        "HACCP System"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Baking and Pastry Equipment",
+      "sections": [
+        "Ovens",
+        "Mixers"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Ingredients",
+      "sections": [
+        "Wheat Flour",
+        "Other Flours and Starches",
+        "Sugars",
+        "Fats",
+        "Milk and Milk Products",
+        "Eggs",
+        "Leavening Agents",
+        "Gelling Agents",
+        "Chocolate and Cocoa"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Basic Baking Principles",
+      "sections": [
+        "Mixing and Gluten Development",
+        "The Baking Process",
+        "After Baking"
+      ]
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Understanding Yeast Doughs",
+      "sections": [
+        "Yeast Product Types",
+        "The 12 Steps of Yeast Dough Production"
+      ]
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "Basic Syrups Creams and Sauces",
+      "sections": [
+        "Sugar Cooking",
+        "Crystallization and Inversion",
+        "Whipped Cream",
+        "Meringue",
+        "Custard Sauces"
+      ]
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "Cake Mixing and Baking",
+      "sections": [
+        "Principles of Cake Mixing",
+        "Cake Formula Balance",
+        "Scaling Panning and Baking"
+      ]
+    },
+    {
+      "chapter_num": 20,
+      "chapter_title": "Frozen Desserts",
+      "sections": [
+        "Types of Frozen Dessert Products",
+        "Ice Cream Production",
+        "Sorbet Production"
+      ]
+    },
+    {
+      "chapter_num": 23,
+      "chapter_title": "Chocolate",
+      "sections": [
+        "Couverture",
+        "Tempering",
+        "Molding Chocolate"
+      ]
+    },
+    {
+      "chapter_num": 26,
+      "chapter_title": "Baking for Special Diets",
+      "sections": [
+        "Nutrition in the Bakeshop",
+        "Food Allergies and Intolerances",
+        "Ingredient Substitutions"
+      ]
+    }
+  ],
+  "mouthfeel": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "The Complex Universe of Taste and Flavor",
+      "sections": [
+        "The Mouth and the Nose",
+        "Mouthfeel: A Central Element",
+        "Astringency and Kokumi",
+        "Sensory Confusion",
+        "Interplay Between Mouthfeel and Other Sensory Impressions",
+        "Neurogastronomy: Flavor Is All in the Brain"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "What Makes Up Our Food",
+      "sections": [
+        "Food from the Tree of Life",
+        "Edible Molecules",
+        "Biological Soft Materials",
+        "Water: Both Stable and Versatile",
+        "Processed Food",
+        "Synthetic Food"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "The Physical Properties of Food",
+      "sections": [
+        "Structure and Texture",
+        "Foods as Solids Liquids and Gases",
+        "More Complex States",
+        "When Food Changes Form Structure and Texture"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Texture and Mouthfeel",
+      "sections": [
+        "When We Chew",
+        "What Is Texture",
+        "How to Describe Texture",
+        "Changing Texture"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Playing Around with Mouthfeel",
+      "sections": [
+        "Heat and Temperature",
+        "Starch",
+        "Emulsions and Emulsifiers",
+        "Gels and Gelation",
+        "Gums",
+        "Effect of Enzymes on Texture",
+        "Sugars in Food",
+        "Fats in Food",
+        "Textures of Milk",
+        "Amazing Eggs",
+        "Glassy Glossy Foods",
+        "Particles in Food",
+        "Bubbles in Food"
+      ]
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Making Further Inroads into the Universe of Texture",
+      "sections": [
+        "Legumes Soybeans and Sprouts",
+        "Vegetables with Bite",
+        "Grains and Seeds",
+        "Secrets of Sauces",
+        "Mouthfeel of Soups",
+        "Crispy Skin and Crunchy Bones",
+        "Frozen Desserts",
+        "Texture That Releases Big Bursts of Taste"
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Why Do We Like the Food That We Do",
+      "sections": [
+        "Enjoyment and Hedonism",
+        "Food and Taste Adventurousness",
+        "Texture and the Choice of Foods",
+        "The Perfect Meal"
+      ]
+    }
   ]
 }

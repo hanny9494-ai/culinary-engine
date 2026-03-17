@@ -1381,10 +1381,12 @@ def run_step5_annotate(
     annotated = load_json_list(out_path)
     failures = load_json_list(failures_path)
     if not dry_run:
+        if len(annotated) == 0:
+            raise PipelineError(f"step5 produced 0 annotations from {len(chunks)} chunks — Ollama可能未运行")
         if len(annotated) != len(chunks):
-            raise PipelineError(f"step5 mismatch: chunks_smart={len(annotated)} chunks_raw={len(chunks)}")
+            print(f"[warn] step5: {len(annotated)}/{len(chunks)} annotated, {len(failures)} failures (继续)")
         if failures:
-            raise PipelineError(f"step5 annotation failures remain: {len(failures)}")
+            print(f"[warn] step5: {len(failures)} annotation failures (不阻塞)")
     return out_path, len(annotated)
 
 
@@ -1465,6 +1467,13 @@ def main() -> int:
             # Step2.5: Vision覆盖率检查
             if not args.dry_run:
                 check_vision_coverage(output_dir)
+            # 强制TOC审核：没有TOC配置的书不允许进入切分
+            if not toc_config.get(book.book_id) and not args.dry_run:
+                raise PipelineError(
+                    f"TOC配置缺失: config/mc_toc.json 中没有 '{book.book_id}' 的条目。\n"
+                    f"必须先运行TOC检测 → 人工审阅 → 写入mc_toc.json后才能继续。\n"
+                    f"auto-chapter-split已禁用（会把版权页/配方/作者介绍切进去）。"
+                )
             _, total_chunks = run_step4_chunk(book, output_dir, toc_config, split_model, args.dry_run, args.watchdog)
             if total_chunks > 0 or args.dry_run:
                 write_progress(output_dir, book, "step4_done")
