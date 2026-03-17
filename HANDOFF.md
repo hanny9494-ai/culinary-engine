@@ -92,14 +92,11 @@
 ---
 
 ## 17域列表
-
-```
 protein_science, carbohydrate, lipid_science, fermentation,
 food_safety, water_activity, enzyme, color_pigment,
 equipment_physics, maillard_caramelization, oxidation_reduction,
 salt_acid_chemistry, taste_perception, aroma_volatiles,
 thermal_dynamics, mass_transfer, texture_rheology
-```
 
 ---
 
