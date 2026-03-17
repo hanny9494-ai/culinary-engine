@@ -89,8 +89,14 @@
 | MC Vol2 | 485 | 旧14域 | ✅ |
 | MC Vol3 | 502 | 旧14域 | ✅ |
 | MC Vol4 | 703 | 旧14域 | ✅ |
-| 冰淇淋风味学 | 128+ | 17域 | 🔄 Stage1跑中 |
-| **合计** | **3,245+** | | |
+| MC Vol1 | 2,148 | 17域 | ✅ |
+| Neurogastronomy | 613 | 17域 | ✅ |
+| Salt Fat Acid Heat | 1,055 | 17域 | ✅ |
+| Mouthfeel | 🔄 | 17域 | Stage1重跑中(有TOC) |
+| Flavorama | 🔄 | 17域 | Stage1重跑中(有TOC) |
+| Science of Spice | 🔄 | 17域 | Stage1重跑中(有TOC) |
+| Professional Baking | 🔄 | 17域 | Stage1重跑中(有TOC) |
+| **合计** | **6,933+** | | **目标10,000+** |
 
 ---
 
@@ -120,8 +126,10 @@
 6. **L0是裁判** — 食谱和外部信息必须经L0校验才入库
 7. **L6只翻译不判断** — 审美合理性判断在L3
 8. **查不到就问** — 不猜测，引导用户提供食材/工艺/口感目标
-9. **无TOC书按heading自动切分** — split_markdown_into_chapters已修复
+9. **新书必须先TOC检测→人工审阅→再跑Stage1** — auto-chapter-split已禁用（pipeline强制检查mc_toc.json）
 10. **外部数据源ETL导入不蒸馏** — FoodAtlas/FlavorGraph等直接导入Neo4j
+11. **Ollama不能并发跑多本书** — 9b标注必须串行，2b切分同理；MinerU/Vision(API)可并行
+12. **Ollama调用必须绕过http_proxy** — 本机有代理127.0.0.1:7890，ollama_client.py已用trust_env=False
 
 ---
 
