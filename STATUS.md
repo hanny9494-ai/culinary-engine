@@ -111,6 +111,8 @@
 10. Ollama串行，绕过http_proxy(trust_env=False)
 11. Stage2 Ollama embedding threshold=0.48
 12. 配方×L0映射融入Stage5提取
+15. Step2视觉识别默认启用smart_filter，只送table/equation/文字不足页，纯照片页跳过（Food Lab验证：768→233，省70%）
+16. Step5 9b标注新增chunk_type字段（science/recipe/mixed/narrative），第三批书开始生效，已有11本书不重跑
 
 ---
 

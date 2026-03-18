@@ -70,7 +70,8 @@ ANNOTATE_PROMPT_TEMPLATE = """你要为一个食品科学 chunk 生成检索用�
 只输出 JSON，格式必须是：
 {{
   "summary": "50字以内中文摘要",
-  "topics": ["allowed_topic_1", "allowed_topic_2"]
+  "topics": ["allowed_topic_1", "allowed_topic_2"],
+  "chunk_type": "science|recipe|mixed|narrative"
 }}
 
 Allowed topics:
@@ -82,6 +83,11 @@ Strict rules:
 - Choose 1-2 topics only.
 - Prefer the main mechanism, not peripheral mentions.
 - If uncertain, return the single most central topic.
+- chunk_type must be exactly one of: "science", "recipe", "mixed", "narrative".
+- Use "science" for mechanisms, causal explanations, parameter limits, experiments, or food science facts.
+- Use "recipe" for ingredient lists, formulas, procedures, or dish recipes.
+- Use "mixed" when science explanation and recipe/procedure content are both substantial.
+- Use "narrative" for history, anecdotes, biography, or non-technical storytelling.
 
 Chapter title: {chapter_title}
 Section range: {chapter_start} -> {chapter_end}
@@ -393,8 +399,9 @@ def load_part_entries(output_dir: Path) -> list[dict[str, Any]]:
     return load_json(output_dir / "mineru_parts_progress.json", {"parts": []}).get("parts", [])
 
 
-def build_visual_target_pages(output_dir: Path) -> list[int]:
+def build_visual_target_pages(output_dir: Path, smart_filter: bool = True) -> list[int]:
     target_pages: set[int] = set()
+    skipped_pages = 0
     for part in load_part_entries(output_dir):
         part_id = str(part.get("part_id") or "")
         md_path = Path(str(part.get("md_path") or ""))
@@ -413,8 +420,43 @@ def build_visual_target_pages(output_dir: Path) -> list[int]:
             actual_page = page_start + page_idx
             image_paths: list[str] = []
             collect_image_paths(page, image_paths)
-            if image_paths:
+            if not image_paths:
+                continue
+
+            if smart_filter:
+                blocks = page.get("preproc_blocks", [])
+                text_len = 0
+                has_table = False
+                has_equation = False
+                if isinstance(blocks, list):
+                    for block in blocks:
+                        if not isinstance(block, dict):
+                            continue
+                        block_type = str(block.get("type") or "")
+                        if block_type == "table":
+                            has_table = True
+                        elif block_type in {"interline_equation", "equation"}:
+                            has_equation = True
+                        for line in block.get("lines", []) or []:
+                            if not isinstance(line, dict):
+                                continue
+                            for span in line.get("spans", []) or []:
+                                if not isinstance(span, dict):
+                                    continue
+                                text_len += len(str(span.get("content", "")))
+
+                if has_table or has_equation or text_len < 200:
+                    target_pages.add(actual_page)
+                else:
+                    skipped_pages += 1
+            else:
                 target_pages.add(actual_page)
+
+    if smart_filter and skipped_pages:
+        print(
+            f"Smart filter: {len(target_pages)} pages need vision, {skipped_pages} skipped (text sufficient)",
+            flush=True,
+        )
     return sorted(target_pages)
 
 
@@ -1291,9 +1333,14 @@ def refine_annotation_topics(chunk_text: str, topics: list[str]) -> list[str]:
     return refined[:2] if refined else topics[:1]
 
 
+def normalize_chunk_type(value: Any) -> str | None:
+    chunk_type = str(value or "").strip().lower()
+    return chunk_type if chunk_type in {"science", "recipe", "mixed", "narrative"} else None
+
+
 def annotate_chunk(chunk: dict[str, Any], annotate_model: str, valid_topics: list[str], dry_run: bool) -> dict[str, Any]:
     if dry_run:
-        return {"summary": "dry-run 摘要", "topics": valid_topics[:1]}
+        return {"summary": "dry-run 摘要", "topics": valid_topics[:1], "chunk_type": None}
     prompt = ANNOTATE_PROMPT_TEMPLATE.format(
         topics=", ".join(valid_topics),
         chapter_title=chunk.get("chapter_title", ""),
@@ -1305,11 +1352,16 @@ def annotate_chunk(chunk: dict[str, Any], annotate_model: str, valid_topics: lis
     parsed = extract_json_object(raw)
     summary = str(parsed.get("summary") or "").strip()
     topics = [str(item).strip() for item in parsed.get("topics") or [] if str(item).strip() in valid_topics]
+    chunk_type = normalize_chunk_type(parsed.get("chunk_type"))
     if not summary:
         raise PipelineError("Missing summary in annotation response")
     if not topics:
         raise PipelineError("Missing valid topics in annotation response")
-    return {"summary": summary[:50], "topics": refine_annotation_topics(chunk["full_text"], topics)}
+    return {
+        "summary": summary[:50],
+        "topics": refine_annotation_topics(chunk["full_text"], topics),
+        "chunk_type": chunk_type,
+    }
 
 
 def run_step5_annotate(
