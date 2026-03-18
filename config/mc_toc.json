@@ -1,0 +1,782 @@
+{
+  "mc_vol2": [
+    {
+      "chapter_num": 7,
+      "chapter_title": "TRADITIONAL COOKING",
+      "sections": [
+        "GRILLING",
+        "BROILING",
+        "ROASTING",
+        "PANFRYING A LA PLANCHA",
+        "SAUTEING",
+        "STIR-FRYING",
+        "COVERED SAUTEING",
+        "BOILING",
+        "STEAMING",
+        "CANNING",
+        "POT-ROASTING AND STEWING",
+        "BAKING",
+        "COOKING IN OIL",
+        "SMOKING"
+      ]
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "COOKING IN MODERN OVENS",
+      "sections": [
+        "COOKING WITH MOIST AIR",
+        "COOKING WITH MICROWAVES"
+      ]
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "COOKING SOUS VIDE",
+      "sections": [
+        "WHY SOUS VIDE",
+        "PACKAGING FOOD FOR SOUS VIDE",
+        "SOUS VIDE EQUIPMENT",
+        "STRATEGIES FOR COOKING SOUS VIDE",
+        "STRATEGIES FOR CHILLING AND REHEATING",
+        "BLANCHING AND SEARING FOR SOUS VIDE"
+      ]
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "THE MODERNIST KITCHEN",
+      "sections": [
+        "EXTRACTING FLAVORS",
+        "INFUSING ESSENCES",
+        "JUICING",
+        "FILTERING",
+        "CONCENTRATE",
+        "CUTTING EM DOWN TO SIZE",
+        "DRYING",
+        "CRYOGENIC FREEZING AND CARBONATING"
+      ]
+    }
+  ],
+  "mc_vol3": [
+    {
+      "chapter_num": 11,
+      "chapter_title": "MEAT AND SEAFOOD",
+      "sections": [
+        "HOW MUSCLE WORKS",
+        "CONVERTING MUSCLE INTO MEAT",
+        "CUTTING",
+        "COOKING MEAT AND SEAFOOD",
+        "COOKING SKIN AND INNARDS",
+        "SALTING AND DRYING",
+        "MARINATING",
+        "SMOKING",
+        "RESTRUCTURING"
+      ]
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "PLANT FOODS",
+      "sections": [
+        "PLANTS AS FOOD",
+        "COOKING SOUS VIDE",
+        "PRESSURE-COOKING",
+        "MICROWAVING",
+        "FRYING",
+        "PRESERVING",
+        "MODIFYING TEXTURES"
+      ]
+    }
+  ],
+  "mc_vol4": [
+    {
+      "chapter_num": 13,
+      "chapter_title": "THICKENERS",
+      "sections": [
+        "HOW THICKENING WORKS",
+        "STRATEGIES FOR THICKENING",
+        "STARCHES",
+        "HYDROCOLLOIDS"
+      ]
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "GELS",
+      "sections": [
+        "HOW GELLING WORKS",
+        "EGG GELS",
+        "DAIRY AND TOFU GELS",
+        "GELLING WITH HYDROCOLLOIDS",
+        "FLUID GELS",
+        "SPHERIFICATION"
+      ]
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "EMULSIONS",
+      "sections": [
+        "HOW EMULSIFICATION WORKS",
+        "METHODS OF EMULSIFYING",
+        "MODERNIST EMULSIONS"
+      ]
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "FOAMS",
+      "sections": [
+        "HOW FOAMS WORK",
+        "FORMING FOAMS"
+      ]
+    },
+    {
+      "chapter_num": 17,
+      "chapter_title": "WINE",
+      "sections": [
+        "WHAT MAKES A GREAT WINE",
+        "TASTING WINE"
+      ]
+    },
+    {
+      "chapter_num": 18,
+      "chapter_title": "COFFEE",
+      "sections": [
+        "FROM CHERRY TO BEAN",
+        "BREWING",
+        "ESPRESSO",
+        "THE ART OF MILK AND COFFEE",
+        "ACHIEVING CONSISTENCY"
+      ]
+    }
+  ],
+  "ice_cream_flavor": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "什麼是冰淇淋",
+      "sections": [
+        "冰淇淋的歷史",
+        "認識義式冰淇淋",
+        "義式冰淇淋的固體組成",
+        "糖",
+        "脂肪",
+        "其他固形物"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "冰淇淋的製作流程",
+      "sections": [
+        "STEP 01",
+        "STEP 02",
+        "STEP 03"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Gelato & Sorbet 基礎作法",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "冰淇淋的配方計算",
+      "sections": [
+        "固體和水分的關係",
+        "Sorbet 的平衡",
+        "Gelato 的平衡"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "空氣的打發率計算",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "糖的轉換",
+      "sections": [
+        "糖度 Brix",
+        "有感糖是什麼",
+        "配方中有感糖的計算"
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "油脂的轉換",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "其他冰品介紹",
+      "sections": [
+        "凍糕",
+        "鑽石冰",
+        "素食冰淇淋",
+        "霜淇淋"
+      ]
+    }
+  ],
+  "salt_fat_acid_heat": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "Salt",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Fat",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Acid",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Heat",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "What to Cook",
+      "sections": []
+    }
+  ],
+  "neurogastronomy": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "The Revolution in Smell and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Dogs, Humans, and Retronasal Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "How the Mouth Fools the Brain",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "The Molecules of Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Smell Receptors for Smell Molecules",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Forming a Sensory Image",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Images of Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "A Smell Is Like a Face",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Pointillist Images of Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Enhancing the Image",
+      "sections": []
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Creating, Learning, and Remembering Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "Smell and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 13,
+      "chapter_title": "Taste and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "Mouth-Sense and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "Seeing and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "Hearing and Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 17,
+      "chapter_title": "The Muscles of Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 18,
+      "chapter_title": "Putting It Together: The Human Brain Flavor System",
+      "sections": []
+    },
+    {
+      "chapter_num": 19,
+      "chapter_title": "Flavor and Emotions",
+      "sections": []
+    },
+    {
+      "chapter_num": 20,
+      "chapter_title": "Flavor and Memory",
+      "sections": []
+    },
+    {
+      "chapter_num": 21,
+      "chapter_title": "Flavor and Obesity",
+      "sections": []
+    },
+    {
+      "chapter_num": 22,
+      "chapter_title": "Decisions and the Neuroeconomics of Flavor and Nutrition",
+      "sections": []
+    },
+    {
+      "chapter_num": 23,
+      "chapter_title": "Plasticity in the Human Brain Flavor System",
+      "sections": []
+    },
+    {
+      "chapter_num": 24,
+      "chapter_title": "Smell, Flavor, and Language",
+      "sections": []
+    },
+    {
+      "chapter_num": 25,
+      "chapter_title": "Smell, Flavor, and Consciousness",
+      "sections": []
+    },
+    {
+      "chapter_num": 26,
+      "chapter_title": "Smell and Flavor in Human Evolution",
+      "sections": []
+    },
+    {
+      "chapter_num": 27,
+      "chapter_title": "Why Flavor Matters",
+      "sections": []
+    }
+  ],
+  "mc_vol1": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "THE HISTORY OF COOKING",
+      "sections": [
+        "DISCOVERING FIRE",
+        "AGRICULTURE AND ANIMAL HUSBANDRY",
+        "THE SCIENCE OF COOKING"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "THE PHYSICS OF FOOD AND WATER",
+      "sections": [
+        "HEAT AND ENERGY",
+        "WATER",
+        "OILS AND FATS"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "THE PHYSICS OF COOKING",
+      "sections": [
+        "HEAT TRANSFER",
+        "FOOD ABOVE THE BOILING POINT",
+        "FOOD BELOW THE BOILING POINT"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "THE CHEMISTRY OF FOOD AND FLAVOR",
+      "sections": [
+        "THE MAILLARD REACTION",
+        "CARAMELIZATION",
+        "ENZYMES",
+        "FLAVOR AND AROMA"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "THE MICROBIOLOGY OF FOOD",
+      "sections": [
+        "FOOD SAFETY",
+        "FERMENTATION",
+        "FOOD PRESERVATION"
+      ]
+    }
+  ],
+  "flavorama": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "Introduction: The Unbridled Science of Flavor",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Taste",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Smell",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Flavor First",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Putting Patterns to Work",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "The Five(ish) Tastes",
+      "sections": [
+        "Salty",
+        "Sour",
+        "Sweet",
+        "Umami",
+        "Bitter",
+        "Spicy"
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Smell Patterns",
+      "sections": [
+        "Fruity",
+        "Vegetal",
+        "Spiced",
+        "Herbal",
+        "Meaty"
+      ]
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Concentrating Flavor",
+      "sections": [
+        "Juicing and Pressing",
+        "Removing Water",
+        "Drying"
+      ]
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Extracting and Infusing Flavor",
+      "sections": [
+        "Like Dissolves Like",
+        "Extracting with Fats",
+        "Extracting with Water",
+        "Vinegar and Alcohol"
+      ]
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Creating Flavor with Heat",
+      "sections": [
+        "Caramelization",
+        "Burning Charring Smoke",
+        "Maillard Reaction"
+      ]
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Creating Flavors with Fermentation",
+      "sections": [
+        "Making Vinegar",
+        "Lactic Fermentation",
+        "Fermenting with Fungi"
+      ]
+    }
+  ],
+  "science_of_spice": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "What is a Spice",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Spices and their Flavour Compounds",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Periodic Table of Spices",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Creating Spice Pairings and Blends",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Sweet Warming Phenols",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Warming Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Fragrant Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Earthy Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Penetrating Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Citrus Terpenes",
+      "sections": []
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Sweet-Sour Acids",
+      "sections": []
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "Fruity Aldehydes",
+      "sections": []
+    },
+    {
+      "chapter_num": 13,
+      "chapter_title": "Toasty Pyrazines",
+      "sections": []
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "Sulphurous Compounds",
+      "sections": []
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "Pungent Compounds",
+      "sections": []
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "Unique Compounds",
+      "sections": []
+    }
+  ],
+  "professional_baking": [
+    {
+      "chapter_num": 2,
+      "chapter_title": "Basic Professional Skills: Bakeshop Math and Food Safety",
+      "sections": [
+        "Food Safety and Sanitation",
+        "Food Hazards",
+        "HACCP System"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Baking and Pastry Equipment",
+      "sections": [
+        "Ovens",
+        "Mixers"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Ingredients",
+      "sections": [
+        "Wheat Flour",
+        "Other Flours and Starches",
+        "Sugars",
+        "Fats",
+        "Milk and Milk Products",
+        "Eggs",
+        "Leavening Agents",
+        "Gelling Agents",
+        "Chocolate and Cocoa"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Basic Baking Principles",
+      "sections": [
+        "Mixing and Gluten Development",
+        "The Baking Process",
+        "After Baking"
+      ]
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Understanding Yeast Doughs",
+      "sections": [
+        "Yeast Product Types",
+        "The 12 Steps of Yeast Dough Production"
+      ]
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "Basic Syrups Creams and Sauces",
+      "sections": [
+        "Sugar Cooking",
+        "Crystallization and Inversion",
+        "Whipped Cream",
+        "Meringue",
+        "Custard Sauces"
+      ]
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "Cake Mixing and Baking",
+      "sections": [
+        "Principles of Cake Mixing",
+        "Cake Formula Balance",
+        "Scaling Panning and Baking"
+      ]
+    },
+    {
+      "chapter_num": 20,
+      "chapter_title": "Frozen Desserts",
+      "sections": [
+        "Types of Frozen Dessert Products",
+        "Ice Cream Production",
+        "Sorbet Production"
+      ]
+    },
+    {
+      "chapter_num": 23,
+      "chapter_title": "Chocolate",
+      "sections": [
+        "Couverture",
+        "Tempering",
+        "Molding Chocolate"
+      ]
+    },
+    {
+      "chapter_num": 26,
+      "chapter_title": "Baking for Special Diets",
+      "sections": [
+        "Nutrition in the Bakeshop",
+        "Food Allergies and Intolerances",
+        "Ingredient Substitutions"
+      ]
+    }
+  ],
+  "mouthfeel": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "The Complex Universe of Taste and Flavor",
+      "sections": [
+        "The Mouth and the Nose",
+        "Mouthfeel: A Central Element",
+        "Astringency and Kokumi",
+        "Sensory Confusion",
+        "Interplay Between Mouthfeel and Other Sensory Impressions",
+        "Neurogastronomy: Flavor Is All in the Brain"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "What Makes Up Our Food",
+      "sections": [
+        "Food from the Tree of Life",
+        "Edible Molecules",
+        "Biological Soft Materials",
+        "Water: Both Stable and Versatile",
+        "Processed Food",
+        "Synthetic Food"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "The Physical Properties of Food",
+      "sections": [
+        "Structure and Texture",
+        "Foods as Solids Liquids and Gases",
+        "More Complex States",
+        "When Food Changes Form Structure and Texture"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Texture and Mouthfeel",
+      "sections": [
+        "When We Chew",
+        "What Is Texture",
+        "How to Describe Texture",
+        "Changing Texture"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Playing Around with Mouthfeel",
+      "sections": [
+        "Heat and Temperature",
+        "Starch",
+        "Emulsions and Emulsifiers",
+        "Gels and Gelation",
+        "Gums",
+        "Effect of Enzymes on Texture",
+        "Sugars in Food",
+        "Fats in Food",
+        "Textures of Milk",
+        "Amazing Eggs",
+        "Glassy Glossy Foods",
+        "Particles in Food",
+        "Bubbles in Food"
+      ]
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Making Further Inroads into the Universe of Texture",
+      "sections": [
+        "Legumes Soybeans and Sprouts",
+        "Vegetables with Bite",
+        "Grains and Seeds",
+        "Secrets of Sauces",
+        "Mouthfeel of Soups",
+        "Crispy Skin and Crunchy Bones",
+        "Frozen Desserts",
+        "Texture That Releases Big Bursts of Taste"
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Why Do We Like the Food That We Do",
+      "sections": [
+        "Enjoyment and Hedonism",
+        "Food and Taste Adventurousness",
+        "Texture and the Choice of Foods",
+        "The Perfect Meal"
+      ]
+    }
+  ]
+}

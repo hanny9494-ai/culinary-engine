@@ -27,7 +27,49 @@ books:
     toc_config: mc_toc.json
 
   - id: mc_vol1
-    title: "Modernist Cuisine Vol 1 - History and Fundamentals"
-    path: "/Users/jeff/Documents/厨书数据库/工具科学书/volume-1-History+and+Fundamentals.epub"
-    type: epub
+    title: "Modernist Cuisine Vol1 - History and Fundamentals"
+    path: "/Users/jeff/Desktop/mineru待处理/Volume 1 - Techniques and Equipment 2.pdf"
+    type: pdf
     toc_config: mc_toc.json
+
+  - id: salt_fat_acid_heat
+    title: "Salt Fat Acid Heat"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/salt-fat-acid-heat.pdf"
+    type: pdf
+    toc_config: null
+
+  - id: neurogastronomy
+    title: "Neurogastronomy"
+    path: "/Users/jeff/Documents/厨书（mineru）/_OceanofPDF.com_Neurogastronomy_-_Gordon_Shepherd.pdf"
+    type: pdf
+    toc_config: null
+
+  - id: ice_cream_flavor
+    title: "冰淇淋风味学"
+    path: "/Users/jeff/Documents/厨书数据库/工具科学书/冰淇淋风味学.pdf"
+    type: pdf
+    toc_config: null
+
+  - id: mouthfeel
+    title: "Mouthfeel - How Texture Makes Taste"
+    path: "/Users/jeff/Documents/第二批厨艺书籍/_OceanofPDF.com_Mouthfeel_-_Ole_G_Mouritsen.pdf"
+    type: pdf
+    toc_config: null
+
+  - id: flavorama
+    title: "Flavorama"
+    path: "/Users/jeff/Documents/厨书（待转换）/_OceanofPDF.com_Flavorama_-_Arielle_Johnson.epub"
+    type: epub
+    toc_config: null
+
+  - id: science_of_spice
+    title: "The Science of Spice"
+    path: "/Users/jeff/Documents/第二批厨艺书籍/_OceanofPDF.com_The_Science_of_Spice_-_Stuart_Farrimond.pdf"
+    type: pdf
+    toc_config: null
+
+  - id: professional_baking
+    title: "Professional Baking 7th Edition"
+    path: "/Users/jeff/Documents/第二批厨艺书籍/Professional_Baking_7th_Edition_-_Wayne_Gisslen.pdf"
+    type: pdf
+    toc_config: null

@@ -1,0 +1,35 @@
+Stage 3B Report
+================
+
+Total records: 1159
+Split-derived records: 867
+
+Proposition types:
+- causal_chain: 627
+- compound_condition: 188
+- fact_atom: 309
+- mathematical_law: 35
+
+Low confidence (<0.7): 243
+- L0-HT-001: 0.5
+- L0-HT-002: 0.5
+- L0-HT-003: 0.5
+- L0-HT-004: 0.5
+- L0-HT-005: 0.5
+- L0-HT-006: 0.5
+- L0-HT-007: 0.5
+- L0-HT-008: 0.5
+- L0-HT-009: 0.5
+- L0-HT-010: 0.5
+
+Missing boundary zones on structured propositions: 418
+- L0-EN-010-A: causal_chain
+- L0-EN-010-B: causal_chain
+- L0-EN-013-A: causal_chain
+- L0-EN-013-A: causal_chain
+- L0-EN-013-B: mathematical_law
+- L0-EN-014-A: causal_chain
+- L0-EN-016-A: causal_chain
+- L0-EN-018-A: causal_chain
+- L0-EN-018-B: causal_chain
+- L0-FS-001-B: causal_chain

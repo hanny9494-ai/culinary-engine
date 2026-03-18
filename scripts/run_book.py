@@ -300,18 +300,19 @@ def main() -> None:
             chunk_args = discover_chunks(output_root)
             if not chunk_args and args.dry_run:
                 chunk_args = ["<discovered-chunks>"]
-            command = [
-                sys.executable,
-                str(script_path),
-                "--chunks",
-                *chunk_args,
-                "--questions",
-                str(questions_path),
-                "--output",
-                str(stage2_output),
-                "--config",
-                str(config_path),
-            ]
+            command = [sys.executable, str(script_path)]
+            for chunk_arg in chunk_args:
+                command.extend(["--chunks", chunk_arg])
+            command.extend(
+                [
+                    "--questions",
+                    str(questions_path),
+                    "--output",
+                    str(stage2_output),
+                    "--config",
+                    str(config_path),
+                ]
+            )
             if args.dry_run:
                 command.append("--dry-run")
             run_command(command, cwd=repo_root, dry_run=args.dry_run)
