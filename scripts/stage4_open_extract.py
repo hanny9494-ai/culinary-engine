@@ -19,6 +19,8 @@ from typing import Any
 import requests
 import yaml
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
 # ---------------------------------------------------------------------------
 # Ollama session (proxy bypass) -- mirrors scripts/utils/ollama_client.py
 # ---------------------------------------------------------------------------
@@ -222,6 +224,39 @@ def chunk_id(chunk: dict[str, Any], index: int) -> str:
     return f"chunk_{index}"
 
 
+def normalize_chunk_type(chunk: dict[str, Any]) -> str | None:
+    value = chunk.get("chunk_type")
+    if value is None:
+        return None
+    text = str(value).strip().lower()
+    return text or None
+
+
+def resolve_chunks_path(chunks_arg: str | None, book_id: str | None) -> Path:
+    if chunks_arg:
+        return Path(chunks_arg)
+    if not book_id:
+        raise FileNotFoundError("Provide --chunks or --book-id.")
+
+    candidates = [
+        REPO_ROOT / "output" / book_id / "stage1" / "chunks_smart.json",
+        Path("/Users/jeff/l0-knowledge-engine/output") / book_id / "stage1" / "chunks_smart.json",
+        Path("/Users/jeff/culinary-engine/output") / book_id / "stage1" / "chunks_smart.json",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    raise FileNotFoundError(f"Could not find chunks_smart.json for book_id={book_id}")
+
+
+def resolve_output_dir(output_dir_arg: str | None, book_id: str | None) -> Path:
+    if output_dir_arg:
+        return Path(output_dir_arg)
+    if book_id:
+        return REPO_ROOT / "output" / book_id / "stage4"
+    return REPO_ROOT / "output" / "stage4"
+
+
 # ---------------------------------------------------------------------------
 # Prompts
 # ---------------------------------------------------------------------------
@@ -315,7 +350,8 @@ def run_phase_a(
     output_path: Path,
     save_every: int,
     resume: bool,
-) -> None:
+    dry_run: bool,
+) -> dict[str, int]:
     print(f"=== Phase A: 27b filter ({filter_model}) ===", flush=True)
     print(f"  Total chunks: {len(chunks)}", flush=True)
 
@@ -329,11 +365,17 @@ def run_phase_a(
         if done_ids:
             print(f"  Resuming: {len(done_ids)} chunks already filtered", flush=True)
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    if not dry_run:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
 
     processed = 0
     skipped = 0
     errors = 0
+    shortcut_passed = 0
+    shortcut_skipped = 0
+    prefilter_passed = 0
+    prefilter_skipped = 0
+    prefilter_pending = 0
 
     for idx, chunk in enumerate(chunks):
         cid = chunk_id(chunk, idx)
@@ -344,7 +386,34 @@ def run_phase_a(
         text = chunk_text(chunk)
         if not text.strip():
             record = {"chunk_id": cid, "has_science": False, "reason": "empty_chunk"}
-            append_jsonl(output_path, record)
+            if not dry_run:
+                append_jsonl(output_path, record)
+            prefilter_skipped += 1
+            processed += 1
+            continue
+
+        ctype = normalize_chunk_type(chunk)
+        if ctype in {"science", "mixed"}:
+            print(f"[chunk_type shortcut] {cid} → pass (type={ctype})", flush=True)
+            record = {"chunk_id": cid, "has_science": True, "reason": f"chunk_type_shortcut:{ctype}"}
+            if not dry_run:
+                append_jsonl(output_path, record)
+            shortcut_passed += 1
+            processed += 1
+            done_ids.add(cid)
+            continue
+        if ctype in {"recipe", "narrative"}:
+            print(f"[chunk_type shortcut] {cid} → skip (type={ctype})", flush=True)
+            record = {"chunk_id": cid, "has_science": False, "reason": f"chunk_type_shortcut:{ctype}"}
+            if not dry_run:
+                append_jsonl(output_path, record)
+            shortcut_skipped += 1
+            processed += 1
+            done_ids.add(cid)
+            continue
+
+        if dry_run:
+            prefilter_pending += 1
             processed += 1
             continue
 
@@ -356,10 +425,15 @@ def run_phase_a(
             result = json.loads(raw)
             has_science = bool(result.get("has_science", False))
             reason = str(result.get("reason", ""))
+            if has_science:
+                prefilter_passed += 1
+            else:
+                prefilter_skipped += 1
         except Exception as exc:
             print(f"  [ERROR] chunk {cid}: {exc}", flush=True)
             has_science = False
             reason = f"error: {str(exc)[:200]}"
+            prefilter_skipped += 1
             errors += 1
 
         record = {"chunk_id": cid, "has_science": has_science, "reason": reason}
@@ -374,7 +448,31 @@ def run_phase_a(
         watchdog_check(f"Phase A chunk {cid}")
 
     print(f"  Phase A done: {processed} filtered, {skipped} skipped, {errors} errors", flush=True)
-    print(f"  Output: {output_path}", flush=True)
+    if dry_run:
+        print(
+            f"[Phase A] chunk_type shortcut: {shortcut_passed} passed, {shortcut_skipped} skipped | "
+            f"27b prefilter: {prefilter_passed} passed, {prefilter_skipped} skipped",
+            flush=True,
+        )
+        if prefilter_pending:
+            print(f"[Phase A dry-run] 27b prefilter deferred for {prefilter_pending} chunks", flush=True)
+    else:
+        print(
+            f"[Phase A] chunk_type shortcut: {shortcut_passed} passed, {shortcut_skipped} skipped | "
+            f"27b prefilter: {prefilter_passed} passed, {prefilter_skipped} skipped",
+            flush=True,
+        )
+        print(f"  Output: {output_path}", flush=True)
+    return {
+        "processed": processed,
+        "resume_skipped": skipped,
+        "errors": errors,
+        "shortcut_passed": shortcut_passed,
+        "shortcut_skipped": shortcut_skipped,
+        "prefilter_passed": prefilter_passed,
+        "prefilter_skipped": prefilter_skipped,
+        "prefilter_pending": prefilter_pending,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -496,46 +594,71 @@ def main() -> None:
         description="Stage 4 open extraction: Phase A (27b filter) + Phase B (Opus extract)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument("--chunks", required=True, help="Path to chunks_smart.json")
-    parser.add_argument("--config", required=True, help="Path to config/api.yaml")
-    parser.add_argument("--domains", required=True, help="Path to config/domains_v2.json")
-    parser.add_argument("--output-dir", required=True, help="Output directory for stage4 artifacts")
+    parser.add_argument("--chunks", help="Path to chunks_smart.json")
+    parser.add_argument("--book-id", help="Book id used to auto-discover chunks_smart.json and default output paths")
+    parser.add_argument("--config", default=str(REPO_ROOT / "config" / "api.yaml"), help="Path to config/api.yaml")
+    parser.add_argument("--domains", default=str(REPO_ROOT / "config" / "domains_v2.json"), help="Path to config/domains_v2.json")
+    parser.add_argument("--output-dir", help="Output directory for stage4 artifacts")
     parser.add_argument("--filter-model", default="qwen3.5:27b", help="Ollama model for Phase A filter (default: qwen3.5:27b)")
     parser.add_argument("--save-every", type=int, default=50, help="Save progress every N records (default: 50)")
     parser.add_argument("--watchdog", type=int, default=15, help="Abort if no progress for N minutes (default: 15, 0=disable)")
     parser.add_argument("--resume", action="store_true", help="Resume from previous run (skip already-processed chunks)")
     parser.add_argument("--filter-only", action="store_true", help="Only run Phase A (27b filter), skip Phase B")
+    parser.add_argument("--phase", choices=("all", "a-only", "b-only"), default="all", help="Pipeline phase to run (default: all)")
+    parser.add_argument("--dry-run", action="store_true", help="Load inputs and print Phase A routing without calling external APIs")
     args = parser.parse_args()
 
     global _watchdog_limit
     _watchdog_limit = args.watchdog
 
-    output_dir = Path(args.output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
+    phase = "a-only" if args.filter_only and args.phase == "all" else args.phase
+    if args.filter_only and args.phase != "all":
+        parser.error("--filter-only cannot be combined with --phase")
+
+    try:
+        chunks_path = resolve_chunks_path(args.chunks, args.book_id)
+    except FileNotFoundError as exc:
+        parser.error(str(exc))
+    output_dir = resolve_output_dir(args.output_dir, args.book_id)
+    if not args.dry_run:
+        output_dir.mkdir(parents=True, exist_ok=True)
 
     filter_path = output_dir / "stage4_filter.jsonl"
     raw_path = output_dir / "stage4_raw.jsonl"
 
     # Load inputs
-    print(f"Loading chunks from {args.chunks} ...", flush=True)
-    chunks = load_chunks(Path(args.chunks))
+    print(f"Loading chunks from {chunks_path} ...", flush=True)
+    chunks = load_chunks(chunks_path)
     print(f"  Loaded {len(chunks)} chunks", flush=True)
+
+    if phase == "b-only" and not filter_path.exists():
+        print(f"[FATAL] Missing Phase A output: {filter_path}", flush=True)
+        sys.exit(1)
+
+    # Phase A
+    if phase != "b-only":
+        run_phase_a(
+            chunks=chunks,
+            filter_model=args.filter_model,
+            output_path=filter_path,
+            save_every=args.save_every,
+            resume=args.resume,
+            dry_run=args.dry_run,
+        )
+
+    if phase == "a-only":
+        if args.dry_run:
+            print("[dry-run] Phase A validation complete; skipped Phase B.", flush=True)
+        else:
+            print("Phase A complete; skipping Phase B.", flush=True)
+        return
+
+    if args.dry_run:
+        print(f"[dry-run] Would run Phase B using {filter_path} -> {raw_path}", flush=True)
+        return
 
     domain_ids, domains_list = load_domains(Path(args.domains))
     print(f"  Loaded {len(domain_ids)} domains", flush=True)
-
-    # Phase A
-    run_phase_a(
-        chunks=chunks,
-        filter_model=args.filter_model,
-        output_path=filter_path,
-        save_every=args.save_every,
-        resume=args.resume,
-    )
-
-    if args.filter_only:
-        print("--filter-only set, skipping Phase B.", flush=True)
-        return
 
     # Phase B
     endpoint, api_key, model = load_config(args.config)
