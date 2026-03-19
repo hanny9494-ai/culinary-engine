@@ -77,6 +77,17 @@ def load_config(config_path: str) -> tuple[str, str, str]:
     return endpoint, api_key, model
 
 
+_CLAUDE_SESSION: requests.Session | None = None
+
+
+def _get_claude_session() -> requests.Session:
+    global _CLAUDE_SESSION
+    if _CLAUDE_SESSION is None:
+        _CLAUDE_SESSION = requests.Session()
+        _CLAUDE_SESSION.trust_env = False  # 绕过 http_proxy
+    return _CLAUDE_SESSION
+
+
 def call_claude(
     endpoint: str,
     api_key: str,
@@ -98,15 +109,44 @@ def call_claude(
         "system": system_prompt,
         "messages": [{"role": "user", "content": user_prompt}],
     }
+    session = _get_claude_session()
     last_err: Exception | None = None
     for attempt in range(1, max_retries + 1):
         try:
-            resp = requests.post(endpoint, headers=headers, json=body, timeout=timeout)
+            resp = session.post(endpoint, headers=headers, json=body, timeout=timeout)
             resp.raise_for_status()
             raw = resp.json()["content"][0]["text"].strip()
             raw = re.sub(r"```json\s*", "", raw)
-            raw = re.sub(r"```\s*$", "", raw)
-            return json.loads(raw)
+            raw = re.sub(r"```\s*", "", raw)
+            raw = raw.strip()
+            try:
+                return json.loads(raw)
+            except json.JSONDecodeError:
+                pass
+            if not raw.startswith("["):
+                raw = "[" + raw + "]"
+                raw = re.sub(r"\}\s*\{", "},{", raw)
+                raw = re.sub(r"\]\s*\[", ",", raw)
+                try:
+                    return json.loads(raw)
+                except json.JSONDecodeError:
+                    pass
+            results = []
+            for line in raw.splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                    if isinstance(obj, list):
+                        results.extend(obj)
+                    else:
+                        results.append(obj)
+                except json.JSONDecodeError:
+                    continue
+            if results:
+                return results
+            raise json.JSONDecodeError("Cannot parse Claude response", raw[:200], 0)
         except Exception as exc:
             last_err = exc
             if attempt < max_retries:
@@ -232,9 +272,12 @@ Domain（17域，选最匹配的一个）：
     "boundary_zones": [],
     "domain": "protein_science",
     "confidence": 0.85,
-    "citation_quote": "exact quote from text"
+    "citation_quote": "exact quote from text",
+    "domain_note": ""
   }}
 ]
+
+如果这条原理不属于以上17域中的任何一个，domain填"unclassified"，并在domain_note字段写明你认为它应该属于什么领域。
 
 如果文本中没有可提取的科学命题，输出空数组：[]\
 """
@@ -369,6 +412,7 @@ def run_phase_b(
     print(f"  Filtered chunks with science: {len(science_ids)}", flush=True)
 
     # Load existing raw results for resume
+    # 跳过所有已处理的chunk（包括错误的，避免反复重试浪费时间）
     done_chunk_ids: set[str] = set()
     if resume:
         for rec in load_jsonl(output_path):
