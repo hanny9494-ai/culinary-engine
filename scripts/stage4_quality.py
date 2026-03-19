@@ -170,9 +170,12 @@ def check_record(
     return checks
 
 
+WARN_ONLY_CHECKS = {"has_number"}
+
+
 def record_passes(checks: dict[str, bool]) -> bool:
-    """A record passes if all checks are True."""
-    return all(checks.values())
+    """A record passes if all non-warning checks are True."""
+    return all(v for k, v in checks.items() if k not in WARN_ONLY_CHECKS)
 
 
 # ---------------------------------------------------------------------------

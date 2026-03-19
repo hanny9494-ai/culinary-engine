@@ -13,11 +13,11 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 import sys
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import requests
 
 # ---------------------------------------------------------------------------
@@ -167,32 +167,39 @@ def main() -> None:
     print("Embedding existing principles ...", flush=True)
     existing_vecs = embed_statements(existing_recs, embed_model, "existing")
 
-    # --- Internal dedup (within open principles) ---
+    # Build numpy matrices
+    dim = next((len(v) for v in open_vecs if v), 0)
+    if dim == 0:
+        print("  [WARN] No valid embeddings, skipping dedup", flush=True)
+        write_jsonl(Path(args.output), open_recs)
+        return
+
+    open_mat = np.array([v if v else [0.0] * dim for v in open_vecs], dtype=np.float32)
+    open_has_vec = np.array([bool(v) for v in open_vecs])
+    open_norms = np.linalg.norm(open_mat, axis=1, keepdims=True)
+    open_norms[open_norms == 0] = 1
+    open_normed = open_mat / open_norms
+
+    # --- Internal dedup (numpy矩阵运算) ---
     print("Running internal dedup (open vs open) ...", flush=True)
+    sim_matrix = open_normed @ open_normed.T
+    dup_i, dup_j = np.where(np.triu(sim_matrix, k=1) > dup_thresh)
     internal_dup_indices: set[int] = set()
-    for i in range(len(open_recs)):
-        if i in internal_dup_indices:
-            continue
-        if not open_vecs[i]:
-            continue
-        for j in range(i + 1, len(open_recs)):
-            if j in internal_dup_indices:
-                continue
-            if not open_vecs[j]:
-                continue
-            sim = cosine_similarity(open_vecs[i], open_vecs[j])
-            if sim > dup_thresh:
-                internal_dup_indices.add(j)
+    for i, j in zip(dup_i.tolist(), dup_j.tolist()):
+        if open_has_vec[i] and open_has_vec[j] and j not in internal_dup_indices:
+            internal_dup_indices.add(j)
+    print(f"  Internal duplicates removed: {len(internal_dup_indices)}", flush=True)
 
-    if internal_dup_indices:
-        print(f"  Internal duplicates removed: {len(internal_dup_indices)}", flush=True)
-
-    # --- Cross-dedup (open vs existing) ---
+    # --- Cross-dedup (numpy矩阵运算) ---
     print("Running cross-dedup (open vs existing) ...", flush=True)
-    # Pre-filter existing vecs that are non-empty
-    valid_existing: list[tuple[int, list[float]]] = [
-        (idx, vec) for idx, vec in enumerate(existing_vecs) if vec
-    ]
+    existing_mat = np.array([v if v else [0.0] * dim for v in existing_vecs], dtype=np.float32)
+    existing_has_vec = np.array([bool(v) for v in existing_vecs])
+    existing_norms = np.linalg.norm(existing_mat, axis=1, keepdims=True)
+    existing_norms[existing_norms == 0] = 1
+    existing_normed = existing_mat / existing_norms
+
+    cross_sim = open_normed @ existing_normed.T
+    cross_sim[:, ~existing_has_vec] = 0.0
 
     stats = {"duplicate": 0, "similar": 0, "novel": 0, "internal_dup": len(internal_dup_indices)}
     output_records: list[dict[str, Any]] = []
@@ -201,29 +208,22 @@ def main() -> None:
         if i in internal_dup_indices:
             stats["duplicate"] += 1
             continue
-
-        vec_i = open_vecs[i]
-        if not vec_i:
+        if not open_has_vec[i]:
             rec["dedup_status"] = "novel"
             rec["dedup_max_sim"] = 0.0
             output_records.append(rec)
             stats["novel"] += 1
             continue
 
-        max_sim = 0.0
-        max_sim_id = ""
-        for ex_idx, ex_vec in valid_existing:
-            sim = cosine_similarity(vec_i, ex_vec)
-            if sim > max_sim:
-                max_sim = sim
-                max_sim_id = str(existing_recs[ex_idx].get("principle_id", f"existing_{ex_idx}"))
+        max_idx = int(np.argmax(cross_sim[i]))
+        max_sim = float(cross_sim[i, max_idx])
+        max_sim_id = str(existing_recs[max_idx].get("principle_id", f"existing_{max_idx}"))
 
         if max_sim > dup_thresh:
             rec["dedup_status"] = "duplicate"
             rec["dedup_max_sim"] = round(max_sim, 4)
             rec["dedup_match_id"] = max_sim_id
             stats["duplicate"] += 1
-            # Skip duplicates -- do not include in output
             continue
         elif max_sim > sim_thresh:
             rec["dedup_status"] = "similar"
@@ -236,9 +236,6 @@ def main() -> None:
             rec["dedup_max_sim"] = round(max_sim, 4)
             output_records.append(rec)
             stats["novel"] += 1
-
-        if (i + 1) % 100 == 0:
-            print(f"  Cross-dedup progress: {i + 1}/{len(open_recs)}", flush=True)
 
     # Write output
     write_jsonl(Path(args.output), output_records)
