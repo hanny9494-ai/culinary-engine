@@ -345,4 +345,33 @@ Recipe = components + main_ingredients + garnish + refs + assembly
 - 脚本: scripts/stage5_recipe_extract.py
 - 配置: config/stage5_batch1_books.json
 - 产出: output/stage5_batch/（本地）
+
+### 追加进展
+- ⏳ 第二波23本：等Stage1完成后自动接上
+- ⏳ 第三波17本编译md：需先切分再提取
+
+**结论：flash比27b快7倍，质量等同，全量用flash。**
+
+### 全量规模
+| 批次 | 书数 | 来源 | 状态 |
+|------|------|------|------|
+| 第一波 | 12 | 已完成Stage4的旧书 | 🔄 在跑 |
+| 第二波 | 23 | Stage4在跑+收官批 | ⏳ 等Stage1完成 |
+| 第三波 | 17 | 编译md新书 | ⏳ 需先切分 |
+| **总计** | **52** | | |
+
+### 食谱Schema v2（决策#28）
+纯配方JSON + Neo4j关系网。科学标注（key_science_points/derivations/l0_gaps）全部在Neo4j关系网，不嵌入食谱JSON。
+
+### 两步架构
+- **Step A（qwen3.5-flash，已验证）**：提取纯配方JSON + 同时标注chunk_type/topics
+- **Step B（Opus，待做）**：找3-5个关键科学决策点，绑定L0，生成裂变推导
+
+### 第三波17本新书清单
+Crave, EMP Cookbook, EMP Next Chapter, Manresa, Baltic,
+Meat Illustrated, Momofuku, Organum, Hand and Flowers,
+Alinea, Bouchon, Core, Daniel, Japanese Farm Food,
+Relae, Everlasting Meal, Whole Fish, French Laundry
+
+流程：编译md → 2b切分 → flash提取食谱+标注（不做L0蒸馏）
 ---
