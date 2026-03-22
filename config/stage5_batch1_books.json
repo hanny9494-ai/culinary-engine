@@ -1,0 +1,50 @@
+[
+  {
+    "book_id": "ofc",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/ofc/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "mc_vol2",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/mc/vol2/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "mc_vol3",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/mc/vol3/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "mc_vol4",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/mc/vol4/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "neurogastronomy",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/neurogastronomy/stage1/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "mc_vol1",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/mc_vol1/stage1/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "salt_fat_acid_heat",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/salt_fat_acid_heat/stage1/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "ice_cream_flavor",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/ice_cream_flavor/stage1/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "mouthfeel",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/mouthfeel/stage1/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "flavorama",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/flavorama/stage1/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "science_of_spice",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/science_of_spice/stage1/stage1/chunks_smart.json"
+  },
+  {
+    "book_id": "professional_baking",
+    "chunks_path": "/Users/jeff/l0-knowledge-engine/output/professional_baking/stage1/stage1/chunks_smart.json"
+  }
+]
