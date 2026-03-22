@@ -320,3 +320,29 @@ Recipe = components + main_ingredients + garnish + refs + assembly
 3. 多Agent分工：诊断/创作/优化/知识/替换
 4. 1159条原理中627条causal_chain已含因果边，入库时结构化解析即可
 5. 配方Schema采用ISA-88三段分离：process/formula/equipment
+
+---
+## Stage5 食谱提取（Step A）
+
+- ✅ Pilot验证通过（结构化/多组件/叙事型三种格式）
+- ✅ flash vs 27b对比：flash快7倍，质量等同
+- ✅ 合并prompt：chunk_type标注+食谱提取一步到位
+- 🔄 42本书全量在跑（flash API，3并发自动轮转）
+- 已完成: OFC, MC Vol2/3/4, Neurogastronomy
+- 在跑: MC Vol1, SFAH, Ice Cream, Alinea
+- 排队: 33本
+
+### Pilot对比结果
+| 指标 | 27b本地 | flash API |
+|------|--------|-----------|
+| test1 recipes | 2 | 2 |
+| test1 时间 | 114.6s | 16.2s |
+| test2 recipes | 5 | 5 |
+| test2 时间 | 225.0s | 31.0s |
+| test3 空返回 | ✅ | ✅ |
+
+### 关键文件
+- 脚本: scripts/stage5_recipe_extract.py
+- 配置: config/stage5_batch1_books.json
+- 产出: output/stage5_batch/（本地）
+---

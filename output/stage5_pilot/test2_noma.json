@@ -1,5 +1,5 @@
 {
   "status": "failed",
-  "error": "502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat",
+  "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
   "elapsed": 0
 }

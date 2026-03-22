@@ -1,5 +1,7 @@
 {
-  "status": "failed",
-  "error": "502 Server Error: Bad Gateway for url: http://localhost:11434/api/chat",
-  "elapsed": 0
+  "status": "ok",
+  "elapsed": 113.19149112701416,
+  "n_recipes": 0,
+  "recipes": [],
+  "expected": "Possibly empty or partial extraction. name_ref to 'ramen broth' if detected"
 }
