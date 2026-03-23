@@ -90,6 +90,9 @@ def _get_claude_session() -> requests.Session:
     return _CLAUDE_SESSION
 
 
+_token_usage = {"input_tokens": 0, "output_tokens": 0, "total_calls": 0}
+
+
 def call_claude(
     endpoint: str,
     api_key: str,
@@ -117,7 +120,12 @@ def call_claude(
         try:
             resp = session.post(endpoint, headers=headers, json=body, timeout=timeout)
             resp.raise_for_status()
-            raw = resp.json()["content"][0]["text"].strip()
+            resp_json = resp.json()
+            usage = resp_json.get("usage", {})
+            _token_usage["input_tokens"] += usage.get("input_tokens", 0)
+            _token_usage["output_tokens"] += usage.get("output_tokens", 0)
+            _token_usage["total_calls"] += 1
+            raw = resp_json["content"][0]["text"].strip()
             raw = re.sub(r"```json\s*", "", raw)
             raw = re.sub(r"```\s*", "", raw)
             raw = raw.strip()
@@ -492,6 +500,11 @@ def run_phase_b(
 ) -> None:
     print(f"=== Phase B: Opus extract ({model}) ===", flush=True)
 
+    # Reset token counter for this book
+    _token_usage["input_tokens"] = 0
+    _token_usage["output_tokens"] = 0
+    _token_usage["total_calls"] = 0
+
     # Build chunk lookup by id
     chunk_map: dict[str, dict[str, Any]] = {}
     for idx, chunk in enumerate(chunks):
@@ -583,6 +596,19 @@ def run_phase_b(
         flush=True,
     )
     print(f"  Output: {output_path}", flush=True)
+
+    # Save token usage
+    usage_path = output_path.parent / "token_usage.json"
+    usage_data = {
+        "total_input_tokens": _token_usage["input_tokens"],
+        "total_output_tokens": _token_usage["output_tokens"],
+        "total_tokens": _token_usage["input_tokens"] + _token_usage["output_tokens"],
+        "total_calls": _token_usage["total_calls"],
+    }
+    with open(usage_path, "w", encoding="utf-8") as f:
+        json.dump(usage_data, f, ensure_ascii=False, indent=2)
+    print(f"  Token usage: {usage_data}", flush=True)
+    print(f"  Saved to: {usage_path}", flush=True)
 
 
 # ---------------------------------------------------------------------------
