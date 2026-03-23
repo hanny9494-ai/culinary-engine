@@ -1,8 +1,9 @@
-# 餐饮研发引擎 — 项目状态 v5
+# 餐饮研发引擎 — 项目状态 v6
 
 > 母对话维护此文件，agent不许修改
 > 新仓库: https://github.com/hanny9494-ai/culinary-engine
-> 更新时间: 2026-03-22
+> 更新时间: 2026-03-23
+> CC Lead 基础设施已迁入本仓库（CLAUDE.md + .claude/agents/ + scripts/dify/）
 
 ---
 
@@ -18,7 +19,7 @@
 
 | 层 | 名称 | 定位 | 状态 |
 |----|------|------|------|
-| L0 | 科学原理图谱 | "为什么会发生" — 因果链+参数边界+17域 | 🔄 蒸馏中（11本书） |
+| L0 | 科学原理图谱 | "为什么会发生" — 因果链+参数边界+17域 | 🔄 蒸馏中（21/46本完成） |
 | L1 | 设备实践参数层 | "同一原理，不同设备怎么调" | ⏳ 待建 |
 | L2a | 天然食材参数库 | 品种/部位/季节/产地/价格 | ⏳ 待建（FoodAtlas/FooDB/USDA待导入） |
 | L2b | 食谱校准库 | 已验证参数组合+可信度评分（L0是裁判） | ⏳ 待建 |
@@ -51,17 +52,58 @@
 
 ---
 
-## L0数据规模
+## L0数据规模（2026-03-23 校准）
 
-| 来源 | 原子命题数 | 状态 |
-|------|-----------|------|
-| Stage3骨架 | 690 | ✅完成 |
-| Stage4第零批（OFC+Neuro+MC2/3/4） | 7,290 | ✅完成 |
-| Stage4第一批（7本） | 11,198 | ✅完成 |
-| Stage4第三批+第五批（10本） | ~12,000预估 | 🔄CC在跑 |
-| Stage4收官批（10本） | ~10,000预估 | ⏳排队 |
-| **L0累计** | **19,178+** | |
-| **全量预估** | **~45,000** | |
+| 来源 | raw | dedup | QC通过 |
+|------|-----|-------|--------|
+| Stage3骨架 | — | — | 690 |
+| Stage4 21本（详见下表） | 47,203 | 37,084 | 34,355 |
+| **L0累计** | | | **35,045** |
+
+**主线盘子：46本（21已完成 + 25待处理）**
+
+### Stage4 完成明细（21本，34,355条QC通过）
+
+| 书 | raw | dedup | QC通过 | 通过率 |
+|---|---|---|---|---|
+| ofc | 4,868 | 4,680 | 3,955 | 81% |
+| science_good_cooking | 4,823 | 4,229 | 3,806 | 79% |
+| mc_vol1 | 3,983 | 3,314 | 3,110 | 78% |
+| mouthfeel | 3,021 | 2,605 | 2,410 | 80% |
+| cooking_for_geeks | 3,629 | 3,057 | 2,266 | 62% |
+| food_lab | 3,386 | 2,785 | 2,242 | 66% |
+| professional_baking | 3,134 | 2,458 | 2,136 | 68% |
+| molecular_gastronomy | 2,439 | 2,246 | 1,951 | 80% |
+| bread_hamelman | 2,612 | 1,971 | 1,669 | 64% |
+| science_of_chocolate | 2,319 | 1,871 | 1,577 | 68% |
+| flavorama | 2,012 | 1,689 | 1,258 | 63% |
+| mc_vol4 | 1,267 | 1,166 | 1,034 | 82% |
+| mc_vol3 | 1,194 | 1,123 | 1,059 | 89% |
+| koji_alchemy | 1,414 | 1,178 | 978 | 69% |
+| science_of_spice | 1,604 | 1,052 | 960 | 60% |
+| salt_fat_acid_heat | 1,348 | 1,163 | 910 | 68% |
+| mc_vol2 | 1,085 | 938 | 893 | 82% |
+| noma_fermentation | 1,213 | 1,061 | 850 | 70% |
+| bread_science_yoshino | 657 | 568 | 522 | 79% |
+| ice_cream_flavor | 601 | 438 | 414 | 69% |
+| ratio | 594 | 488 | 355 | 60% |
+
+### 待处理书籍（25本）
+
+**Stage1就绪 → 可直接进Stage4（5本）：**
+french_sauces(127), neurogastronomy(619), dashi_umami(268), handbook_molecular_gastronomy(521), chocolates_confections(908)
+
+**Stage1 Step5 正在跑（1本）：**
+flavor_equation（9b标注中）
+
+**Stage1 Step4+5 待跑（6本）：**
+essentials_food_science, flavor_bible, bocuse_cookbook, taste_whats_missing, modernist_pizza, professional_pastry_chef
+
+**需要OCR+Stage1（2本）：**
+french_patisserie, phoenix_claws
+
+**新增11本（需要OCR起步）：**
+sous_vide_keller, japanese_cooking_tsuji, professional_chef, charcuterie, jacques_pepin, noma_vegetable, art_of_fermentation, flavor_thesaurus, franklin_barbecue, vegetarian_flavor_bible, whole_fish
 
 ## Stage4第一批结果
 
