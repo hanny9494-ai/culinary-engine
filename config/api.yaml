@@ -6,7 +6,7 @@ claude:
   endpoint: "${L0_API_ENDPOINT}/v1/messages"
   api_key: "${L0_API_KEY}"
   models:
-    distill: "claude-opus-4.6"      # Stage3 蒸馏
+    distill: "claude-opus-4-6"      # Stage3 蒸馏
     causal: "claude-sonnet-4-6"
     scan: "claude-sonnet-4-6"       # 补题扫描
   timeout_sec: 90
