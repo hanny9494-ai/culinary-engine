@@ -20,6 +20,7 @@ Thumbs.db
 !config/*.json
 !config/*.yaml
 !package.json
+!scripts/dify/dify_config.json
 
 # 输出目录
 output/
@@ -33,3 +34,9 @@ data/
 mineru_parts/
 pages_150dpi/
 *.pdf
+
+# Dify
+scripts/dify/dify_config.json
+
+# Agent settings (local only)
+.claude/settings.local.json
