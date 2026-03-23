@@ -1,8 +1,9 @@
-# 餐饮研发引擎 — 项目状态 v3.5
+# 餐饮研发引擎 — 项目状态 v6
 
 > 母对话维护此文件，agent不许修改
 > 新仓库: https://github.com/hanny9494-ai/culinary-engine
-> 更新时间: 2026-03-20
+> 更新时间: 2026-03-23
+> CC Lead 基础设施已迁入本仓库（CLAUDE.md + .claude/agents/ + scripts/dify/）
 
 ---
 
@@ -10,7 +11,7 @@
 - **目标用户**：专业厨师 / 餐饮老板 / 研发团队
 - **核心能力**：因果链科学推理 + 粤菜审美转化（不是配方检索）
 - **核心公式**：食材参数 × 风味目标 × 科学原理 = 无限食谱
-- **架构文档**：docs/culinary_engine_architecture_v3.docx
+- **架构文档**：docs/culinary_engine_architecture_v5.docx
 
 ---
 
@@ -18,7 +19,7 @@
 
 | 层 | 名称 | 定位 | 状态 |
 |----|------|------|------|
-| L0 | 科学原理图谱 | "为什么会发生" — 因果链+参数边界+17域 | 🔄 蒸馏中（11本书） |
+| L0 | 科学原理图谱 | "为什么会发生" — 因果链+参数边界+17域 | 🔄 蒸馏中（21/46本完成） |
 | L1 | 设备实践参数层 | "同一原理，不同设备怎么调" | ⏳ 待建 |
 | L2a | 天然食材参数库 | 品种/部位/季节/产地/价格 | ⏳ 待建（FoodAtlas/FooDB/USDA待导入） |
 | L2b | 食谱校准库 | 已验证参数组合+可信度评分（L0是裁判） | ⏳ 待建 |
@@ -51,24 +52,108 @@
 
 ---
 
-## L0原理库
+## L0数据规模（2026-03-23 校准）
 
-| 版本 | 原理数 | 原子命题 | 状态 |
-|------|--------|---------|------|
-| 旧版（OFC+MC分开跑） | 597 | 1,159 | 归档 |
-| 新版（12本书统一蒸馏） | 305 | 690 | ✅ 骨架完成 |
-| Stage4 OFC | — | 3,955 | ✅ dedup+QC完成 |
-| Stage4 Neurogastronomy | — | 349 | ✅ dedup+QC完成 |
-| Stage4 mc_vol2/3/4 | — | 待出 | 🔄 Phase B进行中 |
-| **Stage4累计（含骨架）** | — | **4,994+** | 🔄 |
+| 来源 | raw | dedup | QC通过 |
+|------|-----|-------|--------|
+| Stage3骨架 | — | — | 690 |
+| Stage4 21本（详见下表） | 47,203 | 37,084 | 34,355 |
+| **L0累计** | | | **35,045** |
 
-全量30本书预估30,000-50,000条原子命题。
+**主线盘子：46本（21已完成 + 25待处理）**
 
-命题类型分布（旧版1,159条）:
-- causal_chain: 627条 (54%)
-- fact_atom: 309条 (27%)
-- compound_condition: 188条 (16%)
-- mathematical_law: 35条 (3%)
+### Stage4 完成明细（21本，34,355条QC通过）
+
+| 书 | raw | dedup | QC通过 | 通过率 |
+|---|---|---|---|---|
+| ofc | 4,868 | 4,680 | 3,955 | 81% |
+| science_good_cooking | 4,823 | 4,229 | 3,806 | 79% |
+| mc_vol1 | 3,983 | 3,314 | 3,110 | 78% |
+| mouthfeel | 3,021 | 2,605 | 2,410 | 80% |
+| cooking_for_geeks | 3,629 | 3,057 | 2,266 | 62% |
+| food_lab | 3,386 | 2,785 | 2,242 | 66% |
+| professional_baking | 3,134 | 2,458 | 2,136 | 68% |
+| molecular_gastronomy | 2,439 | 2,246 | 1,951 | 80% |
+| bread_hamelman | 2,612 | 1,971 | 1,669 | 64% |
+| science_of_chocolate | 2,319 | 1,871 | 1,577 | 68% |
+| flavorama | 2,012 | 1,689 | 1,258 | 63% |
+| mc_vol4 | 1,267 | 1,166 | 1,034 | 82% |
+| mc_vol3 | 1,194 | 1,123 | 1,059 | 89% |
+| koji_alchemy | 1,414 | 1,178 | 978 | 69% |
+| science_of_spice | 1,604 | 1,052 | 960 | 60% |
+| salt_fat_acid_heat | 1,348 | 1,163 | 910 | 68% |
+| mc_vol2 | 1,085 | 938 | 893 | 82% |
+| noma_fermentation | 1,213 | 1,061 | 850 | 70% |
+| bread_science_yoshino | 657 | 568 | 522 | 79% |
+| ice_cream_flavor | 601 | 438 | 414 | 69% |
+| ratio | 594 | 488 | 355 | 60% |
+
+### 待处理书籍（25本）
+
+**Stage1就绪 → 可直接进Stage4（5本）：**
+french_sauces(127), neurogastronomy(619), dashi_umami(268), handbook_molecular_gastronomy(521), chocolates_confections(908)
+
+**Stage1 Step5 正在跑（1本）：**
+flavor_equation（9b标注中）
+
+**Stage1 Step4+5 待跑（6本）：**
+essentials_food_science, flavor_bible, bocuse_cookbook, taste_whats_missing, modernist_pizza, professional_pastry_chef
+
+**需要OCR+Stage1（2本）：**
+french_patisserie, phoenix_claws
+
+**新增11本（需要OCR起步）：**
+sous_vide_keller, japanese_cooking_tsuji, professional_chef, charcuterie, jacques_pepin, noma_vegetable, art_of_fermentation, flavor_thesaurus, franklin_barbecue, vegetarian_flavor_bible, whole_fish
+
+## Stage4第一批结果
+
+| 书 | raw | dedup后 | QC通过 | 通过率 |
+|---|---|---|---|---|
+| mc_vol1 | 3,983 | 3,314 | 3,110 | 78% |
+| salt_fat_acid_heat | 1,348 | 1,163 | 910 | 67% |
+| ice_cream_flavor | 601 | 438 | 414 | 69% |
+| mouthfeel | 3,021 | 2,605 | 2,410 | 80% |
+| flavorama | 2,012 | 1,689 | 1,258 | 63% |
+| science_of_spice | 1,604 | 1,052 | 960 | 60% |
+| professional_baking | 3,134 | 2,458 | 2,136 | 68% |
+| **合计** | **15,703** | **12,719** | **11,198** | **71%** |
+
+## Pipeline状态
+
+**已完成Stage4（12本）：**
+零批5本 + 一批7本 → 19,178条L0
+
+**Stage4在跑（10本）：**
+第三批7本（food_lab, science_good_cooking, molecular_gastronomy, noma_fermentation, koji_alchemy, ratio, cooking_for_geeks）+ 第五批3本（science_of_chocolate, bread_hamelman, bread_science_yoshino）
+
+**Stage1在跑（3本，Codex）：**
+handbook_molecular_gastronomy（Step5标注中）, dashi_umami（需补Step5）, chocolates_confections（需2b+9b）
+
+**L0收官批（10本，等前置完成后启动）：**
+第六批6本（essentials_food_science, flavor_equation, flavor_bible, french_sauces, bocuse_cookbook, phoenix_claws）+ 第九批4本（taste_whats_missing, modernist_pizza, french_patisserie, professional_pastry_chef）
+
+**L2b食谱提取（不做L0）：**
+第七批7本 + 第八批5本（编译md，无图，只做食谱提取）
+
+## VLM OCR新链路
+
+qwen3.5-flash VLM OCR验证通过（决策#22）：
+- 3本脏书全量OCR完成，0失败0乱码
+- 成本¥0.6/本，速度8.5秒/页
+- 新标准pipeline：PDF → flash OCR → md → 2b → 9b
+- 替代MinerU+qwen-vl+merge五步流程
+
+## 架构更新
+
+架构文档v5已发布：docs/culinary_engine_architecture_v5.docx
+主要更新：
+- Neo4j统一图谱（去掉Weaviate，用Neo4j内置向量索引）
+- Graphiti做L3-personal动态记忆
+- 食谱schema v2：纯配方JSON + Neo4j关系网（科学标注不嵌入食谱）
+- 关键科学决策点（3-5个深度绑定）替代逐步L0硬贴
+- 裂变推导：每个L0绑定点生成3+条what-if推导
+- 五个自主进化机制（查询驱动L3、用户贡献、L0盲区发现、反馈强化、跨食谱模式）
+- LangGraph + 7工具的Agentic Graph RAG
 
 ---
 
@@ -173,33 +258,49 @@ Pipeline: 27b预过滤(或chunk_type快捷) → Opus 4.6核心提取 → embeddi
 19. **stage4_quality.py的has_number改为warning** — 不再fail gate
 20. **API不支持并发** — Opus任务串行排队
 21. **域外原理暂标unclassified** — 全量跑完再统一处理，17域不扩
+22. **qwen3.5-flash替代MinerU为OCR标准**（2026-03-22）
+23. **LangGraph + Neo4j + Graphiti，不用Dify**（2026-03-22）
+24. **Sonnet 4.6 Thinking记录推理过程**（2026-03-22）
+25. **Stage4追加token统计**（2026-03-22）
+26. **Neo4j内置向量索引替代Weaviate**（2026-03-22）
+27. **Graphiti做L3-personal动态记忆**（2026-03-22）
+28. **食谱schema v2——纯JSON + Neo4j关系**（2026-03-22）
+29. **关键科学决策点替代逐步L0绑定**（2026-03-22）
+30. **三级置信度high/medium/inferred/unmapped**（2026-03-22）
+31. **裂变推导——每个L0点→3+ what-if**（2026-03-22）
+32. **编译md只做L2b食谱提取不做L0**（2026-03-22）
 
 ---
 
-## 当前执行与下一步
+## 里程碑
 
-### 正在执行
-- [ ] Stage2：7本新书 embedding 匹配中（13,824 chunks × 306题）
-- [ ] 冰淇淋 Stage2 待跑（完成后全量 14,041 chunks）
+- ✅ Stage4第一批7本完成：11,198条（2026-03-22）
+- ✅ qwen3.5-flash VLM OCR验证通过（2026-03-22）
+- ✅ 3本脏书flash全量OCR完成（2026-03-22）
+- ✅ L0累计突破19,000条（2026-03-22）
+- ✅ 架构文档v5发布（2026-03-22）
 
-### 蒸馏完成后立即做（P2）
-- [ ] 全量 Stage3 蒸馏：306题 × 全量 chunks → Claude Opus 4.6（预计 ~$25，~1小时）
-- [ ] 全量 Stage3B 因果链增强 → Claude Sonnet 4.6（预计 ~$5-8，~1小时）
-- [ ] 195条 fallback confidence 补刷（重新解析JSON，不重新蒸馏）
-- [ ] scan_low_hit 补题扫描：发现知识盲区 → candidate_questions.json → 人工审核
-- [ ] mass_transfer / oxidation_reduction 定向补题（各5-8题）
+## 待办队列
 
-### 原理库稳定后（P3）
-- [ ] Neo4j 搭建 + 实体对齐：原子命题入图谱，causal_chain解析为节点+边
-- [ ] Weaviate 填充：embedding 向量检索层
-- [ ] 外部数据源第一批 ETL：FoodAtlas + FlavorGraph + FooDB + USDA API
-- [ ] 中英食材名映射表（一次建成，所有数据源共用）
+P0（进行中）：
+- Stage4第三批+第五批10本（CC在跑）
+- 3本脏书Stage1收尾（Codex在跑）
 
-### 终局方向（P4，等P0-P3走通后）
-- [ ] 双RAG原型（Neo4j图谱检索 + Weaviate向量检索）
-- [ ] L3推理引擎雏形
-- [ ] v4多维因果图谱 + 审美驱动 + 多Agent架构
-- [ ] 详见：docs/arch_discussion_v4_20260316.docx
+P1（待启动）：
+- 3本脏书Stage4
+- L0收官批10本（第六批+第九批）flash OCR全链路
+
+P2（L0完成后）：
+- Neo4j搭建 + L0导入
+- 外部数据库导入（FoodKG/USDA → L2a）
+- Stage5食谱提取（Step A结构 + Step B L0绑定）
+- Agentic Graph RAG MVP
+
+P3（第二阶段）：
+- FT风味层 + L6翻译层
+- Graphiti L3-personal
+- 用户贡献食谱自动L0绑定
+- 自主进化闭环
 
 ---
 
@@ -207,14 +308,16 @@ Pipeline: 27b预过滤(或chunk_type快捷) → Opus 4.6核心提取 → embeddi
 
 | 组件 | 选型 | 状态 |
 |------|------|------|
-| PDF提取 | MinerU API + qwen3-vl-plus | ✅ |
+| OCR | qwen3.5-flash（DashScope） | ✅ |
 | 文本切分 | qwen3.5:2b Ollama | ✅ |
-| Topic标注 | qwen3.5:9b Ollama (think:false) | ✅ |
+| 食谱提取 | qwen3.5（Ollama本地） | ✅ |
 | Embedding | qwen3-embedding:8b (本地Ollama) | ✅ |
-| 原理蒸馏 | Claude Opus 4.6，代理API | ✅ |
-| 因果链蒸馏 | Claude Sonnet 4.6 | ✅ |
-| 向量库 | Weaviate | ⏳ |
-| 图谱库 | Neo4j Docker | ⏳ |
+| L0蒸馏 | Opus 4.6（代理API） | ✅ |
+| Agent LLM | Sonnet 4.6 Thinking | ✅ |
+| 深度推理 | Opus 4.6 | ✅ |
+| Agent框架 | LangGraph | ✅ |
+| 动态记忆 | Graphiti | ⏳ |
+| 图数据库 | Neo4j 5.x（graph + vector） | ⏳ |
 
 ---
 
@@ -259,3 +362,58 @@ Recipe = components + main_ingredients + garnish + refs + assembly
 3. 多Agent分工：诊断/创作/优化/知识/替换
 4. 1159条原理中627条causal_chain已含因果边，入库时结构化解析即可
 5. 配方Schema采用ISA-88三段分离：process/formula/equipment
+
+---
+## Stage5 食谱提取（Step A）
+
+- ✅ Pilot验证通过（结构化/多组件/叙事型三种格式）
+- ✅ flash vs 27b对比：flash快7倍，质量等同
+- ✅ 合并prompt：chunk_type标注+食谱提取一步到位
+- 🔄 42本书全量在跑（flash API，3并发自动轮转）
+- 已完成: OFC, MC Vol2/3/4, Neurogastronomy
+- 在跑: MC Vol1, SFAH, Ice Cream, Alinea
+- 排队: 33本
+
+### Pilot对比结果
+| 指标 | 27b本地 | flash API |
+|------|--------|-----------|
+| test1 recipes | 2 | 2 |
+| test1 时间 | 114.6s | 16.2s |
+| test2 recipes | 5 | 5 |
+| test2 时间 | 225.0s | 31.0s |
+| test3 空返回 | ✅ | ✅ |
+
+### 关键文件
+- 脚本: scripts/stage5_recipe_extract.py
+- 配置: config/stage5_batch1_books.json
+- 产出: output/stage5_batch/（本地）
+
+### 追加进展
+- ⏳ 第二波23本：等Stage1完成后自动接上
+- ⏳ 第三波17本编译md：需先切分再提取
+
+**结论：flash比27b快7倍，质量等同，全量用flash。**
+
+### 全量规模
+| 批次 | 书数 | 来源 | 状态 |
+|------|------|------|------|
+| 第一波 | 12 | 已完成Stage4的旧书 | 🔄 在跑 |
+| 第二波 | 23 | Stage4在跑+收官批 | ⏳ 等Stage1完成 |
+| 第三波 | 17 | 编译md新书 | ⏳ 需先切分 |
+| **总计** | **52** | | |
+
+### 食谱Schema v2（决策#28）
+纯配方JSON + Neo4j关系网。科学标注（key_science_points/derivations/l0_gaps）全部在Neo4j关系网，不嵌入食谱JSON。
+
+### 两步架构
+- **Step A（qwen3.5-flash，已验证）**：提取纯配方JSON + 同时标注chunk_type/topics
+- **Step B（Opus，待做）**：找3-5个关键科学决策点，绑定L0，生成裂变推导
+
+### 第三波17本新书清单
+Crave, EMP Cookbook, EMP Next Chapter, Manresa, Baltic,
+Meat Illustrated, Momofuku, Organum, Hand and Flowers,
+Alinea, Bouchon, Core, Daniel, Japanese Farm Food,
+Relae, Everlasting Meal, Whole Fish, French Laundry
+
+流程：编译md → 2b切分 → flash提取食谱+标注（不做L0蒸馏）
+---

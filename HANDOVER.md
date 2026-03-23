@@ -249,3 +249,46 @@ thermal_dynamics, mass_transfer, texture_rheology
 
 ## 工作流程
 母对话出工单/设计 → Jeff派给agent → Agent开发push分支 → Jeff把分支链接/diff贴给母对话 → 母对话review → Jeff merge
+
+---
+
+## 2026-03-22 架构升级
+
+架构文档v5发布  
+docs/culinary_engine_architecture_v5.docx
+
+覆盖：Neo4j本体设计、食谱schema v2、Agentic Graph RAG、自主进化机制
+
+### 核心架构变更
+
+- Neo4j统一存储（去掉Weaviate，用内置向量索引）
+- Graphiti做L3-personal动态记忆
+- 食谱存纯JSON，科学标注在Neo4j关系网
+- 关键科学决策点（3-5个）+ 裂变推导（每个3+条what-if）
+- 五个自主进化机制
+
+### 技术栈确认
+
+- 图数据库：Neo4j 5.x（graph + vector）
+- Agent框架：LangGraph
+- 动态记忆：Graphiti
+- Agent LLM：Sonnet 4.6 Thinking
+- 深度推理：Opus 4.6
+- 食谱提取：qwen3.5（Ollama本地）
+- Embedding：qwen3-embedding:8b（Ollama本地）
+- OCR：qwen3.5-flash（DashScope）
+- L0蒸馏：Opus 4.6（代理API）
+
+### 数据进展
+
+- L0累计：19,178条
+- Stage4在跑：10本（CC）
+- Stage1在跑：3本（Codex）
+- L0收官批：10本排队
+- 全量预估：~45,000条
+
+### 关键文件
+
+- 架构v5：docs/culinary_engine_architecture_v5.docx
+- 食谱schema：docs/recipe_schema_v1.md（v2设计在架构v5第4章）
+- Stage5设计：docs/stage5_recipe_extract_design.md（更新见架构v5第4章）
