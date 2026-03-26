@@ -40,3 +40,8 @@ scripts/dify/dify_config.json
 
 # Agent settings (local only)
 .claude/settings.local.json
+reports/*.log
+reports/*_err.log
+reports/*.done
+reports/*.fail
+data/
