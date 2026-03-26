@@ -58,8 +58,8 @@ Stage 3B: l0_principles.jsonl + matches -> l0_principles_v2.jsonl
 ```bash
 python3 scripts/run_book.py \
   --book-id mc_vol2 \
-  --output-root /Users/jeff/l0-knowledge-engine/output \
-  --questions /Users/jeff/l0-knowledge-engine/data/l0_question_master.json \
+  --output-root /Users/jeff/culinary-engine/output \
+  --questions /Users/jeff/culinary-engine/data/l0_question_master.json \
   --config config/api.yaml \
   --books config/books.yaml \
   --toc config/mc_toc.json \
@@ -72,8 +72,8 @@ Run Stage 2 through Stage 3B only:
 ```bash
 python3 scripts/run_book.py \
   --book-id mc_vol2 \
-  --output-root /Users/jeff/l0-knowledge-engine/output \
-  --questions /Users/jeff/l0-knowledge-engine/data/l0_question_master.json \
+  --output-root /Users/jeff/culinary-engine/output \
+  --questions /Users/jeff/culinary-engine/data/l0_question_master.json \
   --config config/api.yaml \
   --books config/books.yaml \
   --toc config/mc_toc.json \
@@ -85,8 +85,8 @@ Stop after Stage 3:
 ```bash
 python3 scripts/run_book.py \
   --book-id mc_vol2 \
-  --output-root /Users/jeff/l0-knowledge-engine/output \
-  --questions /Users/jeff/l0-knowledge-engine/data/l0_question_master.json \
+  --output-root /Users/jeff/culinary-engine/output \
+  --questions /Users/jeff/culinary-engine/data/l0_question_master.json \
   --config config/api.yaml \
   --books config/books.yaml \
   --toc config/mc_toc.json \
@@ -98,8 +98,8 @@ Skip Stage 1 and reuse existing chunks:
 ```bash
 python3 scripts/run_book.py \
   --book-id mc_vol2 \
-  --output-root /Users/jeff/l0-knowledge-engine/output \
-  --questions /Users/jeff/l0-knowledge-engine/data/l0_question_master.json \
+  --output-root /Users/jeff/culinary-engine/output \
+  --questions /Users/jeff/culinary-engine/data/l0_question_master.json \
   --config config/api.yaml \
   --books config/books.yaml \
   --toc config/mc_toc.json \
@@ -125,7 +125,7 @@ Stage 1:
 ```bash
 python3 scripts/stage1_pipeline.py \
   --book-id mc_vol2 \
-  --output-dir /Users/jeff/l0-knowledge-engine/output/mc_vol2/stage1 \
+  --output-dir /Users/jeff/culinary-engine/output/mc_vol2/stage1 \
   --config config/api.yaml \
   --books config/books.yaml \
   --toc config/mc_toc.json
@@ -134,19 +134,19 @@ python3 scripts/stage1_pipeline.py \
 Stage 2:
 ```bash
 python3 scripts/stage2_match.py \
-  --chunks /Users/jeff/l0-knowledge-engine/output/mc_vol2/stage1/chunks_smart.json \
-           /Users/jeff/l0-knowledge-engine/output/mc_vol3/stage1/chunks_smart.json \
-  --questions /Users/jeff/l0-knowledge-engine/data/l0_question_master.json \
-  --output /Users/jeff/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
+  --chunks /Users/jeff/culinary-engine/output/mc_vol2/stage1/chunks_smart.json \
+           /Users/jeff/culinary-engine/output/mc_vol3/stage1/chunks_smart.json \
+  --questions /Users/jeff/culinary-engine/data/l0_question_master.json \
+  --output /Users/jeff/culinary-engine/output/stage2/question_chunk_matches.json \
   --config config/api.yaml
 ```
 
 Stage 3:
 ```bash
 python3 scripts/stage3_distill.py \
-  --matches /Users/jeff/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --chunks /Users/jeff/l0-knowledge-engine/output/stage3/merged_chunks.json \
-  --output-dir /Users/jeff/l0-knowledge-engine/output/stage3 \
+  --matches /Users/jeff/culinary-engine/output/stage2/question_chunk_matches.json \
+  --chunks /Users/jeff/culinary-engine/output/stage3/merged_chunks.json \
+  --output-dir /Users/jeff/culinary-engine/output/stage3 \
   --config config/api.yaml \
   --domains config/domains_v2.json \
   --append
@@ -155,10 +155,10 @@ python3 scripts/stage3_distill.py \
 Stage 3B:
 ```bash
 python3 scripts/stage3b_causal.py \
-  --input /Users/jeff/l0-knowledge-engine/output/stage3/l0_principles.jsonl \
-  --matches /Users/jeff/l0-knowledge-engine/output/stage2/question_chunk_matches.json \
-  --output /Users/jeff/l0-knowledge-engine/output/stage3/l0_principles_v2.jsonl \
-  --report /Users/jeff/l0-knowledge-engine/output/stage3/stage3b_report.txt \
+  --input /Users/jeff/culinary-engine/output/stage3/l0_principles.jsonl \
+  --matches /Users/jeff/culinary-engine/output/stage2/question_chunk_matches.json \
+  --output /Users/jeff/culinary-engine/output/stage3/l0_principles_v2.jsonl \
+  --report /Users/jeff/culinary-engine/output/stage3/stage3b_report.txt \
   --config config/api.yaml
 ```
 

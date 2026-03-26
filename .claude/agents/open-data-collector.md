@@ -38,7 +38,7 @@ model: sonnet
 
 所有采集数据落到：
 
-`~/l0-knowledge-engine/data/external/{source_name}/`
+`~/culinary-engine/data/external/{source_name}/`
 
 每次采集产出一个 manifest.json：
 ```json

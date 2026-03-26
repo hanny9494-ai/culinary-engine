@@ -13,7 +13,7 @@ import shutil
 import argparse
 from pathlib import Path
 
-L0_OUTPUT = Path.home() / "l0-knowledge-engine" / "output"
+L0_OUTPUT = Path(__file__).resolve().parent.parent / "output"
 CE_OUTPUT = Path.home() / "culinary-engine" / "output"
 
 # Archive these subdirectories (test/obsolete data)

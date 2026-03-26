@@ -115,12 +115,12 @@ Recommendation: [建议]
 - 关键科学决策点替代逐步 L0 绑定
 - 编译 md 只做 L2b 食谱提取不做 L0
 
-## 7. 两个根目录
+## 7. 项目根目录
 
-- 代码仓库：~/culinary-engine
-- 主数据目录：~/l0-knowledge-engine/output
-
-STATUS.md 在 ~/culinary-engine/STATUS.md（唯一权威来源）。
+统一根目录：`~/culinary-engine`
+- 代码、配置、文档、agents 都在此 repo
+- `output/` 是 symlink → `~/l0-knowledge-engine/output`（数据不入 git）
+- STATUS.md 在 `~/culinary-engine/STATUS.md`（唯一权威来源）
 
 ## 8. Dify 集成
 

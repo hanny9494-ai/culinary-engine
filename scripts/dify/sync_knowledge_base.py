@@ -25,7 +25,7 @@ PASSWORD = "Jeffery96352101"
 
 SYNC_FILES = {
     "STATUS.md": Path.home() / "culinary-engine" / "STATUS.md",
-    "CLAUDE.md": Path.home() / "l0-knowledge-engine" / "CLAUDE.md",
+    "CLAUDE.md": Path(__file__).resolve().parent.parent.parent / "CLAUDE.md",
 }
 
 

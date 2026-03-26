@@ -248,8 +248,6 @@ def resolve_chunks_path(chunks_arg: str | None, book_id: str | None) -> Path:
 
     candidates = [
         REPO_ROOT / "output" / book_id / "stage1" / "chunks_smart.json",
-        Path("/Users/jeff/l0-knowledge-engine/output") / book_id / "stage1" / "chunks_smart.json",
-        Path("/Users/jeff/culinary-engine/output") / book_id / "stage1" / "chunks_smart.json",
     ]
     for candidate in candidates:
         if candidate.exists():

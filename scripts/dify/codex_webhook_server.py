@@ -27,13 +27,13 @@ from datetime import datetime
 PORT = 8741
 CODEX_BIN = str(Path.home() / "bin" / "codex")
 DEFAULT_WORKDIR = str(Path.home() / "culinary-engine")
-RESULT_DIR = Path.home() / "l0-knowledge-engine" / "data" / "codex_results"
+RESULT_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "codex_results"
 RESULT_DIR.mkdir(parents=True, exist_ok=True)
 
 TASK_CONTEXT = """## Context
 - 项目：culinary-engine（餐饮科学推理引擎）
 - 代码仓库：~/culinary-engine
-- 数据目录：~/l0-knowledge-engine/output
+- 数据目录：~/culinary-engine/output
 - trust_env=False（本机代理 127.0.0.1:7890）
 - Ollama 串行，不并发
 - 保持 CLI 和输出格式兼容

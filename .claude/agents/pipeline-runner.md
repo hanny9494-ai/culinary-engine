@@ -24,13 +24,12 @@ model: sonnet
 ## 2. 你工作的两个根目录
 
 - 代码仓库：`~/culinary-engine`
-- 主数据目录：`~/l0-knowledge-engine/output`
+- 主数据目录：`~/culinary-engine/output`
 
 默认原则：
 
 - 代码、脚本、分支操作在 `~/culinary-engine`
-- 最终书籍产物优先落在 `~/l0-knowledge-engine/output/{book_id}/...`
-- 如果临时在 `~/culinary-engine/output/{book_id}` 跑出正式产物，完成后要同步回 `~/l0-knowledge-engine/output/{book_id}/stage1/`
+- 最终书籍产物优先落在 `~/culinary-engine/output/{book_id}/...`
 
 ## 3. 当前有效的 Stage1 事实
 
@@ -86,14 +85,14 @@ Step5 失败项写入：
 
 OCR 标准输出目录：
 
-- `~/l0-knowledge-engine/output/{book_id}/vlm_full_flash/vlm_ocr_pages.json`
-- `~/l0-knowledge-engine/output/{book_id}/vlm_full_flash/vlm_ocr_merged.md`
+- `~/culinary-engine/output/{book_id}/vlm_full_flash/vlm_ocr_pages.json`
+- `~/culinary-engine/output/{book_id}/vlm_full_flash/vlm_ocr_merged.md`
 
 如果源文件不是 PDF 而是 EPUB / MOBI：
 
 - 优先用 `ebook-convert` 转成 PDF
 - 转换 PDF 保存为：
-  `~/l0-knowledge-engine/output/{book_id}/source_converted.pdf`
+  `~/culinary-engine/output/{book_id}/source_converted.pdf`
 
 ### 3.3 TOC 规则
 
@@ -260,14 +259,14 @@ Stage4 是现在的 L0 主力提取链路：
 Stage1：
 
 - `~/culinary-engine/scripts/stage1_pipeline.py`
-- `~/l0-knowledge-engine/output/{book_id}/stage1/chunks_smart.json`
+- `~/culinary-engine/output/{book_id}/stage1/chunks_smart.json`
 
 Stage4：
 
 - `~/culinary-engine/scripts/stage4_open_extract.py`
 - `~/culinary-engine/scripts/stage4_dedup.py`
 - `~/culinary-engine/scripts/stage4_quality.py`
-- `~/l0-knowledge-engine/output/stage4_{book_id}/`
+- `~/culinary-engine/output/stage4_{book_id}/`
 
 状态文档：
 

@@ -25,7 +25,7 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from collections import Counter
 
-L0_OUTPUT = Path.home() / "l0-knowledge-engine" / "output"
+L0_OUTPUT = Path(__file__).resolve().parent.parent.parent / "output"
 CE_OUTPUT = Path.home() / "culinary-engine" / "output"
 REPORT_DIR = Path.home() / "culinary-engine" / "reports"
 

@@ -8,7 +8,7 @@
 - **目标用户**：专业厨师（粤菜/法餐/融合菜）
 - **核心公式**：食材参数 × 风味目标 × 科学原理 = 无限食谱
 - **仓库**：https://github.com/hanny9494-ai/culinary-engine
-- **本地数据**：~/l0-knowledge-engine/
+- **本地数据：~/culinary-engine/（统一根目录）
 
 ---
 

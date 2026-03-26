@@ -28,7 +28,7 @@ APP_DESC = "查询餐饮研发引擎项目状态"
 
 DOCS_TO_UPLOAD = [
     Path.home() / "culinary-engine" / "STATUS.md",
-    Path.home() / "l0-knowledge-engine" / "CLAUDE.md",
+    Path(__file__).resolve().parent.parent.parent / "CLAUDE.md",
 ]
 
 SYSTEM_PROMPT = """你是餐饮研发引擎（culinary-engine）的项目知识库助手。

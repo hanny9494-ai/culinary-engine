@@ -27,23 +27,26 @@ import stage1_pipeline as stage1
 SESSION = requests.Session()
 SESSION.trust_env = False
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+OUTPUT_ROOT = REPO_ROOT / "output"
+
 BATCH_BOOKS = {
-    "ofc": "/Users/jeff/l0-knowledge-engine/output/ofc/stage1/chunks_smart.json",
-    "mc_vol2": "/Users/jeff/l0-knowledge-engine/output/mc/vol2/stage1/chunks_smart.json",
-    "mc_vol3": "/Users/jeff/l0-knowledge-engine/output/mc/vol3/stage1/chunks_smart.json",
-    "mc_vol4": "/Users/jeff/l0-knowledge-engine/output/mc/vol4/stage1/chunks_smart.json",
-    "neurogastronomy": "/Users/jeff/l0-knowledge-engine/output/neurogastronomy/stage1/stage1/chunks_smart.json",
-    "mc_vol1": "/Users/jeff/l0-knowledge-engine/output/mc_vol1/stage1/stage1/chunks_smart.json",
-    "salt_fat_acid_heat": "/Users/jeff/l0-knowledge-engine/output/salt_fat_acid_heat/stage1/stage1/chunks_smart.json",
-    "ice_cream_flavor": "/Users/jeff/l0-knowledge-engine/output/ice_cream_flavor/stage1/stage1/chunks_smart.json",
-    "mouthfeel": "/Users/jeff/l0-knowledge-engine/output/mouthfeel/stage1/stage1/chunks_smart.json",
-    "flavorama": "/Users/jeff/l0-knowledge-engine/output/flavorama/stage1/stage1/chunks_smart.json",
-    "science_of_spice": "/Users/jeff/l0-knowledge-engine/output/science_of_spice/stage1/stage1/chunks_smart.json",
-    "professional_baking": "/Users/jeff/l0-knowledge-engine/output/professional_baking/stage1/stage1/chunks_smart.json",
+    "ofc": str(OUTPUT_ROOT / "ofc/stage1/chunks_smart.json"),
+    "mc_vol2": str(OUTPUT_ROOT / "mc/vol2/stage1/chunks_smart.json"),
+    "mc_vol3": str(OUTPUT_ROOT / "mc/vol3/stage1/chunks_smart.json"),
+    "mc_vol4": str(OUTPUT_ROOT / "mc/vol4/stage1/chunks_smart.json"),
+    "neurogastronomy": str(OUTPUT_ROOT / "neurogastronomy/stage1/stage1/chunks_smart.json"),
+    "mc_vol1": str(OUTPUT_ROOT / "mc_vol1/stage1/stage1/chunks_smart.json"),
+    "salt_fat_acid_heat": str(OUTPUT_ROOT / "salt_fat_acid_heat/stage1/stage1/chunks_smart.json"),
+    "ice_cream_flavor": str(OUTPUT_ROOT / "ice_cream_flavor/stage1/stage1/chunks_smart.json"),
+    "mouthfeel": str(OUTPUT_ROOT / "mouthfeel/stage1/stage1/chunks_smart.json"),
+    "flavorama": str(OUTPUT_ROOT / "flavorama/stage1/stage1/chunks_smart.json"),
+    "science_of_spice": str(OUTPUT_ROOT / "science_of_spice/stage1/stage1/chunks_smart.json"),
+    "professional_baking": str(OUTPUT_ROOT / "professional_baking/stage1/stage1/chunks_smart.json"),
 }
 
 COMPILED_MD_DIR = Path("/Users/jeff/Documents/厨书数据库（编译）")
-L0_OUTPUT_ROOT = Path("/Users/jeff/l0-knowledge-engine/output")
+L0_OUTPUT_ROOT = OUTPUT_ROOT
 COMPILED_MD_FILES = [
     "Crave.md",
     "Eleven Madison Park The Next Chapter 紫色封面 .md",

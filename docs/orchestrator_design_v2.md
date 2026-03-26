@@ -34,7 +34,7 @@ Orchestrator (launchd 守护, 每60s轮询)
 ```python
 DB_PATH = Path.home() / "culinary-engine" / "data" / "task_queue.db"
 CE_DIR = Path.home() / "culinary-engine"
-L0_OUTPUT = Path.home() / "l0-knowledge-engine" / "output"
+L0_OUTPUT = Path.home() / "culinary-engine" / "output"
 LOG_DIR = Path.home() / "culinary-engine" / "reports"
 GH_BIN = "/opt/homebrew/bin/gh"
 TMUX_SESSION = "ce"
@@ -93,7 +93,7 @@ def run_codex_in_tmux(prompt, window_name, task_id=0, dry_run=False, timeout=144
     # 5. 读 report JSON，返回 summary
 ```
 
-**必须用 `--dangerously-bypass-approvals-and-sandbox`**，否则 Codex 写不了 `~/l0-knowledge-engine/output/`。
+**必须用 `--dangerously-bypass-approvals-and-sandbox`**，否则 Codex 写不了 `~/culinary-engine/output/`。
 
 ## 7. ENV_CONTEXT（每个 prompt 前置）
 
@@ -102,7 +102,7 @@ IMPORTANT ENVIRONMENT NOTES:
 - Ollama runs at http://localhost:11434
 - This machine has a proxy at 127.0.0.1:7890. ALL HTTP clients MUST set trust_env=False
 - Before running any script, run: export no_proxy=localhost,127.0.0.1 http_proxy= https_proxy=
-- Output data goes to ~/l0-knowledge-engine/output/
+- Output data goes to ~/culinary-engine/output/
 - Do not modify any existing scripts.
 ```
 

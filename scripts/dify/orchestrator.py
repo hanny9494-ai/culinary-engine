@@ -56,7 +56,7 @@ log = logging.getLogger("orchestrator")
 # ============================================================
 DB_PATH = Path.home() / "culinary-engine" / "data" / "task_queue.db"
 CE_DIR = Path.home() / "culinary-engine"
-L0_OUTPUT = Path.home() / "l0-knowledge-engine" / "output"
+L0_OUTPUT = Path(__file__).resolve().parent.parent.parent / "output"
 REPORT_DIR = LOG_DIR / "task_reports"
 LEARNINGS_PATH = LOG_DIR / "learnings.jsonl"
 FIX_LOG_PATH = LOG_DIR / "auto_fixes.jsonl"
@@ -129,7 +129,7 @@ IMPORTANT ENVIRONMENT NOTES:
 - Ollama runs at http://localhost:11434
 - This machine has a proxy at 127.0.0.1:7890. ALL HTTP clients MUST set trust_env=False
 - Before running any script, run: export no_proxy=localhost,127.0.0.1 http_proxy= https_proxy=
-- Output data goes to ~/l0-knowledge-engine/output/
+- Output data goes to ~/culinary-engine/output/
 - Do not modify any existing scripts.
 """
 
@@ -489,8 +489,8 @@ def run_ocr_batch(task, dry_run=False):
 Run qwen3.5-flash VLM OCR for these books: {book_list}
 
 For each book:
-1. Source PDF at ~/l0-knowledge-engine/output/{{book_id}}/source_converted.pdf
-2. Output to ~/l0-knowledge-engine/output/{{book_id}}/ocr/vlm_ocr_pages.json and vlm_ocr_merged.md
+1. Source PDF at ~/culinary-engine/output/{{book_id}}/source_converted.pdf
+2. Output to ~/culinary-engine/output/{{book_id}}/ocr/vlm_ocr_pages.json and vlm_ocr_merged.md
 3. Use: python3 scripts/flash_ocr_dashscope.py --pdf <pdf> --output-dir <ocr_dir>
 4. MUST use trust_env=False (already in script)
 5. Process sequentially (one at a time)

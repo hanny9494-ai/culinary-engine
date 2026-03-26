@@ -27,12 +27,12 @@ from datetime import datetime
 
 CODEX_BIN = Path.home() / "bin" / "codex"
 DEFAULT_WORKDIR = Path.home() / "culinary-engine"
-RESULT_DIR = Path.home() / "l0-knowledge-engine" / "data" / "codex_results"
+RESULT_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "codex_results"
 
 TASK_CONTEXT = """## Context
 - 项目：culinary-engine（餐饮科学推理引擎）
 - 代码仓库：~/culinary-engine
-- 数据目录：~/l0-knowledge-engine/output
+- 数据目录：~/culinary-engine/output
 - 所有 HTTP 客户端必须 trust_env=False（本机有代理 127.0.0.1:7890）
 - Ollama 调用必须串行（不能并发跑多本书）
 - 保持现有 CLI argparse 接口兼容

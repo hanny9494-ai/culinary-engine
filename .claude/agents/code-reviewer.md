@@ -22,7 +22,7 @@ model: opus
 ### 1.1 根目录
 
 - 仓库：`~/culinary-engine`
-- 主数据目录：`~/l0-knowledge-engine/output`
+- 数据目录：`~/culinary-engine/output/`
 
 ### 1.2 项目目标
 
@@ -371,7 +371,7 @@ model: opus
 例如：
 
 - 正式产物只写到了 `~/culinary-engine/output`
-- 没同步回 `~/l0-knowledge-engine/output`
+- 路径引用不一致
 - 试验产物和正式产物混在一起
 
 ### 10.3 错并发

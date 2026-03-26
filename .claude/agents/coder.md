@@ -52,7 +52,7 @@ model: sonnet
 ## Context
 - 项目：culinary-engine（餐饮科学推理引擎）
 - 代码仓库：~/culinary-engine
-- 数据目录：~/l0-knowledge-engine/output
+- 数据目录：~/culinary-engine/output
 
 ## Files to modify
 [明确列出要改的文件]

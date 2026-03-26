@@ -334,7 +334,7 @@ export L0_API_KEY="..."
 ## GitHub
 - 新仓库: https://github.com/hanny9494-ai/culinary-engine
 - 旧仓库（参考）: https://github.com/hanny9494-ai/L0-systerm
-- 本地数据: ~/l0-knowledge-engine/
+- 本地数据: ~/culinary-engine/ (output/ symlink → l0-knowledge-engine)
 
 ---
 

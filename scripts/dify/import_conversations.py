@@ -26,11 +26,11 @@ DIFY_URL = "http://localhost"
 EMAIL = "hanny9494@gmail.com"
 PASSWORD = "Jeffery96352101"
 
-CONV_FILE = Path.home() / "l0-knowledge-engine/data/conversation_history/conversations.json"
+CONV_FILE = Path(__file__).resolve().parent.parent.parent / "data" / "conversation_history" / "conversations.json"
 DATASET_ID = "43a926e2-666f-4234-8eb9-c29ccca63916"  # conversation-history KB
 
 # Output dir for converted markdown files
-OUTPUT_DIR = Path.home() / "l0-knowledge-engine/data/conversation_history/converted"
+OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "conversation_history" / "converted"
 
 # Conversations with these keywords in name are project-related
 PROJECT_KEYWORDS = [
