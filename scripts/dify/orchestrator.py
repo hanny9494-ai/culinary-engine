@@ -208,9 +208,10 @@ def detect_task_type(task):
 
 def extract_book_id(task):
     title = task.get("title", "")
-    m = re.search(r":\s*(\S+?)[\s(]", title)
+    # Match "Stage4: book_name" or "Stage4: book_name (extra)"
+    m = re.search(r":\s*(\S+?)(?:\s*\(|$)", title)
     if m:
-        return m.group(1)
+        return m.group(1).rstrip()
     inp = task.get("input_path", "")
     if inp:
         return Path(inp).stem
