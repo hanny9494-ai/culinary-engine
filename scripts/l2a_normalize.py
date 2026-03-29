@@ -12,6 +12,12 @@ API: qwen3.5-flash via DashScope (DASHSCOPE_API_KEY).
 Concurrency: ThreadPoolExecutor with 4 workers.
 """
 
+# MUST be first: kill proxy env vars before any network library loads
+import os as _os
+for _k in ("http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY",
+           "all_proxy", "ALL_PROXY", "no_proxy", "NO_PROXY"):
+    _os.environ.pop(_k, None)
+
 import argparse
 import json
 import os
