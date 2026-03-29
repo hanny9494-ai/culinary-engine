@@ -25,6 +25,11 @@ Thumbs.db
 # 输出目录
 output/
 data/
+!data/external/
+data/external/**/*.xlsx
+data/external/**/*.parquet
+data/external/**/raw_recipe_data.json
+data/external/**/OpenFoodTox_v2.1.xlsx
 
 # 环境变量
 .env
