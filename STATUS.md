@@ -1,9 +1,90 @@
-# 餐饮研发引擎 — 项目状态 v6
+# 餐饮研发引擎 — 项目状态 v7
 
 > 母对话维护此文件，agent不许修改
 > 新仓库: https://github.com/hanny9494-ai/culinary-engine
-> 更新时间: 2026-03-23
+> 更新时间: 2026-03-30
 > CC Lead 基础设施已迁入本仓库（CLAUDE.md + .claude/agents/ + scripts/dify/）
+
+---
+
+## 2026-03-30 Session 更新
+
+### L0 蒸馏
+- ✅ jacques_pepin dedup+QC 完成：401 条通过（98.3%）
+- L0 累计 **45,093 条** QC 通过
+
+### L2a 天然食材参数库（本日主线）
+- ✅ 架构审查完成（architect agent），报告 `reports/architect_schema_audit_20260330.md`
+- ✅ recipe_id 分配：65 本书 **30,582 条食谱**全部分配唯一 ID
+- ✅ 外部数据源合并：books 18,951 + USDA 19,295 = **38,246 raw ingredients**
+- ✅ L2a 三轮归一化完成：
+  - Round 1 Flash：38,246 → 13,230 canonicals, 27,594 mapped
+  - Round 2 Opus 1M：866 组全局合并, 1,124 alias merged → 12,106
+  - Round 3 Flash：+8,689 新映射 → **12,985 canonicals, 36,283/38,246 mapped (94.9%)**
+- ✅ 清洗完成：删除 197 垃圾条目 + 分离 13 品牌产品 → **12,775 干净天然食材**
+- ⚠️ USDA 数据质量问题发现：packaged food 污染 → **决策：USDA 全量不用，仅 Foundation Foods 子集 335 条可用**
+- 🔄 外部数据源 11/14 已下载（bitterdb/supersweet/phenol_explorer 链接失效待手动补）
+- ✅ 16 本食材图鉴书已下载到 `~/Documents/食材蒸馏书本/`（含新增 Larousse Gastronomique）
+- ✅ 干鮑魚海味寶典：73 页 webp 已下载（后 173 页被免费套餐锁，可联系作者）
+- 🔄 PaddleOCR API 批量 OCR 进行中（11 PDF + 5 EPUB）
+
+### L2b 食谱校准库
+- ✅ Step B 设计文档完成（`docs/l2b_stepb_prompt_design.md`）
+- Step B 执行推迟到 Neo4j 搭建后（需要向量检索做 L0 绑定）
+
+### L2c 商业食材数据库
+- ✅ 调研完成：粤菜调味料 310 SKU + 全品类 6,500-10,000 SKU
+- ✅ TDS 爬虫脚本就绪（`scripts/l2c_scrape_tds.py`，5 品牌）
+- ✅ TDS 数据源调研：Boiron/Valrhona/Callebaut/Debic 公开可爬
+- 🔄 等外部数据下载完 + L2a 稳定后启动
+
+### 基础设施
+- ✅ API 路由文档：`docs/api_routing.md`
+- ✅ coder agent 修复：Codex push 到 GitHub + CC Lead fetch + review 闭环
+- ✅ Agent tool worktree 隔离问题确认：所有 subagent 有隔离，写文件任务用 `claude -p` 或终端直接跑
+- ✅ OCR 工具调研：推荐 PaddleOCR/MinerU 做文字提取 + flash VLM 做图片识别
+
+### 新技术决策
+- **#37**: USDA 全量不用，仅 Foundation Foods 335 条（2026-03-30）— packaged food 污染
+- **#38**: 每个外部数据源导入前必须质量检查（2026-03-30）
+- **#39**: DashScope flash/plus 默认关闭 thinking（2026-03-30）— 节省 10x 时间
+- **#40**: Pipeline 脚本必须有分步落袋 + resume + 进度持久化（2026-03-30）
+- **#41**: CC Lead 不写代码，编码全部由 coder agent 完成（2026-03-30）
+- **#42**: 食材图鉴书走简单 OCR 提取文字 → LLM 提取食材名（2026-03-30）— 不需要复杂三层 pipeline
+
+### 待办队列
+
+**P0（进行中）：**
+- 16 本食材图鉴书 OCR（PaddleOCR API）→ 提取食材名
+  - PDF 11 本：PaddleOCR 云端 API
+  - EPUB 5 本：ebooklib 直接提取文字
+  - 新增：Larousse Gastronomique（4,000+ 条目）
+- 干鮑魚海味寶典：73 页已下载（后 173 页被平台免费套餐锁定）
+- 外部数据源 11/14 已下载 → 食材提取 → 重跑 L2a 归一化（不含 USDA 全量）
+
+**P1（L2a 稳定后）：**
+- L2a Gemini 蒸馏（canonical atoms → 完整参数）
+- L2c TDS 爬虫启动（5 品牌 193 SKU）
+- Neo4j 搭建 + L0/L2a/L2b 导入
+- L2b Step C（L0 绑定，需 Neo4j 向量检索）
+
+**P2：**
+- 粤菜食材专项补充（干货/海鲜/汤料/酱料）
+- L2c 品牌调味料数据（李锦记/海天/港式品牌）
+- FT 风味目标库
+- L6 翻译层
+
+### 研究报告（今日产出）
+- `docs/api_routing.md` — API 路由完整参考
+- `docs/research/l2c_cantonese_condiments_data_sources.md` — 粤菜调味料数据源
+- `docs/research/l2c_full_commercial_ingredients.md` — 全品类商业食材目录
+- `docs/research/l2c_tds_sources.md` — TDS 技术数据表来源
+- `docs/research/l2a_global_food_atom_sources.md` — 全球食材原子数据库
+- `docs/research/l2a_ingredient_reference_books.md` — 食材图鉴书单
+- `docs/research/ocr_tools_comparison_2026.md` — OCR 工具对比
+- `docs/research/claude_code_agent_isolation.md` — Agent tool 隔离问题
+- `docs/research/cci_website_exploration.md` — CCI 网站探索
+- `reports/architect_schema_audit_20260330.md` — 架构审查报告
 
 ---
 
@@ -19,14 +100,14 @@
 
 | 层 | 名称 | 定位 | 状态 |
 |----|------|------|------|
-| L0 | 科学原理图谱 | "为什么会发生" — 因果链+参数边界+17域 | 🔄 蒸馏中（21/46本完成） |
+| L0 | 科学原理图谱 | "为什么会发生" — 因果链+参数边界+17域 | ✅ 45,093 条 QC 通过（收官中） |
 | L1 | 设备实践参数层 | "同一原理，不同设备怎么调" | ⏳ 待建 |
-| L2a | 天然食材参数库 | 品种/部位/季节/产地/价格 | ⏳ 待建（FoodAtlas/FooDB/USDA待导入） |
-| L2b | 食谱校准库 | 已验证参数组合+可信度评分（L0是裁判） | ⏳ 待建 |
-| L2c | 商业食材数据库 | 品牌/型号→成分细分（食谱精确到品牌） | ⏳ 待建（USDA Branded待导入） |
-| FT | 风味目标库 | 审美词→可量化感官参数 | ⏳ 待建（FlavorGraph/FlavorDB2待导入） |
+| L2a | 天然食材参数库 | 品种/部位/季节/产地/价格 | 🔄 归一化完成 12,775 atoms，待 Gemini 蒸馏 |
+| L2b | 食谱校准库 | 已验证参数组合+可信度评分（L0是裁判） | ✅ 30,582 条食谱（65本），Step B 待做 |
+| L2c | 商业食材数据库 | 品牌/型号→成分细分（食谱精确到品牌） | 🔄 调研完成，TDS 爬虫就绪 |
+| FT | 风味目标库 | 审美词→可量化感官参数 | ⏳ 待建（FlavorDB2 已下载） |
 | L3 | 推理引擎 | f(L0,L1,L2a,L2c,FT) 预计算+实时推理 | ⏳ 待建 |
-| L6 | 翻译层 | 粤菜语言↔系统语言（纯翻译不判断） | ⏳ 待建（FoodOn本体待对齐） |
+| L6 | 翻译层 | 粤菜语言↔系统语言（纯翻译不判断） | ⏳ 待建 |
 
 ---
 
