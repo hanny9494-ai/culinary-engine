@@ -38,6 +38,7 @@ L2A_DIR = ROOT / "output" / "l2a"
 DEFAULT_INPUT = L2A_DIR / "ingredient_seeds.json"
 DEFAULT_OUTPUT = L2A_DIR / "canonical_map.json"
 ERRORS_OUTPUT = L2A_DIR / "normalize_errors.json"
+PARTIAL_OUTPUT = L2A_DIR / "canonical_map_partial.jsonl"
 
 # ── API config ────────────────────────────────────────────────────────────────
 MODEL = "qwen3.5-flash"
@@ -111,6 +112,7 @@ def call_llm(base_url: str, api_key: str, prompt_user: str) -> dict | None:
         ],
         "temperature": 0.1,
         "max_tokens": 8192,
+        "enable_thinking": False,  # DashScope: skip reasoning tokens, 10x faster
     }
 
     # Use a session with explicit no-proxy to bypass any inherited env
@@ -176,31 +178,63 @@ def chunk_list(lst, size):
     return [lst[i:i + size] for i in range(0, len(lst), size)]
 
 
-def build_batches(ingredients, batch_size, resume_categories):
+def build_batches(ingredients, batch_size, done_batch_keys):
+    """Build batches with unique keys for resume support."""
     groups = defaultdict(list)
     for ing in ingredients:
         cat = ing.get("category_guess", "other")
         groups[cat].append(ing)
     batches = []
     for cat, items in sorted(groups.items()):
-        if cat in resume_categories:
-            continue
-        for chunk in chunk_list(items, batch_size):
-            batches.append((cat, chunk))
+        for i, chunk in enumerate(chunk_list(items, batch_size)):
+            batch_key = f"{cat}_{i}"
+            if batch_key in done_batch_keys:
+                continue
+            batches.append((batch_key, cat, chunk))
     return batches
 
 
-def load_resume_state(output_path):
-    if not output_path.exists():
-        return {}, {}, set()
+def load_resume_state(partial_path):
+    """Load partial JSONL for resume. Each line is a batch result."""
+    all_c = {}
+    r2c = {}
+    done_batch_keys = set()
+    if not partial_path.exists():
+        return all_c, r2c, done_batch_keys
     try:
-        existing = json.loads(output_path.read_text(encoding="utf-8"))
-        all_c = {c["canonical_id"]: c for c in existing.get("canonicals", [])}
-        r2c = existing.get("raw_to_canonical", {})
-        done = {c.get("category", "other") for c in all_c.values()}
-        return all_c, r2c, done
-    except Exception:
-        return {}, {}, set()
+        for line in partial_path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            done_batch_keys.add(rec["batch_key"])
+            for c in rec.get("canonicals", []):
+                cid = c.get("canonical_id", "").strip()
+                if not cid:
+                    continue
+                if cid not in all_c:
+                    all_c[cid] = c
+                else:
+                    existing = set(all_c[cid].get("raw_variants", []))
+                    for rv in c.get("raw_variants", []):
+                        existing.add(rv)
+                    all_c[cid]["raw_variants"] = sorted(existing)
+            for raw, cid in rec.get("mapping", {}).items():
+                r2c[raw] = cid
+        print(f"Resumed {len(done_batch_keys)} batches, {len(all_c)} canonicals, {len(r2c)} mappings")
+    except Exception as e:
+        print(f"WARNING: resume load failed: {e}", file=sys.stderr)
+    return all_c, r2c, done_batch_keys
+
+
+def append_partial(partial_path, batch_key, result):
+    """Append one batch result to partial JSONL — immediate persistence."""
+    rec = {
+        "batch_key": batch_key,
+        "canonicals": result.get("canonicals", []),
+        "mapping": result.get("mapping", {}),
+    }
+    with open(partial_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
 def main():
@@ -228,14 +262,13 @@ def main():
 
     all_canonicals: dict[str, Any] = {}
     raw_to_canonical: dict[str, str] = {}
-    resume_categories: set[str] = set()
-    if args.resume:
-        all_canonicals, raw_to_canonical, resume_categories = load_resume_state(args.output)
-        if resume_categories:
-            print(f"Resuming — skipping: {sorted(resume_categories)}")
+    done_batch_keys: set[str] = set()
 
-    batches = build_batches(ingredients, args.batch_size, resume_categories)
-    print(f"Batches: {len(batches)}")
+    # Always try resume from partial file
+    all_canonicals, raw_to_canonical, done_batch_keys = load_resume_state(PARTIAL_OUTPUT)
+
+    batches = build_batches(ingredients, args.batch_size, done_batch_keys)
+    print(f"Batches to do: {len(batches)} (already done: {len(done_batch_keys)})")
 
     if args.dry_run:
         print("[DRY RUN] First batch only ...")
@@ -244,18 +277,18 @@ def main():
     errors = []
     t0 = time.time()
 
-    def process_batch(cat_batch):
-        cat, batch = cat_batch
+    def process_batch(keyed_batch):
+        batch_key, cat, batch = keyed_batch
         items_block = "\n".join(f"{e['item']} | {e.get('frequency', 0)}" for e in batch)
         prompt = USER_PROMPT_TEMPLATE.format(items_block=items_block)
         result = call_llm(base_url, api_key, prompt)
-        return cat, batch, result
+        return batch_key, cat, batch, result
 
     with ThreadPoolExecutor(max_workers=MAX_CONCURRENCY) as pool:
         futures = {pool.submit(process_batch, b): b for b in batches}
         pbar = tqdm(total=len(futures), desc="Normalizing", unit="batch")
         for future in as_completed(futures):
-            cat, batch, result = future.result()
+            batch_key, cat, batch, result = future.result()
             pbar.update(1)
             if result is None or "_error" in result:
                 err = (result or {}).get("_error", "null")
@@ -263,6 +296,8 @@ def main():
                 tqdm.write(f"  [FAIL] {cat} ({len(batch)}): {err[:80]}")
             else:
                 unmapped = merge_batch_result(result, batch, all_canonicals, raw_to_canonical)
+                # Persist immediately
+                append_partial(PARTIAL_OUTPUT, batch_key, result)
                 if unmapped:
                     tqdm.write(f"  [WARN] {cat}: {len(unmapped)} unmapped")
         pbar.close()
