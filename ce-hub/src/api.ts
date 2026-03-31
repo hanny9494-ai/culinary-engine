@@ -88,5 +88,13 @@ export async function buildApp(store: StateStore, engine: TaskEngine, agentManag
     return knownKeys.map(k => ({ envVar: k, hasValue: !!process.env[k] }));
   });
 
+  // Context builder: generate resume prompt for an agent
+  app.get<{ Params: { name: string } }>('/api/agents/:name/resume-prompt', async (req) => {
+    // Lazy import to avoid circular deps
+    const { ContextBuilder } = await import('./context-builder.js');
+    const builder = new ContextBuilder(store);
+    return { prompt: builder.buildResumePrompt(req.params.name) };
+  });
+
   return app;
 }

@@ -7,6 +7,7 @@ import { StateStore } from './state-store.js';
 import { TaskEngine } from './task-engine.js';
 import { AgentManager } from './agent-manager.js';
 import { MessageRouter } from './message-router.js';
+import { ContextBuilder } from './context-builder.js';
 import { buildApp } from './api.js';
 
 const DB_PATH = '/Users/jeff/culinary-engine/ce-hub/ce-hub.db';
@@ -19,6 +20,7 @@ async function main() {
   const agentManager = new AgentManager();
   await agentManager.initialize();
   const router = new MessageRouter(store);
+  const contextBuilder = new ContextBuilder(store);
 
   const app = await buildApp(store, engine, agentManager);
 
