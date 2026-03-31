@@ -6,6 +6,7 @@ import { AgentManager } from './agent-manager.js';
 import { MessageRouter } from './message-router.js';
 import { ContextBuilder } from './context-builder.js';
 import { buildApp } from './api.js';
+import { setupBridge } from './bridge.js';
 
 const DB_PATH = '/Users/jeff/culinary-engine/ce-hub/ce-hub.db';
 const PORT = 8750;
@@ -26,16 +27,24 @@ async function main() {
   engine.emitter.on('task.*.completed', (r: unknown) => router.broadcastAll({ type: 'task_update', event: 'completed', result: r }));
   engine.emitter.on('task.*.failed', (e: unknown) => router.broadcastAll({ type: 'task_update', event: 'failed', error: e }));
 
-  // Wire frontend messages → AgentManager → response back to frontend
+  // Bridge: intercept dispatch commands (@agent: message)
+  const handleBridge = setupBridge(agentManager, router);
+
+  // Wire frontend messages → AgentManager → Bridge → response back to frontend
   router.emitter.on('client.message.*', async (data: { agentName: string; content: string; clientId: string }) => {
     const { agentName, content } = data;
     console.log(`[ce-hub] Message to ${agentName}: ${content.slice(0, 80)}`);
     try {
       const response = await agentManager.sendMessage(agentName, content);
+
+      // Show response in agent's tile
       router.broadcastToAgent(agentName, {
         type: 'agent_message', agentName, role: 'assistant',
         content: response, timestamp: Date.now(),
       });
+
+      // Check if response contains @agent dispatches
+      await handleBridge(agentName, response);
     } catch (err) {
       router.broadcastToAgent(agentName, {
         type: 'agent_message', agentName, role: 'system',

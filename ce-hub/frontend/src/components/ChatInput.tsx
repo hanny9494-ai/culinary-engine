@@ -1,33 +1,22 @@
 import React, { useState } from 'react';
+import { useTheme } from '../App';
 
-interface Props {
-  onSend: (content: string) => void;
-  disabled?: boolean;
-}
-
-export function ChatInput({ onSend, disabled }: Props) {
+export function ChatInput({ onSend, disabled }: { onSend: (s: string) => void; disabled?: boolean }) {
   const [value, setValue] = useState('');
+  const { dark } = useTheme();
 
-  const handleSubmit = () => {
-    const trimmed = value.trim();
-    if (!trimmed) return;
-    onSend(trimmed);
-    setValue('');
-  };
+  const submit = () => { const t = value.trim(); if (t) { onSend(t); setValue(''); } };
 
   return (
-    <div style={{ display: 'flex', borderTop: '1px solid #1a1a2e', background: '#0d0d18' }}>
-      <span style={{ padding: '6px 4px 6px 8px', color: '#4a6cf7', fontFamily: 'SF Mono, Menlo, monospace', fontSize: 12 }}>$</span>
+    <div style={{ display: 'flex', borderTop: `1px solid ${dark ? '#1a1a2e' : '#ddd'}`, background: dark ? '#0d0d18' : '#fafafa' }}>
+      <span style={{ padding: '6px 4px 6px 8px', color: dark ? '#4a6cf7' : '#3b5cf5', fontFamily: 'SF Mono, Menlo, monospace', fontSize: 12 }}>$</span>
       <input
-        value={value}
-        onChange={e => setValue(e.target.value)}
-        onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); handleSubmit(); } }}
+        value={value} onChange={e => setValue(e.target.value)}
+        onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); submit(); } }}
         disabled={disabled}
-        placeholder=""
         style={{
-          flex: 1, background: 'transparent', color: '#ccc', border: 'none',
-          padding: '6px 4px', fontSize: 12, fontFamily: 'SF Mono, Menlo, monospace',
-          outline: 'none',
+          flex: 1, background: 'transparent', color: dark ? '#ccc' : '#333', border: 'none',
+          padding: '6px 4px', fontSize: 12, fontFamily: 'SF Mono, Menlo, monospace', outline: 'none',
         }}
       />
     </div>
