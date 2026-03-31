@@ -73,5 +73,20 @@ export async function buildApp(store: StateStore, engine: TaskEngine, agentManag
     catch (e) { return reply.status(500).send({ error: String(e) }); }
   });
 
+  // Settings: save API keys to process.env (runtime only)
+  app.post('/api/settings/keys', async (req) => {
+    const keys = req.body as Array<{ envVar: string; value: string }>;
+    if (!Array.isArray(keys)) return { error: 'Expected array' };
+    for (const { envVar, value } of keys) {
+      if (envVar && value) process.env[envVar] = value;
+    }
+    return { saved: keys.length };
+  });
+
+  app.get('/api/settings/keys', async () => {
+    const knownKeys = ['DASHSCOPE_API_KEY', 'GEMINI_API_KEY', 'L0_API_KEY', 'L0_API_ENDPOINT', 'MINERU_API_KEY', 'ANTHROPIC_BASE_URL'];
+    return knownKeys.map(k => ({ envVar: k, hasValue: !!process.env[k] }));
+  });
+
   return app;
 }
