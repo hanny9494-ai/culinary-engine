@@ -1,7 +1,4 @@
-delete process.env.http_proxy;
-delete process.env.https_proxy;
-delete process.env.HTTP_PROXY;
-delete process.env.HTTPS_PROXY;
+// Don't modify process.env — claude CLI needs clean env for OAuth
 
 import { StateStore } from './state-store.js';
 import { TaskEngine } from './task-engine.js';
@@ -28,6 +25,24 @@ async function main() {
   engine.emitter.on('task.*.created', (t: unknown) => router.broadcastAll({ type: 'task_update', event: 'created', task: t }));
   engine.emitter.on('task.*.completed', (r: unknown) => router.broadcastAll({ type: 'task_update', event: 'completed', result: r }));
   engine.emitter.on('task.*.failed', (e: unknown) => router.broadcastAll({ type: 'task_update', event: 'failed', error: e }));
+
+  // Wire frontend messages → AgentManager → response back to frontend
+  router.emitter.on('client.message.*', async (data: { agentName: string; content: string; clientId: string }) => {
+    const { agentName, content } = data;
+    console.log(`[ce-hub] Message to ${agentName}: ${content.slice(0, 80)}`);
+    try {
+      const response = await agentManager.sendMessage(agentName, content);
+      router.broadcastToAgent(agentName, {
+        type: 'agent_message', agentName, role: 'assistant',
+        content: response, timestamp: Date.now(),
+      });
+    } catch (err) {
+      router.broadcastToAgent(agentName, {
+        type: 'agent_message', agentName, role: 'system',
+        content: `Error: ${err}`, timestamp: Date.now(),
+      });
+    }
+  });
 
   const shutdown = async (sig: string) => {
     console.log(`[ce-hub] ${sig}, shutting down...`);

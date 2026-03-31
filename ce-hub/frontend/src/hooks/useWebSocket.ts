@@ -14,8 +14,8 @@ export function useWebSocket() {
   const reconnectTimer = useRef<ReturnType<typeof setTimeout>>();
 
   const connect = useCallback(() => {
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const ws = new WebSocket(`${protocol}//${window.location.host}`);
+    // Connect directly to backend WebSocket server
+    const ws = new WebSocket('ws://localhost:8750');
 
     ws.onopen = () => { setConnected(true); console.log('[ws] connected'); };
     ws.onclose = () => {
@@ -26,13 +26,19 @@ export function useWebSocket() {
       try {
         const msg = JSON.parse(e.data);
         if (msg.type === 'agent_message' && msg.agentName) {
-          setMessages(prev => ({
-            ...prev,
-            [msg.agentName]: [...(prev[msg.agentName] || []), {
-              agentName: msg.agentName, role: msg.role || 'assistant',
-              content: msg.content, timestamp: msg.timestamp || Date.now(),
-            }],
-          }));
+          setMessages(prev => {
+            const existing = prev[msg.agentName] || [];
+            // Dedup: skip if last message has same content and role
+            const last = existing[existing.length - 1];
+            if (last && last.content === msg.content && last.role === (msg.role || 'assistant')) return prev;
+            return {
+              ...prev,
+              [msg.agentName]: [...existing, {
+                agentName: msg.agentName, role: msg.role || 'assistant',
+                content: msg.content, timestamp: msg.timestamp || Date.now(),
+              }],
+            };
+          });
         } else if (msg.type === 'task_update') {
           // Could dispatch to task state - for now just log
           console.log('[ws] task update:', msg);
