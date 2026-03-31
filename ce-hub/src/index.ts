@@ -30,20 +30,56 @@ async function main() {
   // Bridge: intercept dispatch commands (@agent: message)
   const handleBridge = setupBridge(agentManager, router);
 
-  // Wire frontend messages → AgentManager → Bridge → response back to frontend
+  // Wire frontend messages → check for @dispatch first, then send to agent
   router.emitter.on('client.message.*', async (data: { agentName: string; content: string; clientId: string }) => {
     const { agentName, content } = data;
     console.log(`[ce-hub] Message to ${agentName}: ${content.slice(0, 80)}`);
+
+    // Check if USER input has @agent: dispatch (direct bridge from any tile)
+    const { parseDispatches } = await import('./bridge.js');
+    const userDispatches = parseDispatches(content);
+    if (userDispatches.length > 0) {
+      for (const { targetAgent, message } of userDispatches) {
+        console.log(`[bridge] user → @${targetAgent}: ${message.slice(0, 60)}`);
+        // Show in source tile
+        router.broadcastToAgent(agentName, {
+          type: 'agent_message', agentName, role: 'system',
+          content: `→ dispatched to ${targetAgent}`, timestamp: Date.now(),
+        });
+        // Show in target tile
+        router.broadcastToAgent(targetAgent, {
+          type: 'agent_message', agentName: targetAgent, role: 'system',
+          content: `[from ${agentName}] ${message}`, timestamp: Date.now(),
+        });
+        // Execute on target
+        try {
+          const result = await agentManager.sendMessage(targetAgent, message);
+          router.broadcastToAgent(targetAgent, {
+            type: 'agent_message', agentName: targetAgent, role: 'assistant',
+            content: result, timestamp: Date.now(),
+          });
+          // Report back to source
+          router.broadcastToAgent(agentName, {
+            type: 'agent_message', agentName, role: 'system',
+            content: `[${targetAgent} done] ${result.slice(0, 500)}`, timestamp: Date.now(),
+          });
+        } catch (err) {
+          router.broadcastToAgent(targetAgent, {
+            type: 'agent_message', agentName: targetAgent, role: 'system',
+            content: `Error: ${err}`, timestamp: Date.now(),
+          });
+        }
+      }
+      return; // Don't send to the agent itself
+    }
+
+    // Normal message: send to agent, then check response for dispatches
     try {
       const response = await agentManager.sendMessage(agentName, content);
-
-      // Show response in agent's tile
       router.broadcastToAgent(agentName, {
         type: 'agent_message', agentName, role: 'assistant',
         content: response, timestamp: Date.now(),
       });
-
-      // Check if response contains @agent dispatches
       await handleBridge(agentName, response);
     } catch (err) {
       router.broadcastToAgent(agentName, {
