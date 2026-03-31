@@ -13,21 +13,38 @@ interface AgentInfo {
   description: string;
 }
 
-const DEFAULT_LAYOUT = [
-  { i: 'cc-lead',    x: 0, y: 0, w: 6, h: 12, minW: 3, minH: 4 },
-  { i: 'coder',      x: 6, y: 0, w: 3, h: 6,  minW: 3, minH: 4 },
-  { i: 'researcher', x: 9, y: 0, w: 3, h: 6,  minW: 3, minH: 4 },
-  { i: 'pipeline-runner', x: 6, y: 6, w: 3, h: 6, minW: 3, minH: 4 },
-  { i: 'architect',  x: 9, y: 6, w: 3, h: 6,  minW: 3, minH: 4 },
-];
+// Auto-generate layout for all agents: cc-lead big, rest 2-column grid
+function generateLayout(agents: string[]) {
+  const layout: any[] = [];
+  const ccIdx = agents.indexOf('cc-lead');
+
+  // cc-lead takes left half
+  if (ccIdx >= 0) {
+    layout.push({ i: 'cc-lead', x: 0, y: 0, w: 6, h: 14, minW: 3, minH: 4 });
+  }
+
+  // Rest go in right column, 2 wide
+  const others = agents.filter(a => a !== 'cc-lead');
+  let row = 0;
+  for (let idx = 0; idx < others.length; idx++) {
+    const col = idx % 2;
+    if (col === 0 && idx > 0) row += 7;
+    layout.push({
+      i: others[idx],
+      x: 6 + col * 3,
+      y: row,
+      w: 3,
+      h: 7,
+      minW: 2,
+      minH: 3,
+    });
+  }
+  return layout;
+}
 
 export default function App() {
   const [agents, setAgents] = useState<AgentInfo[]>([]);
   const [showSettings, setShowSettings] = useState(false);
-  const [layouts, setLayouts] = useState<Record<string, any[]>>(() => {
-    const saved = localStorage.getItem('ce-hub-layouts');
-    return saved ? JSON.parse(saved) : { lg: DEFAULT_LAYOUT };
-  });
   const { connected, messages, sendMessage, subscribe } = useWebSocket();
 
   useEffect(() => {
@@ -37,70 +54,72 @@ export default function App() {
       .catch(() => {});
   }, []);
 
+  // Build agent list: always include cc-lead + all from API
+  const allAgentNames = ['cc-lead', ...agents.map(a => a.name).filter(n => n !== 'cc-lead')];
+
+  const [layouts, setLayouts] = useState<Record<string, any[]>>(() => {
+    const saved = localStorage.getItem('ce-hub-layouts-v2');
+    return saved ? JSON.parse(saved) : {};
+  });
+
+  // Regenerate layout when agents change
+  const currentLayout = layouts.lg?.length >= allAgentNames.length
+    ? layouts
+    : { lg: generateLayout(allAgentNames), md: generateLayout(allAgentNames), sm: generateLayout(allAgentNames) };
+
   const handleLayoutChange = useCallback((_layout: any[], allLayouts: Record<string, any[]>) => {
     setLayouts(allLayouts);
-    localStorage.setItem('ce-hub-layouts', JSON.stringify(allLayouts));
+    localStorage.setItem('ce-hub-layouts-v2', JSON.stringify(allLayouts));
   }, []);
 
-  const visibleAgents = agents.length > 0
-    ? agents.filter(a => DEFAULT_LAYOUT.some(l => l.i === a.name) || messages[a.name]?.length)
-    : DEFAULT_LAYOUT.map(l => ({ name: l.i, model: '', description: '' }));
-
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#0d0d1a' }}>
       {/* Header */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '8px 16px', background: '#16162a', borderBottom: '1px solid #333',
+        padding: '6px 16px', background: '#111122', borderBottom: '1px solid #222',
+        fontFamily: 'SF Mono, Menlo, monospace', fontSize: 12,
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <span style={{ fontWeight: 700, fontSize: 16 }}>ce-hub</span>
-          <div style={{
-            width: 8, height: 8, borderRadius: '50%',
-            background: connected ? '#4ade80' : '#f87171',
-          }} />
-          <span style={{ fontSize: 12, color: '#666' }}>
-            {connected ? 'connected' : 'disconnected'}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <span style={{ fontWeight: 700, color: '#4ade80' }}>ce-hub</span>
+          <span style={{ color: connected ? '#4ade80' : '#f87171' }}>
+            {connected ? '● connected' : '○ disconnected'}
           </span>
         </div>
-        <div style={{ display: 'flex', gap: 8 }}>
-          <span style={{ fontSize: 12, color: '#666' }}>{agents.length} agents</span>
-          <button
-            onClick={() => setShowSettings(true)}
-            style={{
-              background: '#252545', color: '#e0e0e0', border: '1px solid #444',
-              borderRadius: 4, padding: '4px 12px', cursor: 'pointer', fontSize: 12,
-            }}
-          >Settings</button>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <span style={{ color: '#555' }}>{allAgentNames.length} agents</span>
+          <button onClick={() => setShowSettings(true)}
+            style={{ background: '#1a1a2e', color: '#888', border: '1px solid #333', borderRadius: 3, padding: '2px 10px', cursor: 'pointer', fontSize: 11, fontFamily: 'inherit' }}>
+            settings
+          </button>
         </div>
       </div>
 
       {/* Grid */}
-      <div style={{ flex: 1, overflow: 'auto', padding: 8 }}>
+      <div style={{ flex: 1, overflow: 'auto', padding: 4 }}>
         <ResponsiveGridLayout
           className="layout"
-          layouts={layouts}
+          layouts={currentLayout}
           breakpoints={{ lg: 1200, md: 900, sm: 600 }}
           cols={{ lg: 12, md: 9, sm: 6 }}
-          rowHeight={40}
+          rowHeight={35}
           onLayoutChange={handleLayoutChange}
-          draggableHandle=".drag-handle"
           compactType="vertical"
+          margin={[4, 4]}
         >
-          {visibleAgents.map(agent => (
-            <div key={agent.name}>
+          {allAgentNames.map(name => (
+            <div key={name}>
               <AgentTile
-                name={agent.name}
-                messages={messages[agent.name] || []}
-                onSend={(content) => sendMessage(agent.name, content)}
-                onSubscribe={() => subscribe(agent.name)}
+                name={name}
+                messages={messages[name] || []}
+                onSend={(content) => sendMessage(name, content)}
+                onSubscribe={() => subscribe(name)}
               />
             </div>
           ))}
         </ResponsiveGridLayout>
       </div>
 
-      {/* Settings Panel */}
       <SettingsPanel visible={showSettings} onClose={() => setShowSettings(false)} />
     </div>
   );

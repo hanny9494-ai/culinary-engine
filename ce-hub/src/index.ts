@@ -46,6 +46,7 @@ async function main() {
 
   const shutdown = async (sig: string) => {
     console.log(`[ce-hub] ${sig}, shutting down...`);
+    agentManager.shutdown();
     await app.close(); store.close(); process.exit(0);
   };
   process.on('SIGTERM', () => shutdown('SIGTERM'));
