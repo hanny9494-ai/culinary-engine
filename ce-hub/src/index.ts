@@ -1,0 +1,45 @@
+delete process.env.http_proxy;
+delete process.env.https_proxy;
+delete process.env.HTTP_PROXY;
+delete process.env.HTTPS_PROXY;
+
+import { StateStore } from './state-store.js';
+import { TaskEngine } from './task-engine.js';
+import { AgentManager } from './agent-manager.js';
+import { MessageRouter } from './message-router.js';
+import { buildApp } from './api.js';
+
+const DB_PATH = '/Users/jeff/culinary-engine/ce-hub/ce-hub.db';
+const PORT = 8750;
+
+async function main() {
+  console.log('[ce-hub] Starting...');
+  const store = new StateStore(DB_PATH);
+  const engine = new TaskEngine(store);
+  const agentManager = new AgentManager();
+  await agentManager.initialize();
+  const router = new MessageRouter(store);
+
+  const app = await buildApp(store, engine, agentManager);
+
+  // Wire task events to WebSocket broadcast
+  engine.emitter.on('task.*.created', (t: unknown) => router.broadcastAll({ type: 'task_update', event: 'created', task: t }));
+  engine.emitter.on('task.*.completed', (r: unknown) => router.broadcastAll({ type: 'task_update', event: 'completed', result: r }));
+  engine.emitter.on('task.*.failed', (e: unknown) => router.broadcastAll({ type: 'task_update', event: 'failed', error: e }));
+
+  const shutdown = async (sig: string) => {
+    console.log(`[ce-hub] ${sig}, shutting down...`);
+    await app.close(); store.close(); process.exit(0);
+  };
+  process.on('SIGTERM', () => shutdown('SIGTERM'));
+  process.on('SIGINT', () => shutdown('SIGINT'));
+
+  await app.listen({ port: PORT, host: '0.0.0.0' });
+
+  // Attach WebSocket to Fastify's HTTP server
+  router.initialize(app.server);
+
+  console.log(`[ce-hub] Ready on http://localhost:${PORT} (REST + WebSocket)`);
+}
+
+main().catch(e => { console.error('[ce-hub] Fatal:', e); process.exit(1); });
