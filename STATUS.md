@@ -133,15 +133,16 @@
 
 ---
 
-## L0数据规模（2026-03-23 校准）
+## L0数据规模（2026-03-28 校准）
 
 | 来源 | raw | dedup | QC通过 |
 |------|-----|-------|--------|
 | Stage3骨架 | — | — | 690 |
-| Stage4 21本（详见下表） | 47,203 | 37,084 | 34,355 |
-| **L0累计** | | | **35,045** |
+| Stage4 37本（详见 books.yaml） | — | — | 44,002 |
+| **L0累计** | | | **44,692** |
 
-**主线盘子：46本（21已完成 + 25待处理）**
+**主线盘子：45本 science+recipe（37完成 + 3在跑 + 5待跑）+ 18本 recipe_only**
+**食谱总计：63本 Stage5 完成，29,085 条食谱**
 
 ### Stage4 完成明细（21本，34,355条QC通过）
 
@@ -332,12 +333,12 @@ Pipeline: 27b预过滤(或chunk_type快捷) → Opus 4.6核心提取 → embeddi
 8. **查不到就问** — 不猜测，引导用户提供食材/工艺/口感目标
 9. **新书必须先TOC检测→人工审阅→再跑Stage1** — auto-chapter-split已禁用（pipeline强制检查mc_toc.json）
 10. **外部数据源ETL导入不蒸馏** — FoodAtlas/FlavorGraph等直接导入Neo4j
-11. **Ollama不能并发跑多本书** — 9b标注必须串行，2b切分同理；MinerU/Vision(API)可并行
+11. ~~Ollama不能并发跑多本书~~ → **已改为允许并行**（决策#34）M4 Max 128G可同时加载2b+9b+27b
 12. **Ollama调用必须绕过http_proxy** — 本机有代理127.0.0.1:7890，ollama_client.py已用trust_env=False
 17. **新书不再跑Stage2+3** — Stage4开放扫描做L0主力提取，全量完成后仅对薄弱域定向补Stage2+3
 18. **Stage4 Phase A支持chunk_type快捷路径** — 有chunk_type的书跳过27b预过滤
 19. **stage4_quality.py的has_number改为warning** — 不再fail gate
-20. **API不支持并发** — Opus任务串行排队
+20. ~~API不支持并发~~ → **Opus API 支持3并发**（2026-03-27）AiGoCode/灵雅均可
 21. **域外原理暂标unclassified** — 全量跑完再统一处理，17域不扩
 22. **qwen3.5-flash替代MinerU为OCR标准**（2026-03-22）
 23. **LangGraph + Neo4j + Graphiti，不用Dify**（2026-03-22）
@@ -350,6 +351,10 @@ Pipeline: 27b预过滤(或chunk_type快捷) → Opus 4.6核心提取 → embeddi
 30. **三级置信度high/medium/inferred/unmapped**（2026-03-22）
 31. **裂变推导——每个L0点→3+ what-if**（2026-03-22）
 32. **编译md只做L2b食谱提取不做L0**（2026-03-22）
+33. **Stage4 Phase A用9b替代27b**（2026-03-27）— 分类任务9b够用，速度快3-4倍，可与Stage1并行
+34. **Ollama允许多模型并行**（2026-03-27）— `OLLAMA_MAX_LOADED_MODELS=3`，M4 Max 128G同时跑2b+9b无压力
+35. **Stage4 Opus API 3并发**（2026-03-27）— AiGoCode day优先，灵雅fallback，直连不走New API网关
+36. **项目合并到~/culinary-engine**（2026-03-27）— output/ symlink→l0-knowledge-engine/output，所有路径统一
 
 ---
 
@@ -360,16 +365,21 @@ Pipeline: 27b预过滤(或chunk_type快捷) → Opus 4.6核心提取 → embeddi
 - ✅ 3本脏书flash全量OCR完成（2026-03-22）
 - ✅ L0累计突破19,000条（2026-03-22）
 - ✅ 架构文档v5发布（2026-03-22）
+- ✅ L0累计突破41,000条（2026-03-27）
+- ✅ 项目合并到~/culinary-engine（2026-03-27）
+- ✅ Orchestrator v2部署（2026-03-27）
+- ✅ OCR 3本完成 charcuterie/art_of_fermentation/professional_chef（2026-03-27）
+- ✅ 5本dedup+QC: chocolates/neurogastronomy/handbook/dashi/french_sauces（2026-03-27）
+- ✅ Ollama并行+9b Phase A+3并发Stage4（2026-03-27）
 
 ## 待办队列
 
 P0（进行中）：
-- Stage4第三批+第五批10本（CC在跑）
-- 3本脏书Stage1收尾（Codex在跑）
+- Stage4 Phase B: professional_chef, french_patisserie, art_of_fermentation（灵雅 Opus via proxy）
+- Stage4 待跑: vegetarian_flavor_bible, flavor_equation, charcuterie, phoenix_claws
+- Stage5 完成: 63本全部已提取，29,085条食谱
 
-P1（待启动）：
-- 3本脏书Stage4
-- L0收官批10本（第六批+第九批）flash OCR全链路
+P1（L0完成后立即启动）：
 
 P2（L0完成后）：
 - Neo4j搭建 + L0导入
@@ -498,3 +508,6 @@ Relae, Everlasting Meal, Whole Fish, French Laundry
 
 流程：编译md → 2b切分 → flash提取食谱+标注（不做L0蒸馏）
 ---
+
+33. **Stage4 Phase A 用 9b 替代 27b**（2026-03-27）— 分类任务 9b 够用，速度快 3-4 倍，内存占用小，可与 Stage1 并行
+34. **Ollama 允许多模型并行**（2026-03-27）— `OLLAMA_MAX_LOADED_MODELS=3`，M4 Max 128G 同时跑 2b+9b+27b 无压力。Stage4 Phase A 和 Stage1 可同时跑

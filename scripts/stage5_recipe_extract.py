@@ -241,12 +241,7 @@ thermal_dynamics, mass_transfer, texture_rheology
   ]
 }
 
-如果chunk_type是science或narrative，recipes返回空数组：
-{
-  "chunk_type": "science",
-  "topics": ["maillard_caramelization"],
-  "recipes": []
-}
+即使chunk_type是science或narrative，如果文本中包含配方、食谱、配料表、操作步骤，也必须提取到recipes数组中。只有确实没有任何食谱内容时才返回空数组。
 
 ### 关键约束
 - 华氏温度必须转为摄氏度

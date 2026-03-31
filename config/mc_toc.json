@@ -778,5 +778,462 @@
         "The Perfect Meal"
       ]
     }
+  ],
+  "charcuterie": [
+    {
+      "chapter_num": 0,
+      "chapter_title": "Foreword",
+      "sections": []
+    },
+    {
+      "chapter_num": 1,
+      "chapter_title": "Introduction",
+      "sections": [
+        "Using this Book: Notes about Tools and Ingredients"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Salt",
+      "sections": [
+        "The Basic Dry Cure",
+        "Fresh Bacon",
+        "Pancetta",
+        "Guanciale",
+        "Salt Pork",
+        "Salt Cod",
+        "Fennel-Cured Salmon",
+        "Beef Jerky",
+        "Lemon Confit"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "The All-Purpose Brine",
+      "sections": [
+        "Herb-Brined Roasted Chicken or Turkey",
+        "Corned Beef",
+        "The Natural Pickle",
+        "Traditional Dill Pickles",
+        "Home-Cured Sauerkraut"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Parts of the Pig",
+      "sections": [
+        "Live Weight: Buying a Whole Hog",
+        "Dry Cures"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Simple Bacon at Home",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Smoked Food",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Sausages",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Dry-Cured Food",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Pâtés and Terrines",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "The Confit Technique",
+      "sections": []
+    }
+  ],
+  "art_of_fermentation": [
+    {
+      "chapter_num": 0,
+      "chapter_title": "Introduction",
+      "sections": []
+    },
+    {
+      "chapter_num": 1,
+      "chapter_title": "Fermentation as a Coevolutionary Force",
+      "sections": []
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Practical Benefits of Fermentation",
+      "sections": []
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Basic Concepts and Equipment",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Fermenting Sugars into Alcohol",
+      "sections": [
+        "Alcoholic Beverages from Other Concentrated Sweeteners",
+        "Fermented Fruit Salads",
+        "Plant Sap Ferments",
+        "Carbonating Alcoholic Beverages",
+        "Troubleshooting"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Fermenting Vegetables",
+      "sections": [
+        "Lactic Acid Bacteria",
+        "Vitamin C and Fermented Vegetables",
+        "Kraut-Chi Basics",
+        "Salt: Dry-Salting Versus Brining",
+        "Sauerkraut",
+        "Kimchi",
+        "Chinese Pickling",
+        "Indian Pickling",
+        "Fermenting Hot Sauce and Condiments",
+        "Brining",
+        "Sour Pickles"
+      ]
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Fermenting Sour Tonic Beverages",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Fermenting Milk",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Fermenting Grains and Starchy Tubers",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Fermenting Beans",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Fermenting Cereals",
+      "sections": []
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Fermenting Meat, Fish, and Eggs",
+      "sections": []
+    }
+  ],
+  "professional_chef": [
+    {
+      "chapter_num": 12,
+      "chapter_title": "Stocks",
+      "sections": []
+    },
+    {
+      "chapter_num": 13,
+      "chapter_title": "Sauces",
+      "sections": []
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "Soups",
+      "sections": []
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "Mise en Place for Meats, Poultry, Fish, and Shellfish",
+      "sections": []
+    },
+    {
+      "chapter_num": 17,
+      "chapter_title": "Grilling, Broiling, and Roasting",
+      "sections": []
+    },
+    {
+      "chapter_num": 18,
+      "chapter_title": "Sautéing, Pan Frying, and Deep Frying",
+      "sections": []
+    },
+    {
+      "chapter_num": 19,
+      "chapter_title": "Steaming and Submersion Cooking",
+      "sections": []
+    },
+    {
+      "chapter_num": 20,
+      "chapter_title": "Braising and Stewing",
+      "sections": []
+    },
+    {
+      "chapter_num": 22,
+      "chapter_title": "Cooking Vegetables",
+      "sections": []
+    },
+    {
+      "chapter_num": 23,
+      "chapter_title": "Cooking Potatoes",
+      "sections": []
+    },
+    {
+      "chapter_num": 24,
+      "chapter_title": "Cooking Grains and Legumes",
+      "sections": []
+    },
+    {
+      "chapter_num": 25,
+      "chapter_title": "Cooking Pasta and Dumplings",
+      "sections": []
+    },
+    {
+      "chapter_num": 26,
+      "chapter_title": "Cooking Eggs",
+      "sections": []
+    }
+  ],
+  "flavor_equation": [
+    {
+      "chapter_num": 0,
+      "chapter_title": "Introduction",
+      "sections": [
+        "Cultural and Regional Differences in Flavor Pairing"
+      ]
+    },
+    {
+      "chapter_num": 1,
+      "chapter_title": "Emotion",
+      "sections": [
+        "Emotion and Taste",
+        "Emotion Affects Taste",
+        "Taste Affects Emotion"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Sight",
+      "sections": [
+        "Spinach Oxidation",
+        "Table of Common Food Pigments",
+        "Tips on Working with Food Pigments"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Sound",
+      "sections": []
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Mouthfeel",
+      "sections": []
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Aroma",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Taste",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Brightness",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Fieriness",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Richness",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "Pantry Essentials",
+      "sections": []
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "Flavor Reactions",
+      "sections": []
+    }
+  ],
+  "french_patisserie": [
+    {
+      "chapter_num": 0,
+      "chapter_title": "Preface",
+      "sections": []
+    },
+    {
+      "chapter_num": 1,
+      "chapter_title": "Introduction",
+      "sections": [
+        "French Pâtisserie Worldwide",
+        "A Book for All Levels",
+        "The Future"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "Equipment",
+      "sections": [
+        "Utensils",
+        "Electrical Appliances",
+        "Molds and Baking Accessories",
+        "Small Kitchen Tools"
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "Basic Techniques",
+      "sections": [
+        "Using a Rolling Pin",
+        "Lining Tartlet Pans",
+        "Lining a Tart Ring",
+        "Filling and Using a Pastry Bag"
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "Ingredients",
+      "sections": [
+        "Dairy Products",
+        "Milk",
+        "Cream",
+        "Crème Fraîche",
+        "Mascarpone",
+        "Powdered Milk",
+        "Sweetened Condensed Milk"
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "Basic Recipes",
+      "sections": []
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "Cakes",
+      "sections": []
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "Tarts",
+      "sections": []
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "Choux Pastry",
+      "sections": []
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Puff Pastry",
+      "sections": []
+    }
+  ],
+  "phoenix_claws": [
+    {
+      "chapter_num": 0,
+      "chapter_title": "Introduction",
+      "sections": [
+        "Sharing a Meal"
+      ]
+    },
+    {
+      "chapter_num": 1,
+      "chapter_title": "The Essence of Chinese Food",
+      "sections": [
+        "Regional Chinese Cuisine",
+        "Guangdong Cuisine",
+        "The Banquet",
+        "Sichuan Cuisine",
+        "Hunan Cuisine",
+        "The Regions of China",
+        "Food Therapy",
+        "Anhui Cuisine",
+        "Shandong Cuisine",
+        "Beijing Cuisine",
+        "Buddhist Vegetarian Cooking",
+        "Shanghai Cuisine",
+        "Hainan",
+        "Yunnan",
+        "Xinjiang"
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "The Chinese Kitchen",
+      "sections": [
+        "Cleavers and Knives",
+        "Cutting Board",
+        "Woks",
+        "Seasoning a Wok",
+        "Maintaining a Wok"
+      ]
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "Flavoring with Sauces",
+      "sections": []
+    },
+    {
+      "chapter_num": 10,
+      "chapter_title": "The Virtues of Slow Cooking",
+      "sections": []
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "The Intricacy of Boiling",
+      "sections": []
+    },
+    {
+      "chapter_num": 12,
+      "chapter_title": "The Power of Steam",
+      "sections": []
+    },
+    {
+      "chapter_num": 13,
+      "chapter_title": "The Making of Hearty Soups",
+      "sections": []
+    },
+    {
+      "chapter_num": 14,
+      "chapter_title": "Playing with Fire",
+      "sections": []
+    },
+    {
+      "chapter_num": 15,
+      "chapter_title": "Enriching with Smoke",
+      "sections": []
+    },
+    {
+      "chapter_num": 16,
+      "chapter_title": "Appetizing Cold Dishes",
+      "sections": []
+    },
+    {
+      "chapter_num": 17,
+      "chapter_title": "Sweet but Not Dessert",
+      "sections": []
+    }
   ]
 }
