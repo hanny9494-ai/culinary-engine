@@ -24,22 +24,24 @@ model: sonnet
 
 ## 3. 执行方式
 
-调用 Codex CLI 非交互模式：
+调用 Codex CLI 非交互模式，**必须用 `--dangerously-bypass-approvals-and-sandbox` 确保直接写入主 repo**：
 
 ```bash
 ~/bin/codex exec \
-  --full-auto \
+  --dangerously-bypass-approvals-and-sandbox \
   -C ~/culinary-engine \
   -o /tmp/codex_result.md \
   "任务描述"
 ```
 
-关键参数：
-- `--full-auto`: 全自动执行，不需要人工确认
-- `-C <dir>`: 指定工作目录
+**⚠️ 关键：不要用 `--full-auto` 或 `-s workspace-write`！**
+这两个 flag 会创建 ephemeral git worktree（detached HEAD），执行完 worktree 被清理，文件全丢。
+`--dangerously-bypass-approvals-and-sandbox` 直接在主 repo 执行，文件留在原地。
+
+其他参数：
+- `-C <dir>`: 指定工作目录（必须是 ~/culinary-engine）
 - `-o <file>`: 结果输出到文件
 - `--json`: JSONL 格式输出（用于程序化处理）
-- `-s workspace-write`: 允许写入工作区
 
 ## 4. 任务模板
 
@@ -54,8 +56,8 @@ model: sonnet
 - 代码仓库：~/culinary-engine
 - 数据目录：~/culinary-engine/output
 
-## Files to modify
-[明确列出要改的文件]
+## Files to create/modify
+[明确列出要改的文件路径]
 
 ## Requirements
 [具体要求]
@@ -63,20 +65,41 @@ model: sonnet
 ## Constraints
 - 不改 STATUS.md / HANDOFF.md（母对话维护）
 - 所有 HTTP 客户端 trust_env=False
-- Ollama 调用必须串行
+- 脚本顶部清除 proxy env vars（本机有 127.0.0.1:7890）
+- DashScope 调用加 enable_thinking=False
+- 长时间运行脚本必须有分步落袋 + resume
 - 保持现有 CLI argparse 接口兼容
 - 保持 JSON/JSONL 输出格式兼容
+
+## Git
+- 创建分支 feat/<task-name>
+- git add + commit
+- 不 push
 ```
 
-## 5. 结果回收
+## 5. Review 闭环
 
-Codex 完成后：
-1. 读取 `-o` 输出文件获取 Codex 的回答
-2. 检查 git diff 看实际改动
-3. 如果有代码改动，交给 code-reviewer 审查
-4. 汇报给 CC Lead
+**CC Lead 和 coder 之间的迭代循环：**
 
-## 6. 分支规则
+1. Coder 写完代码 → commit + `git push origin feat/<branch>`
+2. CC Lead `git fetch && git diff main..origin/feat/<branch>` 审阅代码
+3. 如果有修改意见 → CC Lead 用 **SendMessage** 发给 coder（保持同一 session，复用 token cache）
+4. Coder 修改 → commit + push
+5. CC Lead 再次 review
+6. **循环直到通过**，CC Lead 才 merge 到主分支
 
-- Codex 在 `agent/<task-name>` 分支工作
-- 完成后不直接 merge，等 code-reviewer 审查 + Jeff 批准
+**关键：用 SendMessage 继续同一个 coder session，不重新创建 agent。** 这样：
+- Codex 的上下文保留，不用重新读文件
+- Token cache 生效，响应更快
+- 修改是增量的，不是从头开始
+
+## 6. 分支 + Push 规则
+
+- 在 `feat/<task-name>` 分支工作
+- **写完代码后必须 push 到 origin**：
+  ```bash
+  git push origin feat/<task-name>
+  ```
+- 这是关键——Codex worktree 是临时的，本地文件会被清理，只有 push 到 GitHub 才能持久化
+- CC Lead 会 `git fetch && git merge origin/feat/<task-name>` 拿回代码
+- 最终由 code-reviewer 审查 + Jeff 批准后 merge 到 main
